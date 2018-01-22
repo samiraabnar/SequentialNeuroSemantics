@@ -16,6 +16,7 @@ class Scan(object):
 
 
 
+<<<<<<< HEAD
 
 
 def read_and_prepare_data():
