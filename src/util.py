@@ -41,3 +41,14 @@ def plot(predictions, targets, train_step, words, plot_size,FLAGS):
     plt.close(fig)
 
     return fig
+
+
+def is_float(text):
+    try:
+        float(text)
+        # check for nan/infinity etc.
+        if text.isalpha():
+            return False
+        return True
+    except ValueError:
+        return False

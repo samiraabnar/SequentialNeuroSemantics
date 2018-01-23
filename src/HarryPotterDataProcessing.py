@@ -2,7 +2,10 @@ import tensorflow as tf
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+from  scipy.stats import pearsonr
 
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
 
 
 class Scan(object):
@@ -103,9 +106,9 @@ def read_and_prepare_data_word_based(block_ids,word_embedding_dic_file="../data/
     scan_words = []
 
     embeddings = []
-
     for block_id in block_ids:
         for scan_obj in scan_objects.item().get(block_id):
+
             if scan_obj.word in word_embeddings.item().keys():
                 brain_scans.append(scan_obj.activations[0])
                 brain_scan_steps.append(scan_obj.step)
@@ -217,3 +220,14 @@ def prepare_trainings_for_glove_word_embeddings():
      test_embeddings, test_normalized_brain_scans, test_words = \
          word_embeddings[test_indexes], normalized_brain_scans[test_indexes], words[test_indexes]
      return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words
+
+
+def select_best_features(brain_scans,scan_words):
+    scan_words_set = list(set(scan_words))
+    words_ids = [scan_words_set.index(word) for word in scan_words]
+    normalized_brain_scans = (brain_scans - np.min(brain_scans)) / (np.max(brain_scans) - np.min(brain_scans))
+    x_new = SelectKBest(chi2, k=100).fit_transform(normalized_brain_scans, words_ids)
+    indexes = SelectKBest(chi2, k=100).get_support(indices=True)
+
+    return indexes
+
