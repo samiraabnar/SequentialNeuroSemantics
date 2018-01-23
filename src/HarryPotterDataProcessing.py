@@ -16,7 +16,6 @@ class Scan(object):
 
 
 
-<<<<<<< HEAD
 
 
 def read_and_prepare_data():
@@ -205,3 +204,16 @@ def prepare_trainings_for_softmax_word_embeddings():
          word_embeddings[test_indexes], normalized_brain_scans[test_indexes], words[test_indexes]
      return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words    
 
+
+
+def prepare_trainings_for_glove_word_embeddings():
+     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based([1, 2, 3, 4],"../data/harry_glove.npy")
+     indexes = np.arange(len(normalized_brain_scans))
+     random.shuffle(indexes)
+     train_size = (len(indexes) // 4) * 3
+     train_indexes = indexes[: train_size]
+     test_indexes = indexes[train_size:]
+     train_embeddings, train_normalized_brain_scans, train_words = word_embeddings[train_indexes], normalized_brain_scans[train_indexes], words[train_indexes]
+     test_embeddings, test_normalized_brain_scans, test_words = \
+         word_embeddings[test_indexes], normalized_brain_scans[test_indexes], words[test_indexes]
+     return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words
