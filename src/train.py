@@ -13,7 +13,7 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
             XY = list(zip(train_x, train_y))
             np.random.shuffle(XY)
             train_x, train_y = zip(*XY)
-
+            print(i)
             start_index = 0;
             end_index = start_index + model.hparams.batch_size
             while end_index < len(train_x):

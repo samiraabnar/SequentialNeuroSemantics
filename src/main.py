@@ -112,6 +112,7 @@ def main(unused_argv):
                       test_embeddings, test_normalized_brain_scans,
                       test_words=test_words,train_words=train_words,FLAGS=FLAGS)
             elif FLAGS.direction == "brain2word":
+                print("brain2word training...")
                 train(mapper, sess, sv, train_normalized_brain_scans, train_embeddings,
                       test_normalized_brain_scans, test_embeddings,
                       test_words=test_words, train_words=train_words, FLAGS=FLAGS)
