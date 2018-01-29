@@ -15,8 +15,8 @@ def plot(predictions, targets, train_step, words, plot_size,FLAGS):
     gs = gridspec.GridSpec(plot_size, plot_size)
     gs.update(wspace=0.5, hspace=0.5)
 
-    print(len(predictions))
-    print(len(targets))
+    #print(len(predictions))
+    #print(len(targets))
     for i, p_t in enumerate(zip(predictions, targets)):
         p, t = p_t
         ax = plt.subplot(gs[i])

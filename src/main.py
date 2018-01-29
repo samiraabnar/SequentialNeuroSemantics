@@ -21,13 +21,15 @@ tf.app.flags.DEFINE_string('log_root', '../log_root', 'Root directory for all lo
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
 tf.app.flags.DEFINE_string('mapper', 'intended', 'intended/forward')
-tf.app.flags.DEFINE_string('exp_name', 'primary', 'Name for experiment. Logs will '
+tf.app.flags.DEFINE_string('exp_name', 'MSE_loss_plus_DES_loss_NoAttention', 'Name for experiment. Logs will '
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
 tf.app.flags.DEFINE_string('model', 'char_word', 'must be one of '
-                                               'char_word/word/contextual_0/contextual_1/contextual_01/char')
+                                               'char_word/word/contextual_0/contextual_1/contextual_01/char/glove')
 tf.app.flags.DEFINE_string('direction', 'word2brain', 'must be one of '
                                                'brain2word/word2brain')
+tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
+                                               'train/test/save_vectors')
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
 
 # ==========Hyper Params=========
@@ -48,7 +50,7 @@ def prepare(FLAGS):
     tf.logging.set_verbosity(tf.logging.INFO)  # choose what level of logging you want
 
     # Change log_root to FLAGS.log_root/FLAGS.exp_name and create the dir if necessary
-    FLAGS.log_root = os.path.join(FLAGS.log_root, FLAGS.direction, FLAGS.model, FLAGS.exp_name)
+    FLAGS.log_root = os.path.join(FLAGS.log_root, FLAGS.direction, FLAGS.model, FLAGS.mapper, FLAGS.exp_name, )
     if not os.path.exists(FLAGS.log_root):
         os.makedirs(FLAGS.log_root)
 
@@ -66,9 +68,10 @@ def compile_params(train_embeddings, train_normalized_brain_scans, train_size):
     elif FLAGS.direction == "brain2word":
         FLAGS.output_dim = train_embeddings.shape[1]
         FLAGS.input_dim = train_normalized_brain_scans.shape[1]
+        print("input dim:",FLAGS.input_dim)
 
     FLAGS.training_size = train_size
-    hparam_list = ['batch_size', 'hidden_dim', 'input_dim', 'output_dim', 'number_of_epochs', 'training_size']
+    hparam_list = ['batch_size', 'hidden_dim', 'input_dim', 'output_dim', 'number_of_epochs', 'training_size', 'mode']
 
     hps_dict = {}
     for key, val in FLAGS.__flags.items():  # for each flag
@@ -108,14 +111,24 @@ def main(unused_argv):
         # Get a TensorFlow session managed by the supervisor.
         with sv.managed_session() as sess:
             if FLAGS.direction == "word2brain":
-                train(mapper, sess, sv, train_embeddings, train_normalized_brain_scans,
+                if FLAGS.mode == "train":
+                    train(mapper, sess, sv, train_embeddings, train_normalized_brain_scans,
                       test_embeddings, test_normalized_brain_scans,
                       test_words=test_words,train_words=train_words,FLAGS=FLAGS)
+                elif FLAGS.mode == "save_vectors":
+                    print("saving vectors...")
+                    save_pred_and_target_labesl(mapper, sess,test_embeddings,test_normalized_brain_scans,test_words,FLAGS)
+
+
             elif FLAGS.direction == "brain2word":
-                print("brain2word training...")
-                train(mapper, sess, sv, train_normalized_brain_scans, train_embeddings,
-                      test_normalized_brain_scans, test_embeddings,
-                      test_words=test_words, train_words=train_words, FLAGS=FLAGS)
+                if FLAGS.mode =="train":
+                    print("brain2word training...")
+                    train(mapper, sess, sv, train_normalized_brain_scans, train_embeddings,
+                        test_normalized_brain_scans, test_embeddings,
+                        test_words=test_words, train_words=train_words, FLAGS=FLAGS)
+                elif FLAGS.mode == "save_vectors":
+                  print("saving vectors...")
+                  save_pred_and_target_labesl(mapper, sess, test_normalized_brain_scans, test_embeddings,test_words,FLAGS)
 
 
 

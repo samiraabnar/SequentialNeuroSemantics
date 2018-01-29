@@ -14,14 +14,12 @@ class StateMapper(object):
     def model(self,X,p_keep_input,
               p_keep_hidden):  # this network is the same as the previous one except with an extra hidden layer + dropout
         X = tf.nn.dropout(X, p_keep_input)
-        h = tf.nn.relu(tf.matmul(X, self.w_h) + self.b_h)
+        h = tf.tanh(tf.matmul(X, self.w_h) + self.b_h)
 
         h = tf.nn.dropout(h, p_keep_hidden)
-        h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
 
-        h2 = tf.nn.dropout(h2, p_keep_hidden)
 
-        return tf.matmul(h2, self.w_o) + self.b_o
+        return tf.tanh(tf.matmul(h, self.w_o) + self.b_o)
 
 
     def build_mapping_model(self):
@@ -29,17 +27,19 @@ class StateMapper(object):
         self.output_states_batch = tf.placeholder("float", [None, self.hparams.output_dim])
         self.p_keep_input = tf.placeholder("float")
         self.p_keep_hidden = tf.placeholder("float")
+        self.batch_size = tf.placeholder("int32")
+
 
         with tf.variable_scope("hidden_layers"):
             self.w_h = self.init_weights([self.hparams.input_dim, self.hparams.hidden_dim])
             self.b_h = self.init_weights([self.hparams.hidden_dim])
-            self.w_h2 = self.init_weights([self.hparams.hidden_dim, self.hparams.hidden_dim])
-            self.b_h2 = self.init_weights([self.hparams.hidden_dim])
+            #self.w_h2 = self.init_weights([self.hparams.hidden_dim, self.hparams.hidden_dim])
+            #self.b_h2 = self.init_weights([self.hparams.hidden_dim])
 
             self.variable_summaries(self.w_h)
             self.variable_summaries(self.b_h)
-            self.variable_summaries(self.w_h2)
-            self.variable_summaries(self.w_h2)
+            #self.variable_summaries(self.w_h2)
+            #self.variable_summaries(self.w_h2)
 
 
         with tf.variable_scope("output_layer"):
@@ -58,18 +58,20 @@ class StateMapper(object):
         self.cost = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=self.predicted_output, labels=self.output_states_batch))
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch,predictions=self.predicted_output))
 
+        self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
+
         tf.summary.scalar("sigmoid_loss",self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
         self.global_step = tf.Variable(0, name='global_step', trainable=False)
         self.learning_rate = tf.train.exponential_decay(
-            learning_rate=0.01,
+            learning_rate=0.001,
             global_step=self.global_step,
             decay_steps=self.hparams.training_size,
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate",self.learning_rate)
-        self.train_op = tf.train.RMSPropOptimizer(self.learning_rate).minimize(self.mean_squared_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize(self.mean_squared_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
