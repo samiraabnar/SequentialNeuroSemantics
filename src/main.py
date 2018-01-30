@@ -20,7 +20,7 @@ FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string('log_root', '../log_root', 'Root directory for all logging.')
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
-tf.app.flags.DEFINE_string('mapper', 'intended', 'intended/forward')
+tf.app.flags.DEFINE_string('mapper', 'decoder', 'intended/forward/decoder')
 tf.app.flags.DEFINE_string('exp_name', 'row_norm_MSE_lossNoAttention_smallLR_lessreg_relu_concat_cosine_dist', 'Name for experiment. Logs will '
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
@@ -101,6 +101,8 @@ def main(unused_argv):
 
     if FLAGS.mapper == "intended":
         from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper
+    elif FLAGS.mapper == "decoder":
+        from DecodedMapper import DecodedMapper as StateMapper
     else:
         from StateMapper import StateMapper as StateMapper
 
