@@ -283,6 +283,92 @@ def read_and_prepare_data_word_based(block_ids,word_embedding_dic_file="../data/
     return np.asarray(avg_word_embeddings), np.asarray(avg_normalized_scans)[:,:], np.asarray(words)
 
 
+
+def read_and_prepare_data_word_based_concat(block_ids,word_embedding_dic_file="../data/word_embedding_dic.npy"):
+    scan_objects = np.load("../data/subject_1_scan_objects.npy")
+    word_embeddings = np.load(word_embedding_dic_file)
+    # print(len(scan_objects.item().get(1)))
+    # print(embeddings.item().get(1))
+    brain_scans = []
+    brain_scan_steps = []
+    scan_words = []
+
+    embeddings = []
+    all_scans = []
+    all_scanned_words = []
+    for block_id in block_ids:
+        for scan_obj in scan_objects.item().get(block_id):
+            all_scans.append(scan_obj.activations[0])
+            all_scanned_words.append('_'.join(scan_obj.all_words))
+            if set(scan_obj.all_words).issubset(word_embeddings.item().keys()):
+                brain_scans.append(scan_obj.activations[0])
+                brain_scan_steps.append(scan_obj.step)
+                scan_words.append('_'.join(scan_obj.all_words))
+                all_word_embeddings = []
+                for word in scan_obj.all_words:
+                    all_word_embeddings.append(word_embeddings.item()[word])
+
+                while( len(all_word_embeddings) < 4):
+                    all_word_embeddings.append(np.zeros(all_word_embeddings[-1].shape))
+
+                embeddings.append(np.concatenate(all_word_embeddings,axis=0))
+
+
+    brain_scans = np.asarray(brain_scans)
+    brain_scan_steps = np.asarray(brain_scan_steps)
+    embeddings = np.asarray(embeddings)
+    scan_words = np.asarray(scan_words)
+
+    #all_scans = np.asarray(all_scans)
+    #all_scanned_words = np.asarray(all_scanned_words)
+
+    #selected_indices = select_best_features(all_scans,all_scanned_words)
+
+    """
+    min_voxel_value = np.min(brain_scans)
+    max_voxel_value = np.max(brain_scans)
+    print("brain scans min max: %f %f" % (min_voxel_value, max_voxel_value))
+    normalized_brain_scans = (brain_scans - min_voxel_value) / (max_voxel_value - min_voxel_value)
+    nmin_voxel_value = np.min(normalized_brain_scans)
+    nmax_voxel_value = np.max(normalized_brain_scans)
+    print("normalized brain scans min max: %f %f" % (nmin_voxel_value, nmax_voxel_value))
+    #print(len(normalized_brain_scans))
+    """
+    normalized_brain_scans =  brain_scans # normalize(brain_scans,'l2')
+
+    # min_embedding_value = np.min(embeddings)
+    # max_embedding_value = np.max(embeddings)
+    normalized_embeddings = embeddings #normalize(embeddings, 'l2')
+    # (embeddings - min_embedding_value) / (max_embedding_value - min_embedding_value)
+
+
+    word_to_scans = {}
+    word_to_embeddings = {}
+    for i in np.arange(len(normalized_brain_scans)):
+        if scan_words[i] not in word_to_scans.keys():
+            word_to_scans[scan_words[i]] = []
+            word_to_embeddings[scan_words[i]] = []
+
+        word_to_scans[scan_words[i]].append(normalized_brain_scans[i])
+        word_to_embeddings[scan_words[i]].append(normalized_embeddings[i])
+
+    words = []
+    avg_normalized_scans = []
+    avg_word_embeddings = []
+    for w in word_to_scans.keys():
+        avg_normalized_scans.append(np.mean(word_to_scans[w],axis=0))
+        avg_word_embeddings.append(np.mean(word_to_embeddings[w],axis=0))
+
+        words.append(w)
+
+        #print(np.mean(word_to_scans[w],axis=0).shape)
+
+
+
+
+    return np.asarray(avg_word_embeddings), np.asarray(avg_normalized_scans)[:,:], np.asarray(words)
+
+
 def load_data(FLAGS):
     if FLAGS.model == "contextual_1":
         train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based([1, 2, 3],layer_id=1)
@@ -347,7 +433,7 @@ def prepare_trainings_for_softmax_word_embeddings():
 
 
 def prepare_trainings_for_glove_word_embeddings():
-     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based([1, 2, 3, 4],"../data/glove_word_embedding_dic.npy")
+     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4],"../data/glove_word_embedding_dic.npy")
      indexes = np.arange(len(normalized_brain_scans))
      random.shuffle(indexes)
      train_size = (len(indexes) // 4) * 3

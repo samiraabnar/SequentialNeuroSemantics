@@ -21,7 +21,7 @@ tf.app.flags.DEFINE_string('log_root', '../log_root', 'Root directory for all lo
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
 tf.app.flags.DEFINE_string('mapper', 'intended', 'intended/forward')
-tf.app.flags.DEFINE_string('exp_name', 'MSE_lossNoAttention_smallLR_lessreg_relu_concat', 'Name for experiment. Logs will '
+tf.app.flags.DEFINE_string('exp_name', 'row_norm_MSE_lossNoAttention_smallLR_lessreg_relu_concat_cosine_dist', 'Name for experiment. Logs will '
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
 tf.app.flags.DEFINE_string('model', 'char_word', 'must be one of '
@@ -83,6 +83,21 @@ def compile_params(train_embeddings, train_normalized_brain_scans, train_size):
 def main(unused_argv):
     hps, test_embeddings, test_normalized_brain_scans, test_words, \
     train_embeddings, train_normalized_brain_scans, train_words = prepare(FLAGS)
+
+    columns_min = np.min(train_normalized_brain_scans,axis=0)
+    columns_max = np.max(train_normalized_brain_scans,axis=0)
+    print("min max",columns_max - columns_min)
+    train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
+
+    print("max:",np.max(train_normalized_brain_scans))
+    print("min:",np.min(train_normalized_brain_scans))
+
+    columns_min = np.min(test_normalized_brain_scans,axis=0)
+    columns_max = np.max(test_normalized_brain_scans,axis=0)
+    print("min max",columns_max - columns_min)
+    test_normalized_brain_scans = (test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
+
+
 
     if FLAGS.mapper == "intended":
         from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper

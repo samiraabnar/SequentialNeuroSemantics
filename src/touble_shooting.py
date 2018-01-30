@@ -21,7 +21,7 @@ tf.app.flags.DEFINE_string('log_root', '../log_root', 'Root directory for all lo
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
 tf.app.flags.DEFINE_string('mapper', 'intended', 'intended/forward')
-tf.app.flags.DEFINE_string('exp_name', 'MSE_lossNoAttention_smallLR_lessreg_relu', 'Name for experiment. Logs will '
+tf.app.flags.DEFINE_string('exp_name', 'troubles', 'Name for experiment. Logs will '
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
 tf.app.flags.DEFINE_string('model', 'char_word', 'must be one of '
@@ -84,6 +84,13 @@ def main(unused_argv):
     hps, test_embeddings, test_normalized_brain_scans, test_words, \
     train_embeddings, train_normalized_brain_scans, train_words = prepare(FLAGS)
 
+
+    columns_min = np.min(train_normalized_brain_scans,axis=0)
+    columns_max = np.max(train_normalized_brain_scans,axis=0)
+    print("c min shape:",columns_min.shape)
+
+    train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min)
+    
     if FLAGS.mapper == "intended":
         from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper
     else:
@@ -110,25 +117,7 @@ def main(unused_argv):
 
         # Get a TensorFlow session managed by the supervisor.
         with sv.managed_session() as sess:
-            if FLAGS.direction == "word2brain":
-                if FLAGS.mode == "train":
-                    train(mapper, sess, sv, train_embeddings, train_normalized_brain_scans,
-                      test_embeddings, test_normalized_brain_scans,
-                      test_words=test_words,train_words=train_words,FLAGS=FLAGS)
-                elif FLAGS.mode == "save_vectors":
-                    print("saving vectors...")
-                    save_pred_and_target_labesl(mapper, sess,test_embeddings,test_normalized_brain_scans,test_words,FLAGS)
-
-
-            elif FLAGS.direction == "brain2word":
-                if FLAGS.mode =="train":
-                    print("brain2word training...")
-                    train(mapper, sess, sv, train_normalized_brain_scans, train_embeddings,
-                        test_normalized_brain_scans, test_embeddings,
-                        test_words=test_words, train_words=train_words, FLAGS=FLAGS)
-                elif FLAGS.mode == "save_vectors":
-                  print("saving vectors...")
-                  save_pred_and_target_labesl(mapper, sess, test_normalized_brain_scans, test_embeddings,test_words,FLAGS)
+            plot_all2one(None, train_normalized_brain_scans[:2], train_words[:2], train_step=0, plot_size=4,FLAGS=FLAGS)
 
 
 

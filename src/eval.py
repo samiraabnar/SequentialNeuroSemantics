@@ -3,6 +3,8 @@ import itertools
 from util import *
 from scipy.spatial.distance import *
 import numpy as np
+from sklearn.preprocessing import *
+
 
 
 def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS):
@@ -44,7 +46,7 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 	predicted_output, mse , sd_error, mean_error = sess.run([ model.predicted_output, model.mean_squared_loss, model.sd_error,model.mean_error],feed_dict={model.input_states_batch: test_x[:test_size], model.output_states_batch: test_y[:test_size], model.batch_size: test_size, model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
 	#print("check_dist",check_dist)
 	if FLAGS.direction == "word2brain":
-		dists = cdist(predicted_output, test_y[:test_size], 'euclidean')
+		dists = cdist(normalize(predicted_output,'l2'), normalize(test_y[:test_size],'l2'), 'cosine')
 	elif FLAGS.direction == "brain2word":
 		dists = cdist(predicted_output, test_y[:test_size], 'cosine')
 	nn_index = np.argmin(dists,axis=1)

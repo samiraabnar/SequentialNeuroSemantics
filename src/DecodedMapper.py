@@ -52,7 +52,7 @@ class VanillaIntendedMapper(object):
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
         """
 
-        h = tf.nn.tanh(tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h))
+        h = tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h)
 
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
@@ -61,7 +61,7 @@ class VanillaIntendedMapper(object):
 
         
 
-        return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o)
+        return tf.nn.relu(tf.matmul(h, self.w_o) + self.b_o)
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -107,10 +107,10 @@ class VanillaIntendedMapper(object):
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch, predictions=self.predicted_output))
         self.pred_dists = tf.losses.mean_pairwise_squared_error(labels=self.predicted_output,predictions=self.predicted_output)
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
-        self.descrimination_loss = 0.001 * tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
+        self.descrimination_loss = tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
         all_vars = tf.trainable_variables()
         
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.00001
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
@@ -122,7 +122,7 @@ class VanillaIntendedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + self.descrimination_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
