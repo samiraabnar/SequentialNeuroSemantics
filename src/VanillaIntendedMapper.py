@@ -16,10 +16,6 @@ class VanillaIntendedMapper(object):
 
         return d
 
-    def all_dists_cosine(self, x, y):
-
-
-        return res
 
     def pairwise_l2_norm2(self, x, y, scope=None):
         size_x = tf.shape(x)[0]
@@ -44,18 +40,19 @@ class VanillaIntendedMapper(object):
         # extra hidden layer + dropout
         input = tf.nn.dropout(input, p_keep_input)
 
-        #input_attention = tf.nn.relu(tf.matmul(input, self.w_I) + self.b_I)
-        #attended_input = tf.multiply(input_attention, input)
+        # input_attention = tf.nn.relu(tf.matmul(input, self.w_I) + self.b_I)
+        # attended_input = tf.multiply(input_attention, input)
         # tf.summary.image("attended_input",attended_input)
         # tf.summary.image("w_h",self.w_h)
 
-        h = tf.layers.batch_normalization(input,
+        """input = tf.layers.batch_normalization(input,
         axis=1,
         center=True,
         scale=False,
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
+        """
 
-        h =  tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h)
+        h = tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h)
 
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
@@ -64,7 +61,7 @@ class VanillaIntendedMapper(object):
 
         
 
-        return tf.matmul(h, self.w_o) + self.b_o
+        return tf.nn.relu(tf.matmul(h, self.w_o) + self.b_o)
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -73,7 +70,7 @@ class VanillaIntendedMapper(object):
         self.p_keep_hidden = tf.placeholder("float")
         self.batch_size = tf.placeholder("int32")
 
-
+        regularizer = tf.contrib.layers.l2_regularizer(scale=0.1)
 
         with tf.variable_scope("hidden_layers"):
             self.w_I = self.init_weights([self.hparams.input_dim, self.hparams.input_dim])
@@ -103,27 +100,17 @@ class VanillaIntendedMapper(object):
         tf.logging.info("predicted output shape: ")
         tf.logging.info(self.predicted_output.shape)
         self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
-        distances = self.pairwise_l2_norm2(self.predicted_output, self.output_states_batch)
-        self.distances = distances
 
-        self.check_distances = self.pairwise_l2_norm2(self.output_states_batch, self.output_states_batch)
-        tf.logging.info("distances")
-        tf.logging.info(distances)
-        nearest_neighbor_index = tf.argmin(distances, axis=1)
-        tf.logging.info("nearest_neighbor_index:")
-        tf.logging.info(nearest_neighbor_index.shape)
-        self.nearest_neighbor_on_test = nearest_neighbor_index
-        self.distance_loss = 2 * tf.reduce_sum( tf.multiply(distances, tf.eye(tf.shape(distances)[0]))) - tf.reduce_sum(distances)
-        self.distance_loss = self.distance_loss / tf.cast(tf.shape(self.output_states_batch)[0],tf.float32)
         tf.summary.histogram("predicted_outputs", self.predicted_output)
 
         #self.cost = tf.reduce_mean(tf.losses.cosine_distance(predictions=self.predicted_output, labels=self.output_states_batch,dim=1)) 
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch, predictions=self.predicted_output))
         self.pred_dists = tf.losses.mean_pairwise_squared_error(labels=self.predicted_output,predictions=self.predicted_output)
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
-
         self.descrimination_loss = tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
-
+        all_vars = tf.trainable_variables()
+        
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.00001
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
@@ -135,7 +122,7 @@ class VanillaIntendedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.RMSPropOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.descrimination_loss , global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
