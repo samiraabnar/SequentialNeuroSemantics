@@ -192,12 +192,13 @@ def read_and_prepare_data_block_based_concat_concat(block_ids):
     words = np.asarray(words)
 
     selected_indices = select_best_features(all_brain_scans,current_word)
+    brain_scans = brain_scans[:,selected_indices]
     print("lstm emb shape:",lstm_embeddings.shape)
     print("brain scans shape:",brain_scans.shape)
     #selected_indices = select_best_features(all_brain_scans,current_word)
     #brain_scans = normalize(brain_scans,'l2')
     #print(len(normalized_brain_scans))
-    return lstm_embeddings, brain_scans[:,selected_indices], words
+    return lstm_embeddings, brain_scans, words
 
 
 #words, word embeddings, associated brain scans
