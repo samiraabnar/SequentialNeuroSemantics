@@ -21,7 +21,7 @@ tf.app.flags.DEFINE_string('log_root', '../log_root', 'Root directory for all lo
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
 tf.app.flags.DEFINE_string('mapper', 'decoder', 'intended/forward/decoder')
-tf.app.flags.DEFINE_string('exp_name', 'row_norm_MSE_lossNoAttention_smallLR_lessreg_relu_concat_cosine_dist', 'Name for experiment. Logs will '
+tf.app.flags.DEFINE_string('exp_name', 'rownorm_l2loss_concat_cosine_dist_reduce_hidden_dim', 'Name for experiment. Logs will '
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
 tf.app.flags.DEFINE_string('model', 'char_word', 'must be one of '
@@ -34,7 +34,7 @@ tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive int
 
 # ==========Hyper Params=========
 tf.app.flags.DEFINE_integer('batch_size', 50, 'minibatch size')
-tf.app.flags.DEFINE_integer('hidden_dim', 512, 'dimension of hidden states')
+tf.app.flags.DEFINE_integer('hidden_dim', 256, 'dimension of hidden states')
 tf.app.flags.DEFINE_integer('input_dim', 784, 'size of the input')
 tf.app.flags.DEFINE_integer('output_dim', 784, 'size of the output')
 

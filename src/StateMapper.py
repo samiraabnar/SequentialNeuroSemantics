@@ -19,7 +19,7 @@ class StateMapper(object):
         h = tf.nn.dropout(h, p_keep_hidden)
 
 
-        return tf.tanh(tf.matmul(h, self.w_o) + self.b_o)
+        return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o)
 
 
     def build_mapping_model(self):
@@ -55,12 +55,12 @@ class StateMapper(object):
 
         tf.summary.histogram("predicted outputs",self.predicted_output)
 
-        self.cost = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=self.predicted_output, labels=self.output_states_batch))
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch,predictions=self.predicted_output))
+        all_vars = tf.trainable_variables()
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
 
         self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
 
-        tf.summary.scalar("sigmoid_loss",self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
         self.global_step = tf.Variable(0, name='global_step', trainable=False)
@@ -71,7 +71,7 @@ class StateMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate",self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize(self.mean_squared_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize(self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 

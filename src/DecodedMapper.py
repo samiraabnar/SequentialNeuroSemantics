@@ -132,7 +132,7 @@ class DecodedMapper(object):
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
         self.descrimination_loss = tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
         all_vars = tf.trainable_variables()
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.001
 
         self.rec_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.input_states_batch, predictions=self.reconstructed_input))
         self.real_rec_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.input_states_batch, predictions=self.word_from_brain))
