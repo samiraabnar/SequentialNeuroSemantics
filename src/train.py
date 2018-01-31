@@ -20,7 +20,7 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
                 summary, _, mse = sess.run([model.summ_op,model.train_op, model.mean_squared_loss],
                                         feed_dict={model.input_states_batch: train_x[start_index:end_index],
                                                    model.output_states_batch: train_y[start_index:end_index], model.batch_size: len(train_x[start_index:end_index]),
-                                                   model.p_keep_input: 0.8, model.p_keep_hidden: 0.8})
+                                                   model.p_keep_input: 0.6, model.p_keep_hidden: 0.8})
                 print("mse %f" % mse)
                 start_index = end_index
                 end_index = start_index + model.hparams.batch_size

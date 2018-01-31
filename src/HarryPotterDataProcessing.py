@@ -452,7 +452,7 @@ def prepare_trainings_for_glove_word_embeddings():
 def select_best_features(brain_scans,scan_words):
     scan_words_set = list(set(scan_words))
     words_ids = [scan_words_set.index(word) for word in scan_words]
-    indexes = SelectKBest(f_regression, k=5000).fit(brain_scans,words_ids).get_support(indices=True)
+    indexes = SelectKBest(f_regression, k=500).fit(brain_scans,words_ids).get_support(indices=True)
 
     return indexes
 

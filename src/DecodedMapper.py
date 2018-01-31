@@ -6,7 +6,7 @@ class DecodedMapper(object):
         self.hparams = hparams
 
     def init_weights(self, shape):
-        return tf.Variable(tf.truncated_normal(shape, stddev=0.1))
+        return tf.Variable(tf.truncated_normal(shape, stddev=0.01))
 
     def pairwise_dist(self, a):
         r = tf.reduce_sum(a * a, 1)
@@ -38,8 +38,8 @@ class DecodedMapper(object):
 
     def decoder(self,input):
 
-        h = tf.nn.tanh(tf.matmul(input, self.w_hd) + self.b_hd)
-        return tf.nn.relu(tf.matmul(h, self.w_d) + self.b_d)
+        #h = tf.nn.tanh(tf.matmul(input, self.w_hd) + self.b_hd)
+        return tf.nn.relu(tf.matmul(input, self.w_d) + self.b_d)
 
 
     def model(self, input, p_keep_input,
@@ -60,14 +60,14 @@ class DecodedMapper(object):
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
         """
 
-        h = tf.nn.tanh(tf.matmul(input, self.w_h) + self.b_h)
+        #h = tf.nn.tanh(tf.matmul(input, self.w_h) + self.b_h)
 
-        h = tf.nn.dropout(h, p_keep_hidden)
+        #h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
 
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
         
-        return tf.nn.relu(tf.matmul(h, self.w_o) + self.b_o)
+        return tf.nn.relu(tf.matmul(input, self.w_o) + self.b_o)
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -77,24 +77,24 @@ class DecodedMapper(object):
         self.batch_size = tf.placeholder("int32")
 
 
-        with tf.variable_scope("hidden_layers"):
-            self.w_I = self.init_weights([self.hparams.input_dim, self.hparams.input_dim])
-            self.b_I = self.init_weights([self.hparams.input_dim])
+        #with tf.variable_scope("hidden_layers"):
+            #self.w_I = self.init_weights([self.hparams.input_dim, self.hparams.input_dim])
+            #self.b_I = self.init_weights([self.hparams.input_dim])
 
-            self.w_h = self.init_weights([self.hparams.input_dim, self.hparams.hidden_dim])
-            self.b_h = self.init_weights([self.hparams.hidden_dim])
+            #self.w_h = self.init_weights([self.hparams.input_dim, self.hparams.hidden_dim])
+            #self.b_h = self.init_weights([self.hparams.hidden_dim])
             #self.w_h2 = self.init_weights([self.hparams.hidden_dim, self.hparams.hidden_dim])
             #self.b_h2 = self.init_weights([self.hparams.hidden_dim])
 
-            self.variable_summaries(self.w_I, "w_I")
-            self.variable_summaries(self.b_I, "b_I")
-            self.variable_summaries(self.w_h, "w_h")
-            self.variable_summaries(self.b_h, "b_h")
+            #self.variable_summaries(self.w_I, "w_I")
+            #self.variable_summaries(self.b_I, "b_I")
+            #self.variable_summaries(self.w_h, "w_h")
+            #self.variable_summaries(self.b_h, "b_h")
             #self.variable_summaries(self.w_h2, "w_h2")
             #self.variable_summaries(self.b_h2, "b_h2")
 
         with tf.variable_scope("output_layer"):
-            self.w_o = self.init_weights([self.hparams.hidden_dim, self.hparams.output_dim])
+            self.w_o = self.init_weights([self.hparams.input_dim, self.hparams.output_dim])
             self.b_o = self.init_weights([self.hparams.output_dim])
 
             self.variable_summaries(self.w_o, "w_o")
@@ -102,15 +102,14 @@ class DecodedMapper(object):
 
         with tf.variable_scope("decoder_layer"):
             
+            #self.w_hd = self.init_weights([self.hparams.output_dim, self.hparams.hidden_dim])
+            #self.b_hd = self.init_weights([self.hparams.hidden_dim])
 
-            self.w_hd = self.init_weights([self.hparams.output_dim, self.hparams.hidden_dim])
-            self.b_hd = self.init_weights([self.hparams.hidden_dim])
-
-            self.w_d = self.init_weights([self.hparams.hidden_dim, self.hparams.input_dim])
+            self.w_d = self.init_weights([self.hparams.output_dim, self.hparams.input_dim])
             self.b_d = self.init_weights([self.hparams.input_dim])
 
-            self.variable_summaries(self.w_hd, "w_hd")
-            self.variable_summaries(self.b_hd, "b_hd")
+            #self.variable_summaries(self.w_hd, "w_hd")
+            #self.variable_summaries(self.b_hd, "b_hd")
             self.variable_summaries(self.w_d, "w_d")
             self.variable_summaries(self.b_d, "b_d")
 

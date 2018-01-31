@@ -9,17 +9,17 @@ class StateMapper(object):
         self.hparams = hparams
 
     def init_weights(self,shape):
-        return tf.Variable(tf.random_normal(shape, stddev=0.01))
+        return tf.Variable(tf.truncated_normal(shape, stddev=0.1))
 
     def model(self,X,p_keep_input,
               p_keep_hidden):  # this network is the same as the previous one except with an extra hidden layer + dropout
         X = tf.nn.dropout(X, p_keep_input)
-        h = tf.tanh(tf.matmul(X, self.w_h) + self.b_h)
+        #h = tf.tanh(tf.matmul(X, self.w_h) + self.b_h)
 
-        h = tf.nn.dropout(h, p_keep_hidden)
+        #h = tf.nn.dropout(h, p_keep_hidden)
 
 
-        return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o)
+        return tf.nn.sigmoid(tf.matmul(X, self.w_o) + self.b_o)
 
 
     def build_mapping_model(self):
@@ -30,20 +30,20 @@ class StateMapper(object):
         self.batch_size = tf.placeholder("int32")
 
 
-        with tf.variable_scope("hidden_layers"):
-            self.w_h = self.init_weights([self.hparams.input_dim, self.hparams.hidden_dim])
-            self.b_h = self.init_weights([self.hparams.hidden_dim])
+        #with tf.variable_scope("hidden_layers"):
+            #self.w_h = self.init_weights([self.hparams.input_dim, self.hparams.hidden_dim])
+            #self.b_h = self.init_weights([self.hparams.hidden_dim])
             #self.w_h2 = self.init_weights([self.hparams.hidden_dim, self.hparams.hidden_dim])
             #self.b_h2 = self.init_weights([self.hparams.hidden_dim])
 
-            self.variable_summaries(self.w_h)
-            self.variable_summaries(self.b_h)
+            #self.variable_summaries(self.w_h)
+            #self.variable_summaries(self.b_h)
             #self.variable_summaries(self.w_h2)
             #self.variable_summaries(self.w_h2)
 
 
         with tf.variable_scope("output_layer"):
-            self.w_o = self.init_weights([self.hparams.hidden_dim, self.hparams.output_dim])
+            self.w_o = self.init_weights([self.hparams.input_dim, self.hparams.output_dim])
             self.b_o = self.init_weights([self.hparams.output_dim])
 
             self.variable_summaries(self.w_o)
@@ -56,8 +56,7 @@ class StateMapper(object):
         tf.summary.histogram("predicted outputs",self.predicted_output)
 
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch,predictions=self.predicted_output))
-        all_vars = tf.trainable_variables()
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
+        self.l2_loss = tf.nn.l2_loss(self.w_o) * 0.001
 
         self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
 
@@ -71,7 +70,7 @@ class StateMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate",self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize(self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
+        self.train_op = tf.train.RMSPropOptimizer(self.learning_rate).minimize(self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
