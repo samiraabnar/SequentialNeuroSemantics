@@ -6,7 +6,7 @@ class DecodedMapper(object):
         self.hparams = hparams
 
     def init_weights(self, shape):
-        return tf.Variable(tf.random_normal(shape, stddev=0.01))
+        return tf.Variable(tf.truncated_normal(shape, stddev=0.1))
 
     def pairwise_dist(self, a):
         r = tf.reduce_sum(a * a, 1)
@@ -37,7 +37,9 @@ class DecodedMapper(object):
 
 
     def decoder(self,input):
-        return tf.nn.relu(tf.matmul(input, self.w_d) + self.b_d)
+
+        h = tf.nn.tanh(tf.matmul(input, self.w_hd) + self.b_hd)
+        return tf.nn.relu(tf.matmul(h, self.w_d) + self.b_d)
 
 
     def model(self, input, p_keep_input,
@@ -58,7 +60,7 @@ class DecodedMapper(object):
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
         """
 
-        h = tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h)
+        h = tf.nn.tanh(tf.matmul(input, self.w_h) + self.b_h)
 
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
@@ -99,14 +101,23 @@ class DecodedMapper(object):
             self.variable_summaries(self.b_o, "b_o")
 
         with tf.variable_scope("decoder_layer"):
-            self.w_d = self.init_weights([self.hparams.output_dim, self.hparams.input_dim])
+            
+
+            self.w_hd = self.init_weights([self.hparams.output_dim, self.hparams.hidden_dim])
+            self.b_hd = self.init_weights([self.hparams.hidden_dim])
+
+            self.w_d = self.init_weights([self.hparams.hidden_dim, self.hparams.input_dim])
             self.b_d = self.init_weights([self.hparams.input_dim])
 
+            self.variable_summaries(self.w_hd, "w_hd")
+            self.variable_summaries(self.b_hd, "b_hd")
             self.variable_summaries(self.w_d, "w_d")
             self.variable_summaries(self.b_d, "b_d")
 
         self.predicted_output = self.model(self.input_states_batch, self.p_keep_input, self.p_keep_hidden)
+        
         self.reconstructed_input = self.decoder(self.predicted_output)
+        self.word_from_brain = self.decoder(self.output_states_batch)
 
         #self.predicted_output = tf.nn.l2_normalize(self.predicted_output, dim=1)
         tf.logging.info("predicted output shape: ")
@@ -121,9 +132,11 @@ class DecodedMapper(object):
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
         self.descrimination_loss = tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
         all_vars = tf.trainable_variables()
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.00001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
 
         self.rec_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.input_states_batch, predictions=self.reconstructed_input))
+        self.real_rec_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.input_states_batch, predictions=self.word_from_brain))
+
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
@@ -135,7 +148,7 @@ class DecodedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + 0.001 * self.rec_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + 0.001 * self.rec_loss + 0.001 * self.real_rec_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
