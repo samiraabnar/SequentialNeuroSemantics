@@ -21,11 +21,11 @@ tf.app.flags.DEFINE_string('log_root', '../log_root', 'Root directory for all lo
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
 tf.app.flags.DEFINE_string('mapper', 'decoder', 'intended/forward/decoder')
-tf.app.flags.DEFINE_string('exp_name', 'rownorm_l2loss_concat_cosine_dist_reduce_hidden_dim', 'Name for experiment. Logs will '
+tf.app.flags.DEFINE_string('exp_name', 'simple_drop_connect', 'Name for experiment. Logs will '
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
 tf.app.flags.DEFINE_string('model', 'char_word', 'must be one of '
-                                               'char_word/word/contextual_0/contextual_1/contextual_01/char/glove')
+                                               'char_word/word/contextual_0/contextual_1/contextual_01/char/glove/contextual_01_avg')
 tf.app.flags.DEFINE_string('direction', 'word2brain', 'must be one of '
                                                'brain2word/word2brain')
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '

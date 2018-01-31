@@ -5,7 +5,7 @@ from matplotlib import style
 import tensorflow as tf
 import os
 
-def plot(predictions, targets, train_step, words, plot_size,FLAGS):
+def plot(predictions, targets, train_step, words, plot_size,FLAGS,mode="test"):
     style.use('seaborn')
     font_dict = {'family': 'serif',
                                  'color':'darkred',
@@ -29,7 +29,7 @@ def plot(predictions, targets, train_step, words, plot_size,FLAGS):
         ax.set_title(words[i], fontdict=font_dict)
         ax.grid(False)
 
-    plots_path = os.path.join(FLAGS.log_root, 'plots')
+    plots_path = os.path.join(FLAGS.log_root, 'plots',mode)
     if not os.path.exists(plots_path): os.makedirs(plots_path)
 
     plt.savefig(plots_path + '/{}.png'.format(str(train_step).zfill(3)),
