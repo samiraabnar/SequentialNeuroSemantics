@@ -148,7 +148,7 @@ class DecodedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + 0.001 * self.rec_loss + 0.001 * self.real_rec_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + 0.0001 * self.rec_loss + self.real_rec_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
