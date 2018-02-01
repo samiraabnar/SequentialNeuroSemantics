@@ -1,0 +1,149 @@
+ERROR: Unable to locate a modulefile for 'tensorflow'
+/home/samira/.local/lib/python3.5/site-packages/sklearn/feature_selection/univariate_selection.py:298: RuntimeWarning: invalid value encountered in true_divide
+  corr /= X_norms
+/home/samira/.local/lib/python3.5/site-packages/scipy/stats/_distn_infrastructure.py:879: RuntimeWarning: invalid value encountered in greater
+  return (self.a < x) & (x < self.b)
+/home/samira/.local/lib/python3.5/site-packages/scipy/stats/_distn_infrastructure.py:879: RuntimeWarning: invalid value encountered in less
+  return (self.a < x) & (x < self.b)
+/home/samira/.local/lib/python3.5/site-packages/scipy/stats/_distn_infrastructure.py:1818: RuntimeWarning: invalid value encountered in less_equal
+  cond2 = cond0 & (x <= self.a)
+INFO:tensorflow:predicted output shape: 
+INFO:tensorflow:(?, 500)
+2018-01-31 18:23:19.379299: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX
+2018-01-31 18:23:19.651788: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla K40m major: 3 minor: 5 memoryClockRate(GHz): 0.745
+pciBusID: 0000:02:00.0
+totalMemory: 11.17GiB freeMemory: 11.09GiB
+2018-01-31 18:23:19.857029: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 1 with properties: 
+name: Tesla K40m major: 3 minor: 5 memoryClockRate(GHz): 0.745
+pciBusID: 0000:82:00.0
+totalMemory: 11.17GiB freeMemory: 11.09GiB
+2018-01-31 18:23:19.857112: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Device peer to peer matrix
+2018-01-31 18:23:19.857152: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] DMA: 0 1 
+2018-01-31 18:23:19.857171: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 0:   Y N 
+2018-01-31 18:23:19.857179: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 1:   N Y 
+2018-01-31 18:23:19.857201: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla K40m, pci bus id: 0000:02:00.0, compute capability: 3.5)
+2018-01-31 18:23:19.857214: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:1) -> (device: 1, name: Tesla K40m, pci bus id: 0000:82:00.0, compute capability: 3.5)
+INFO:tensorflow:Restoring parameters from ../log_root/word2brain/contextual_01/decoder/rownorm_l2loss_concat_cosine_dist_reduce_hidden_dim/train/model.ckpt-2429
+INFO:tensorflow:Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.InvalidArgumentError'>, Assign requires shapes of both tensors to match. lhs shape= [8192] rhs shape= [256]
+	 [[Node: save/Assign_6 = Assign[T=DT_FLOAT, _class=["loc:@decoder_layer/Variable_1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:GPU:0"](decoder_layer/Variable_1/Adam, save/RestoreV2_6/_3)]]
+
+Caused by op 'save/Assign_6', defined at:
+  File "main.py", line 153, in <module>
+    tf.app.run()
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 48, in run
+    _sys.exit(main(_sys.argv[:1] + flags_passthrough))
+  File "main.py", line 119, in main
+    saver = tf.train.Saver(max_to_keep=3)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1218, in __init__
+    self.build()
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1227, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1263, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 751, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 439, in _AddRestoreOps
+    assign_ops.append(saveable.restore(tensors, shapes))
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 160, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 276, in assign
+    validate_shape=validate_shape)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 57, in assign
+    use_locking=use_locking, name=name)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 2956, in create_op
+    op_def=op_def)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1470, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+InvalidArgumentError (see above for traceback): Assign requires shapes of both tensors to match. lhs shape= [8192] rhs shape= [256]
+	 [[Node: save/Assign_6 = Assign[T=DT_FLOAT, _class=["loc:@decoder_layer/Variable_1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:GPU:0"](decoder_layer/Variable_1/Adam, save/RestoreV2_6/_3)]]
+
+Traceback (most recent call last):
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1323, in _do_call
+    return fn(*args)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1302, in _run_fn
+    status, run_metadata)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/framework/errors_impl.py", line 473, in __exit__
+    c_api.TF_GetCode(self.status.status))
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Assign requires shapes of both tensors to match. lhs shape= [8192] rhs shape= [256]
+	 [[Node: save/Assign_6 = Assign[T=DT_FLOAT, _class=["loc:@decoder_layer/Variable_1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:GPU:0"](decoder_layer/Variable_1/Adam, save/RestoreV2_6/_3)]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 153, in <module>
+    tf.app.run()
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 48, in run
+    _sys.exit(main(_sys.argv[:1] + flags_passthrough))
+  File "main.py", line 129, in main
+    with sv.managed_session() as sess:
+  File "/hpc/sw/python-3.5.2/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 964, in managed_session
+    self.stop(close_summary_writer=close_summary_writer)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 792, in stop
+    stop_grace_period_secs=self._stop_grace_secs)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/coordinator.py", line 389, in join
+    six.reraise(*self._exc_info_to_raise)
+  File "/hpc/sw/python-3.5.2/lib/python3.5/site-packages/six.py", line 686, in reraise
+    raise value
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 953, in managed_session
+    start_standard_services=start_standard_services)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/supervisor.py", line 708, in prepare_or_wait_for_session
+    init_feed_dict=self._init_feed_dict, init_fn=self._init_fn)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/session_manager.py", line 273, in prepare_session
+    config=config)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/session_manager.py", line 205, in _restore_checkpoint
+    saver.restore(sess, ckpt.model_checkpoint_path)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1666, in restore
+    {self.saver_def.filename_tensor_name: save_path})
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 889, in run
+    run_metadata_ptr)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1120, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1317, in _do_run
+    options, run_metadata)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1336, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Assign requires shapes of both tensors to match. lhs shape= [8192] rhs shape= [256]
+	 [[Node: save/Assign_6 = Assign[T=DT_FLOAT, _class=["loc:@decoder_layer/Variable_1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:GPU:0"](decoder_layer/Variable_1/Adam, save/RestoreV2_6/_3)]]
+
+Caused by op 'save/Assign_6', defined at:
+  File "main.py", line 153, in <module>
+    tf.app.run()
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/platform/app.py", line 48, in run
+    _sys.exit(main(_sys.argv[:1] + flags_passthrough))
+  File "main.py", line 119, in main
+    saver = tf.train.Saver(max_to_keep=3)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1218, in __init__
+    self.build()
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1227, in build
+    self._build(self._filename, build_save=True, build_restore=True)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 1263, in _build
+    build_save=build_save, build_restore=build_restore)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 751, in _build_internal
+    restore_sequentially, reshape)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 439, in _AddRestoreOps
+    assign_ops.append(saveable.restore(tensors, shapes))
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/training/saver.py", line 160, in restore
+    self.op.get_shape().is_fully_defined())
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py", line 276, in assign
+    validate_shape=validate_shape)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/ops/gen_state_ops.py", line 57, in assign
+    use_locking=use_locking, name=name)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 2956, in create_op
+    op_def=op_def)
+  File "/home/samira/.local/lib/python3.5/site-packages/tensorflow/python/framework/ops.py", line 1470, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+InvalidArgumentError (see above for traceback): Assign requires shapes of both tensors to match. lhs shape= [8192] rhs shape= [256]
+	 [[Node: save/Assign_6 = Assign[T=DT_FLOAT, _class=["loc:@decoder_layer/Variable_1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:GPU:0"](decoder_layer/Variable_1/Adam, save/RestoreV2_6/_3)]]
+
+srun: error: gcn9: task 0: Exited with exit code 1
+srun: Terminating job step 3968711.0
+end of job
