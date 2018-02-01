@@ -107,10 +107,10 @@ class VanillaIntendedMapper(object):
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch, predictions=self.predicted_output))
         self.pred_dists = tf.losses.mean_pairwise_squared_error(labels=self.predicted_output,predictions=self.predicted_output)
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
-        self.descrimination_loss = 0.001 * tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
+        self.descrimination_loss = 0.0001 * tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
         all_vars = [self.w_h, self.w_o]
         
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.001
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
