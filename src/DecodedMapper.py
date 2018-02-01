@@ -6,7 +6,7 @@ class DecodedMapper(object):
         self.hparams = hparams
 
     def init_weights(self, shape):
-        return tf.Variable(tf.truncated_normal(shape, stddev=0.01))
+        return tf.Variable(tf.truncated_normal(shape, stddev=0.001))
 
     def pairwise_dist(self, a):
         r = tf.reduce_sum(a * a, 1)
@@ -39,7 +39,7 @@ class DecodedMapper(object):
     def decoder(self,input):
 
         #h = tf.nn.tanh(tf.matmul(input, self.w_hd) + self.b_hd)
-        return tf.nn.relu(tf.matmul(input, self.w_d) + self.b_d)
+        return tf.sigmoid(tf.matmul(input, self.w_d) + self.b_d)
 
 
     def model(self, input, p_keep_input,
@@ -67,7 +67,7 @@ class DecodedMapper(object):
 
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
         
-        return tf.nn.relu(tf.matmul(input, self.w_o) + self.b_o)
+        return tf.sigmoid(tf.matmul(input, self.w_o) + self.b_o)
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -130,8 +130,9 @@ class DecodedMapper(object):
         self.pred_dists = tf.losses.mean_pairwise_squared_error(labels=self.predicted_output,predictions=self.predicted_output)
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
         self.descrimination_loss = tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
-        all_vars = tf.trainable_variables()
+        all_vars = [self.w_d, self.w_o] #tf.trainable_variables()
         self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.001
+        self.l1_loss = tf.add_n([tf.reduce_sum(tf.abs(v)) for v in all_vars ]) * 0.0001
 
         self.rec_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.input_states_batch, predictions=self.reconstructed_input))
         self.real_rec_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.input_states_batch, predictions=self.word_from_brain))
@@ -147,7 +148,7 @@ class DecodedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + 0.0001 * self.rec_loss + self.real_rec_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + self.l1_loss + 0.001 * self.descrimination_loss , global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 

@@ -3,6 +3,7 @@ import numpy as np
 import random
 from collections import namedtuple
 import numpy as np
+from sklearn.preprocessing import *
 
 
 import math
@@ -88,9 +89,8 @@ def main(unused_argv):
     columns_min = np.min(train_normalized_brain_scans,axis=0)
     columns_max = np.max(train_normalized_brain_scans,axis=0)
     print("c min shape:",columns_min.shape)
-
-    train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min)
-    
+    train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.0000001)
+    train_normalized_brain_scans = normalize(train_normalized_brain_scans,'l2')
     if FLAGS.mapper == "intended":
         from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper
     else:

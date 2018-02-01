@@ -8,18 +8,21 @@ class StateMapper(object):
     def __init__(self,hparams):
         self.hparams = hparams
 
-    def init_weights(self,shape):
-        return tf.Variable(tf.truncated_normal(shape, stddev=0.1))
+    def init_weights(self,shape,name):
+        if len(shape) > 1:
+            return tf.get_variable(name=name,shape=shape, initializer=tf.contrib.layers.xavier_initializer())
+
+        return tf.get_variable(name=name,shape=shape, initializer=tf.zeros_initializer())
 
     def model(self,X,p_keep_input,
               p_keep_hidden):  # this network is the same as the previous one except with an extra hidden layer + dropout
-        X = tf.nn.dropout(X, p_keep_input)
+        #X = tf.nn.dropout(X, p_keep_input)
         #h = tf.tanh(tf.matmul(X, self.w_h) + self.b_h)
 
         #h = tf.nn.dropout(h, p_keep_hidden)
 
 
-        return tf.nn.sigmoid(tf.matmul(X, self.w_o) + self.b_o)
+        return tf.matmul(X, tf.nn.dropout(self.w_o,p_keep_hidden)) + self.b_o
 
 
     def build_mapping_model(self):
@@ -43,8 +46,8 @@ class StateMapper(object):
 
 
         with tf.variable_scope("output_layer"):
-            self.w_o = self.init_weights([self.hparams.input_dim, self.hparams.output_dim])
-            self.b_o = self.init_weights([self.hparams.output_dim])
+            self.w_o = self.init_weights(name="w_o",shape=[self.hparams.input_dim, self.hparams.output_dim])
+            self.b_o = self.init_weights(name="b_o",shape=[self.hparams.output_dim])
 
             self.variable_summaries(self.w_o)
             self.variable_summaries(self.b_o)
@@ -56,7 +59,7 @@ class StateMapper(object):
         tf.summary.histogram("predicted outputs",self.predicted_output)
 
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch,predictions=self.predicted_output))
-        self.l2_loss = tf.nn.l2_loss(self.w_o) * 0.001
+        self.l2_loss = tf.nn.l2_loss(self.w_o) * 0.01
 
         self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
 
@@ -64,7 +67,7 @@ class StateMapper(object):
 
         self.global_step = tf.Variable(0, name='global_step', trainable=False)
         self.learning_rate = tf.train.exponential_decay(
-            learning_rate=0.001,
+            learning_rate=0.01,
             global_step=self.global_step,
             decay_steps=self.hparams.training_size,
             decay_rate=0.95,
