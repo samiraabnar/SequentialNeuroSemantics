@@ -45,6 +45,8 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 	test_size = len(test_x)
 	predicted_output, mse , sd_error, mean_error = sess.run([ model.predicted_output, model.mean_squared_loss, model.sd_error,model.mean_error],feed_dict={model.input_states_batch: test_x[:test_size], model.output_states_batch: test_y[:test_size], model.batch_size: test_size, model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
 	#print("check_dist",check_dist)
+	e_dists = cdist(predicted_output, test_y[:test_size], 'euclidean')
+
 	if FLAGS.direction == "word2brain":
 		dists = cdist(normalize(predicted_output,'l2'), normalize(test_y[:test_size],'l2'), 'cosine')
 	elif FLAGS.direction == "brain2word":
@@ -60,12 +62,17 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 	print("mean erros:",mean_error)
 
 	b_acc = []
+	e_b_acc = []
 	for i,j in itertools.combinations(np.arange(test_size), 2):
 		right_match = dists[i,i] + dists[j,j]
 		wrong_match = dists[i,j] + dists[j,i]
 		b_acc.append(right_match < wrong_match)
 
-	print("binary accuracy: ", np.mean(b_acc))
+		e_right_match = e_dists[i,i] + e_dists[j,j]
+		e_wrong_match = e_dists[i,j] + e_dists[j,i]
+		e_b_acc.append(e_right_match < e_wrong_match)
+
+	print("binary accuracy: ", np.mean(b_acc)," ", np.mean(e_b_acc))
 
 
 

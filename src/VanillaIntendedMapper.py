@@ -52,7 +52,7 @@ class VanillaIntendedMapper(object):
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
         """
 
-        h = tf.nn.tanh(tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h))
+        h = tf.nn.relu(tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h))
 
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
@@ -108,7 +108,7 @@ class VanillaIntendedMapper(object):
         self.pred_dists = tf.losses.mean_pairwise_squared_error(labels=self.predicted_output,predictions=self.predicted_output)
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
         self.descrimination_loss = 0.001 * tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
-        all_vars = tf.trainable_variables()
+        all_vars = [self.w_h, self.w_o]
         
         self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
         #tf.summary.scalar("sigmoid_loss", self.cost)
