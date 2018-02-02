@@ -43,7 +43,7 @@ def read_and_prepare_data_block_based(block_ids,layer_id):
                 for state in embeddings.item().get(block_id)[scan_obj.step]:
                     all_embeddings.append(state)
 
-                print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
+                #print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
                 lstm_embeddings.append(np.mean(all_embeddings,axis=0))
                 words.append('_'.join(scan_obj.all_words))
 
@@ -84,7 +84,6 @@ def read_and_prepare_data_block_based_concat(block_ids):
                     state = np.concatenate([state0,state1],axis=0)
                     all_embeddings.append(state)
 
-                print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
                 lstm_embeddings.append(np.mean(all_embeddings,axis=0))
                 words.append('_'.join(scan_obj.all_words))
 
@@ -126,7 +125,7 @@ def read_and_prepare_data_block_based_concat_concat(block_ids):
 
                 while len(all_embeddings) < 4:
                     all_embeddings.append(np.zeros(all_embeddings[-1].shape))
-                print("avg phrase emb shape:",np.concatenate(all_embeddings,axis=0).shape)
+
                 lstm_embeddings.append(np.concatenate(all_embeddings,axis=0))
                 words.append('_'.join(scan_obj.all_words))
 
@@ -170,7 +169,7 @@ def read_and_prepare_data_block_based_avg_concat(block_ids):
 
                 while len(all_embeddings) < 4:
                     all_embeddings.append(np.zeros(all_embeddings[-1].shape))
-                print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
+                #print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
                 lstm_embeddings.append(np.mean(all_embeddings,axis=0))
                 words.append('_'.join(scan_obj.all_words))
 
@@ -342,10 +341,24 @@ def load_data(FLAGS):
         train_size = len(train_embeddings)
         print("train size: ",train_size)
 
-    selected_indices = select_best_features(train_normalized_brain_scans,train_words)
-    train_normalized_brain_scans = normalize(train_normalized_brain_scans[:,selected_indices],'l2')
-    selected_indices = select_best_features(test_normalized_brain_scans,test_words)
-    test_normalized_brain_scans = normalize(test_normalized_brain_scans[:,selected_indices],'l2')
+    columns_min = np.min(train_normalized_brain_scans,axis=0)
+    columns_max = np.max(train_normalized_brain_scans,axis=0)
+    print("min max",columns_max - columns_min)
+    train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
+
+    print("max:",np.max(train_normalized_brain_scans))
+    print("min:",np.min(train_normalized_brain_scans))
+
+    columns_min = np.min(test_normalized_brain_scans,axis=0)
+    columns_max = np.max(test_normalized_brain_scans,axis=0)
+    print("min max",columns_max - columns_min)
+    test_normalized_brain_scans = (test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
+
+
+    selected_indices = select_best_features(train_normalized_brain_scans,train_words,k=int(FLAGS.select))
+    #train_normalized_brain_scans = normalize(train_normalized_brain_scans[:,selected_indices],'l2')
+    selected_indices = select_best_features(test_normalized_brain_scans,test_words,k=int(FLAGS.select))
+    #test_normalized_brain_scans = normalize(test_normalized_brain_scans[:,selected_indices],'l2')
 
     print("size of brain scans:",train_normalized_brain_scans.shape)
 
@@ -397,10 +410,10 @@ def prepare_trainings_for_glove_word_embeddings():
      return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words
 
 
-def select_best_features(brain_scans,scan_words):
+def select_best_features(brain_scans,scan_words,k):
     scan_words_set = list(set(scan_words))
     words_ids = [scan_words_set.index(word) for word in scan_words]
-    indexes = SelectKBest(f_regression, k=500).fit(brain_scans,words_ids).get_support(indices=True)
+    indexes = SelectKBest(f_regression, k=k).fit(brain_scans,words_ids).get_support(indices=True)
 
     return indexes
 

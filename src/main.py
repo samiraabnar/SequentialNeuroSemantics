@@ -31,6 +31,7 @@ tf.app.flags.DEFINE_string('direction', 'word2brain', 'must be one of '
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
                                                'train/test/save_vectors')
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
+tf.app.flags.DEFINE_string('select', '500', 'must be a positive integer')
 
 # ==========Hyper Params=========
 tf.app.flags.DEFINE_integer('batch_size', 10, 'minibatch size')
@@ -84,27 +85,22 @@ def main(unused_argv):
     hps, test_embeddings, test_normalized_brain_scans, test_words, \
     train_embeddings, train_normalized_brain_scans, train_words = prepare(FLAGS)
 
-    columns_min = np.min(train_normalized_brain_scans,axis=0)
-    columns_max = np.max(train_normalized_brain_scans,axis=0)
-    print("min max",columns_max - columns_min)
-    train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
-
-    print("max:",np.max(train_normalized_brain_scans))
-    print("min:",np.min(train_normalized_brain_scans))
-
-    columns_min = np.min(test_normalized_brain_scans,axis=0)
-    columns_max = np.max(test_normalized_brain_scans,axis=0)
-    print("min max",columns_max - columns_min)
-    test_normalized_brain_scans = (test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
 
 
-
-    if FLAGS.mapper == "intended":
-        from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper
-    elif FLAGS.mapper == "decoder":
-        from DecodedMapper import DecodedMapper as StateMapper
-    else:
-        from StateMapper import StateMapper as StateMapper
+    if FLAGS.direction == "word2brain":
+        if FLAGS.mapper == "intended":
+            from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper
+        elif FLAGS.mapper == "decoder":
+            from DecodedMapper import DecodedMapper as StateMapper
+        else:
+            from StateMapper import StateMapper as StateMapper
+    elif FLAGS.direction == "brain2word":
+        if FLAGS.mapper == "intended":
+            from VanillaIntendedMapper_Brain2Word import VanillaIntendedMapper as StateMapper
+        elif FLAGS.mapper == "decoder":
+            from DecodedMapper import DecodedMapper as StateMapper
+        else:
+            from StateMapper import StateMapper as StateMapper
 
 
     with tf.Graph().as_default():

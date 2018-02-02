@@ -32,6 +32,7 @@ tf.app.flags.DEFINE_string('direction', 'word2brain', 'must be one of '
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
                                                'train/test/save_vectors')
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
+tf.app.flags.DEFINE_string('select', '500', 'must be a positive integer')
 
 # ==========Hyper Params=========
 tf.app.flags.DEFINE_integer('batch_size', 20, 'minibatch size')
@@ -85,12 +86,6 @@ def main(unused_argv):
     hps, test_embeddings, test_normalized_brain_scans, test_words, \
     train_embeddings, train_normalized_brain_scans, train_words = prepare(FLAGS)
 
-
-    columns_min = np.min(train_normalized_brain_scans,axis=0)
-    columns_max = np.max(train_normalized_brain_scans,axis=0)
-    print("c min shape:",columns_min.shape)
-    train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.0000001)
-    train_normalized_brain_scans = normalize(train_normalized_brain_scans,'l2')
     if FLAGS.mapper == "intended":
         from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper
     else:
@@ -117,7 +112,9 @@ def main(unused_argv):
 
         # Get a TensorFlow session managed by the supervisor.
         with sv.managed_session() as sess:
-            plot_all2one(None, train_normalized_brain_scans[:2], train_words[:2], train_step=0, plot_size=4,FLAGS=FLAGS)
+            indexes = np.random.randint(low=0, high=len(train_normalized_brain_scans),size=2)
+            print(indexes)
+            plot_all2one(None, train_normalized_brain_scans[indexes], train_words[indexes], train_step=0, plot_size=4,FLAGS=FLAGS)
 
 
 
