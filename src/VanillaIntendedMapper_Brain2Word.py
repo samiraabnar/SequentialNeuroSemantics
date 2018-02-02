@@ -92,7 +92,7 @@ class VanillaIntendedMapper(object):
             self.variable_summaries(self.b_o, "b_o")
 
         self.predicted_output, self.h = self.model(self.input_states_batch, self.p_keep_input, self.p_keep_hidden)
-        self.predicted_output = tf.norm(self.predicted_output, axis=1)
+        #self.predicted_output = tf.norm(self.predicted_output, axis=1)
         #self.predicted_output = tf.nn.l2_normalize(self.predicted_output, dim=1)
         self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
 

@@ -367,7 +367,7 @@ def load_data(FLAGS):
 
 
 def prepare_trainings_for_character_based_word_embeddings():
-    word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based([1, 2, 3, 4])
+    word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4])
     indexes = np.arange(len(normalized_brain_scans))
     random.shuffle(indexes)
     train_size = (len(indexes) // 4) * 3
