@@ -54,8 +54,6 @@ def read_and_prepare_data_block_based(block_ids,layer_id):
     lstm_embeddings = np.asarray(lstm_embeddings)
     words = np.asarray(words)
 
-    selected_indices = select_best_features(all_brain_scans,current_word)
-    brain_scans = normalize(brain_scans[:,selected_indices],'l2')
 
     return lstm_embeddings, brain_scans, words
 
@@ -97,10 +95,6 @@ def read_and_prepare_data_block_based_concat(block_ids):
     lstm_embeddings = np.asarray(lstm_embeddings)
     words = np.asarray(words)
 
-    selected_indices = select_best_features(all_brain_scans,current_word)
-    brain_scans = normalize(brain_scans[:,selected_indices],'l2')
-    #brain_scans = normalize(brain_scans,'l2')
-    #print(len(normalized_brain_scans))
     return lstm_embeddings, brain_scans, words
 
 
@@ -143,13 +137,7 @@ def read_and_prepare_data_block_based_concat_concat(block_ids):
     lstm_embeddings = np.asarray(lstm_embeddings)
     words = np.asarray(words)
 
-    selected_indices = select_best_features(all_brain_scans,current_word)
-    
-    #selected_indices = select_best_features(all_brain_scans,current_word)
-    brain_scans = normalize(brain_scans[:,selected_indices],'l2')
 
-    print("lstm emb shape:",lstm_embeddings.shape)
-    print("brain scans shape:",brain_scans.shape)
 
     return lstm_embeddings, brain_scans, words
 
@@ -193,11 +181,6 @@ def read_and_prepare_data_block_based_avg_concat(block_ids):
     lstm_embeddings = np.asarray(lstm_embeddings)
     words = np.asarray(words)
 
-    selected_indices = select_best_features(all_brain_scans,current_word)
-    brain_scans = brain_scans[:,selected_indices]
-    print("lstm emb shape:",lstm_embeddings.shape)
-    print("brain scans shape:",brain_scans.shape)
-    #selected_indices = select_best_features(all_brain_scans,current_word)
 
     return lstm_embeddings, brain_scans, words
 
@@ -359,6 +342,11 @@ def load_data(FLAGS):
         train_size = len(train_embeddings)
         print("train size: ",train_size)
 
+    selected_indices = select_best_features(train_normalized_brain_scans,train_words)
+    train_normalized_brain_scans = normalize(train_normalized_brain_scans[:,selected_indices],'l2')
+    selected_indices = select_best_features(test_normalized_brain_scans,test_words)
+    test_normalized_brain_scans = normalize(test_normalized_brain_scans[:,selected_indices],'l2')
+
     print("size of brain scans:",train_normalized_brain_scans.shape)
 
     return test_embeddings, test_normalized_brain_scans, test_words, \
@@ -369,7 +357,7 @@ def prepare_trainings_for_character_based_word_embeddings():
     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based([1, 2, 3, 4])
     indexes = np.arange(len(normalized_brain_scans))
     random.shuffle(indexes)
-    train_size = (len(indexes) // 5) * 4
+    train_size = (len(indexes) // 4) * 3
     train_indexes = indexes[: train_size]
     test_indexes = indexes[train_size:]
     train_embeddings, train_normalized_brain_scans, train_words = \
@@ -381,7 +369,7 @@ def prepare_trainings_for_character_based_word_embeddings():
 
 
 def prepare_trainings_for_softmax_word_embeddings():
-     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based([1, 2, 3, 4],"../data/harry_softmax_embeddings.npy")
+     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4],"../data/harry_softmax_embeddings.npy")
      indexes = np.arange(len(normalized_brain_scans))
      random.shuffle(indexes)
      train_size = (len(indexes) // 4) * 3

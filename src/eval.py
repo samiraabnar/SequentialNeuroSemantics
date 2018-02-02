@@ -48,7 +48,7 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 	e_dists = cdist(predicted_output, test_y[:test_size], 'euclidean')
 
 	if FLAGS.direction == "word2brain":
-		dists = cdist(normalize(predicted_output,'l2'), normalize(test_y[:test_size],'l2'), 'cosine')
+		dists = cdist(predicted_output, test_y[:test_size], 'cosine')
 	elif FLAGS.direction == "brain2word":
 		dists = cdist(predicted_output, test_y[:test_size], 'cosine')
 	nn_index = np.argmin(dists,axis=1)

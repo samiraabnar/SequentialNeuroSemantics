@@ -12,7 +12,7 @@ from HarryPotterDataProcessing import *
 from train import *
 
 
-
+tf.set_random_seed(1234)
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -33,8 +33,8 @@ tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
 
 # ==========Hyper Params=========
-tf.app.flags.DEFINE_integer('batch_size', 20, 'minibatch size')
-tf.app.flags.DEFINE_integer('hidden_dim', 512, 'dimension of hidden states')
+tf.app.flags.DEFINE_integer('batch_size', 10, 'minibatch size')
+tf.app.flags.DEFINE_integer('hidden_dim', 256, 'dimension of hidden states')
 tf.app.flags.DEFINE_integer('input_dim', 784, 'size of the input')
 tf.app.flags.DEFINE_integer('output_dim', 784, 'size of the output')
 

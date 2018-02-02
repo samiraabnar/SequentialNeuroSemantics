@@ -5,8 +5,11 @@ class VanillaIntendedMapper(object):
     def __init__(self, hparams):
         self.hparams = hparams
 
-    def init_weights(self, shape):
-        return tf.Variable(tf.random_normal(shape, stddev=0.01))
+    def init_weights(self, shape, name,bias=False):
+        if bias == True:
+            return tf.get_variable(name=name, shape=shape, initializer=tf.zeros_initializer())
+        else:
+            return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
 
     def pairwise_dist(self, a):
         r = tf.reduce_sum(a * a, 1)
@@ -52,7 +55,7 @@ class VanillaIntendedMapper(object):
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
         """
 
-        h = tf.nn.relu(tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h))
+        h = tf.matmul(input, self.w_h) + self.b_h
 
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
@@ -61,7 +64,7 @@ class VanillaIntendedMapper(object):
 
         
 
-        return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o)
+        return tf.nn.sigmoid(tf.matmul(h, self.w_o) + self.b_o)
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -70,35 +73,27 @@ class VanillaIntendedMapper(object):
         self.p_keep_hidden = tf.placeholder("float")
         self.batch_size = tf.placeholder("int32")
 
-        regularizer = tf.contrib.layers.l2_regularizer(scale=0.1)
-
         with tf.variable_scope("hidden_layers"):
-            self.w_I = self.init_weights([self.hparams.input_dim, self.hparams.input_dim])
-            self.b_I = self.init_weights([self.hparams.input_dim])
+            self.w_I = self.init_weights(name="w_I",shape=[self.hparams.input_dim, self.hparams.input_dim])
+            self.b_I = self.init_weights(name="b_I",shape=[self.hparams.input_dim],bias=True)
 
-            self.w_h = self.init_weights([self.hparams.input_dim, self.hparams.hidden_dim])
-            self.b_h = self.init_weights([self.hparams.hidden_dim])
-            #self.w_h2 = self.init_weights([self.hparams.hidden_dim, self.hparams.hidden_dim])
-            #self.b_h2 = self.init_weights([self.hparams.hidden_dim])
+            self.w_h = self.init_weights(name="w_h",shape=[self.hparams.input_dim, self.hparams.hidden_dim])
+            self.b_h = self.init_weights(name="b_h",shape=[self.hparams.hidden_dim],bias=True)
 
             self.variable_summaries(self.w_I, "w_I")
             self.variable_summaries(self.b_I, "b_I")
             self.variable_summaries(self.w_h, "w_h")
             self.variable_summaries(self.b_h, "b_h")
-            #self.variable_summaries(self.w_h2, "w_h2")
-            #self.variable_summaries(self.b_h2, "b_h2")
 
         with tf.variable_scope("output_layer"):
-            self.w_o = self.init_weights([self.hparams.hidden_dim, self.hparams.output_dim])
-            self.b_o = self.init_weights([self.hparams.output_dim])
+            self.w_o = self.init_weights(name="w_o",shape=[self.hparams.hidden_dim, self.hparams.output_dim])
+            self.b_o = self.init_weights(name="b_o",shape=[self.hparams.output_dim],bias=True)
 
             self.variable_summaries(self.w_o, "w_o")
             self.variable_summaries(self.b_o, "b_o")
 
         self.predicted_output = self.model(self.input_states_batch, self.p_keep_input, self.p_keep_hidden)
         #self.predicted_output = tf.nn.l2_normalize(self.predicted_output, dim=1)
-        tf.logging.info("predicted output shape: ")
-        tf.logging.info(self.predicted_output.shape)
         self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
 
         tf.summary.histogram("predicted_outputs", self.predicted_output)
@@ -110,7 +105,7 @@ class VanillaIntendedMapper(object):
         self.descrimination_loss = 0.0001 * tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
         all_vars = [self.w_h, self.w_o]
         
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
@@ -122,7 +117,7 @@ class VanillaIntendedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + self.descrimination_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 

@@ -6,7 +6,7 @@ class DecodedMapper(object):
         self.hparams = hparams
 
     def init_weights(self, shape):
-        return tf.Variable(tf.truncated_normal(shape, stddev=0.001))
+        return tf.Variable(tf.truncated_normal(shape, stddev=0.01))
 
     def pairwise_dist(self, a):
         r = tf.reduce_sum(a * a, 1)
@@ -62,7 +62,7 @@ class DecodedMapper(object):
 
         h = tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h)
 
-        #h = tf.nn.dropout(h, p_keep_hidden)
+        h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
 
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
@@ -148,7 +148,7 @@ class DecodedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss + 0.001 * self.descrimination_loss , global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
