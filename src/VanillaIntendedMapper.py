@@ -11,31 +11,6 @@ class VanillaIntendedMapper(object):
         else:
             return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
 
-    def pairwise_dist(self, a):
-        r = tf.reduce_sum(a * a, 1)
-        # turn r into column vector
-        r = tf.reshape(r, [-1, 1])
-        d = r - 2 * tf.matmul(a, tf.transpose(a)) + tf.transpose(r)
-
-        return d
-
-
-    def pairwise_l2_norm2(self, x, y, scope=None):
-        size_x = tf.shape(x)[0]
-        size_y = tf.shape(y)[0]
-        xx = tf.expand_dims(x, -1)
-        xx = tf.tile(xx, tf.stack([1, 1, size_y]))
-
-        yy = tf.expand_dims(y, -1)
-        yy = tf.tile(yy, tf.stack([1, 1, size_x]))
-        yy = tf.transpose(yy, perm=[2, 1, 0])
-
-        diff = tf.subtract(xx, yy)
-        square_diff = tf.square(diff)
-
-        square_dist = tf.reduce_sum(square_diff, 1)
-
-        return square_dist
 
     def model(self, input, p_keep_input,
               p_keep_hidden):

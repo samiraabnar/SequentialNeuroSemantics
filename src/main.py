@@ -9,7 +9,6 @@ import math
 import os
 
 from HarryPotterDataProcessing import *
-from train import *
 
 
 tf.set_random_seed(1234)
@@ -31,7 +30,7 @@ tf.app.flags.DEFINE_string('direction', 'word2brain', 'must be one of '
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
                                                'train/test/save_vectors')
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
-tf.app.flags.DEFINE_string('select', '500', 'must be a positive integer')
+tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
 
 # ==========Hyper Params=========
 tf.app.flags.DEFINE_integer('batch_size', 10, 'minibatch size')
@@ -88,6 +87,8 @@ def main(unused_argv):
 
 
     if FLAGS.direction == "word2brain":
+        from train import train
+
         if FLAGS.mapper == "intended":
             from VanillaIntendedMapper import VanillaIntendedMapper as StateMapper
         elif FLAGS.mapper == "decoder":
@@ -95,6 +96,7 @@ def main(unused_argv):
         else:
             from StateMapper import StateMapper as StateMapper
     elif FLAGS.direction == "brain2word":
+        from train_Brain2Word import train
         if FLAGS.mapper == "intended":
             from VanillaIntendedMapper_Brain2Word import VanillaIntendedMapper as StateMapper
         elif FLAGS.mapper == "decoder":

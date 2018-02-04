@@ -349,17 +349,23 @@ def load_data(FLAGS):
     print("max:",np.max(train_normalized_brain_scans))
     print("min:",np.min(train_normalized_brain_scans))
 
-    columns_min = np.min(test_normalized_brain_scans,axis=0)
-    columns_max = np.max(test_normalized_brain_scans,axis=0)
-    print("min max",columns_max - columns_min)
+    #columns_min = np.min(test_normalized_brain_scans,axis=0)
+    #columns_max = np.max(test_normalized_brain_scans,axis=0)
+    #print("min max",columns_max - columns_min)
     test_normalized_brain_scans = (test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
 
 
     selected_indices = select_best_features(train_normalized_brain_scans,train_words,k=int(FLAGS.select))
     #train_normalized_brain_scans = normalize(train_normalized_brain_scans[:,selected_indices],'l2')
-    selected_indices = select_best_features(test_normalized_brain_scans,test_words,k=int(FLAGS.select))
+    #selected_indices = select_best_features(test_normalized_brain_scans,test_words,k=int(FLAGS.select))
     #test_normalized_brain_scans = normalize(test_normalized_brain_scans[:,selected_indices],'l2')
 
+    if int(FLAGS.select) > 0:
+        train_normalized_brain_scans = train_normalized_brain_scans[:,selected_indices]
+        test_normalized_brain_scans = test_normalized_brain_scans[:,selected_indices]
+
+    train_normalized_brain_scans = normalize(train_normalized_brain_scans,'l2')
+    test_normalized_brain_scans = normalize(test_normalized_brain_scans,'l2')
     print("size of brain scans:",train_normalized_brain_scans.shape)
 
     return test_embeddings, test_normalized_brain_scans, test_words, \
