@@ -39,7 +39,7 @@ class VanillaIntendedMapper(object):
 
         
 
-        return tf.matmul(h, self.w_o) + self.b_o, h
+        return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -95,7 +95,7 @@ class VanillaIntendedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
