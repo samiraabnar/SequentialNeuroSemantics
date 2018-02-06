@@ -400,6 +400,12 @@ def load_data(FLAGS):
         test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_avg_concat([4])
         train_size = len(train_embeddings)
         print("train size: ",train_size)
+    elif FLAGS.model == "autoencoder":
+        train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_avg_concat([1, 2, 3])
+        test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_avg_concat([4])
+        train_size = len(train_embeddings)
+        print("train size: ",train_size)
+
 
 
     scan_objects = np.load("../data/subject_1_scan_objects.npy")

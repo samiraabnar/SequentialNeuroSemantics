@@ -3,6 +3,174 @@
 	{
 		"selected_items":
 		[
+			[
+				"best",
+				"best_dir\tparam"
+			],
+			[
+				"train",
+				"train_words"
+			],
+			[
+				"bran",
+				"BrainAutoEncoder"
+			],
+			[
+				"enco",
+				"encoded_input\tstatement"
+			],
+			[
+				"scan",
+				"scan_obj\tstatement"
+			],
+			[
+				"k",
+				"keys"
+			],
+			[
+				"lo",
+				"l2_loss"
+			],
+			[
+				"r",
+				"randint\tfunction"
+			],
+			[
+				"l",
+				"l2_loss\tstatement"
+			],
+			[
+				"zero",
+				"zeros_initializer\tstatement"
+			],
+			[
+				"no",
+				"normalize\tfunction"
+			],
+			[
+				"mean",
+				"mean_squared_error\tfunction"
+			],
+			[
+				"red",
+				"reduce_sum"
+			],
+			[
+				"outp",
+				"output_dim"
+			],
+			[
+				"truncated",
+				"truncated_normal\tfunction"
+			],
+			[
+				"ou",
+				"output_states_batch\tstatement"
+			],
+			[
+				"hidden",
+				"hidden_dim"
+			],
+			[
+				"hide",
+				"hidden_dim"
+			],
+			[
+				"hidd",
+				"hidden_dim"
+			],
+			[
+				"brain",
+				"brain_scans\tstatement"
+			],
+			[
+				"input",
+				"input_dim"
+			],
+			[
+				"out",
+				"output_dim"
+			],
+			[
+				"column",
+				"columns_min\tstatement"
+			],
+			[
+				"state",
+				"state0"
+			],
+			[
+				"pred",
+				"pred_dists\tstatement"
+			],
+			[
+				"predic",
+				"predicted_output"
+			],
+			[
+				"tra",
+				"train_y\tstatement"
+			],
+			[
+				"de",
+				"descrimination_loss"
+			],
+			[
+				"redu",
+				"reduce_mean"
+			],
+			[
+				"norm",
+				"norm_pred\tstatement"
+			],
+			[
+				"norma",
+				"normalize_target\tstatement"
+			],
+			[
+				"pre",
+				"predictions"
+			],
+			[
+				"in",
+				"input_states_batch\tstatement"
+			],
+			[
+				"ta",
+				"transpose_b\tparam"
+			],
+			[
+				"tran",
+				"transpose_b\tparam"
+			],
+			[
+				"di",
+				"distance_loss\tstatement"
+			],
+			[
+				"test",
+				"test_size"
+			],
+			[
+				"reduce",
+				"reduce_sum"
+			],
+			[
+				"one",
+				"ones_like"
+			],
+			[
+				"h",
+				"hparams\tstatement"
+			],
+			[
+				"multi",
+				"multiply\tfunction"
+			],
+			[
+				"nare",
+				"nearest_neighbor_on_test"
+			]
 		]
 	},
 	"buffers":
@@ -15,18 +183,36 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 0.0,
-		"last_filter": "",
+		"height": 392.0,
+		"last_filter": "subl",
 		"selected_items":
 		[
+			[
+				"subl",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 0.0
+		"width": 412.0
 	},
 	"console":
 	{
 		"height": 130.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"install"
 		]
 	},
 	"distraction_free":
@@ -40,10 +226,25 @@
 	},
 	"file_history":
 	[
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/train_Brain2Word.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/train.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/eval.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/VanillaIntendedMapper.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/main.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/HarryPotterDataProcessing.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/BrainAutoEncoder.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/VanillaIntendedMapper_Brain2Word.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/StateMapper_Brain2Word.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/train_Word2Brain.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/touble_shooting.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/util.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/StateMapper.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/DecodedMapper.py",
+		"/Users/samiraabnar/Codes/SequentialNeuroSemantics/src/AVG_Context_best_mapper.py"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -81,11 +282,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 23.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -118,7 +319,7 @@
 	"project": "main.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
