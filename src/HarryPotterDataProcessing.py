@@ -401,9 +401,9 @@ def load_data(FLAGS):
         train_size = len(train_embeddings)
         print("train size: ",train_size)
     elif FLAGS.model == "autoencoder":
-        train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_avg_concat([1, 2, 3])
-        test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_avg_concat([4])
+        train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_avg_concat([1, 2, 3,4])
         train_size = len(train_embeddings)
+        test_embeddings, test_normalized_brain_scans, test_words = [],[],[]
         print("train size: ",train_size)
 
 
@@ -422,17 +422,17 @@ def load_data(FLAGS):
     print("min:",np.min(train_normalized_brain_scans))
 
     train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
-    test_normalized_brain_scans = (test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
+    if(len(test_normalized_brain_scans) > 0):
+        test_normalized_brain_scans = (test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
 
 
     selected_indices = select_best_features(train_normalized_brain_scans,train_words,k=int(FLAGS.select))
 
     if int(FLAGS.select) > 0:
         train_normalized_brain_scans = train_normalized_brain_scans[:,selected_indices]
-        test_normalized_brain_scans = test_normalized_brain_scans[:,selected_indices]
+        if(len(test_normalized_brain_scans) > 0):
+            test_normalized_brain_scans = test_normalized_brain_scans[:,selected_indices]
 
-    #train_normalized_brain_scans = normalize(train_normalized_brain_scans,'l2')
-    #test_normalized_brain_scans = normalize(test_normalized_brain_scans,'l2')
     print("size of brain scans:",train_normalized_brain_scans.shape)
 
     return test_embeddings, test_normalized_brain_scans, test_words, \

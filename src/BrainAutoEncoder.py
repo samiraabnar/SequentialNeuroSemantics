@@ -104,7 +104,7 @@ tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
 
 # ==========Hyper Params=========
 tf.app.flags.DEFINE_integer('batch_size', 16, 'minibatch size')
-tf.app.flags.DEFINE_integer('hidden_dim', 1024, 'dimension of hidden states')
+tf.app.flags.DEFINE_integer('hidden_dim', 512, 'dimension of hidden states')
 tf.app.flags.DEFINE_integer('input_dim', 784, 'size of the input')
 tf.app.flags.DEFINE_integer('output_dim', 784, 'size of the output')
 
@@ -174,7 +174,7 @@ def main(unused_argv):
 
         # Get a TensorFlow session managed by the supervisor.
         with sv.managed_session() as sess:
-            train(mapper, sess, sv, train_normalized_brain_scans,test_normalized_brain_scans,train_words, test_words,FLAGS=FLAGS,best_saver=best_saver,best_dir=best_dir)
+            train(mapper, sess, sv, train_normalized_brain_scans,train_normalized_brain_scans,train_words, train_words,FLAGS=FLAGS,best_saver=best_saver,best_dir=best_dir)
 
 
 
