@@ -38,7 +38,7 @@ class BrainAutoEncoder(object):
 
 
     def decode(self,hidden_state):
-        return tf.matmul(hidden_state,self.w_out) + self.b_out
+        return tf.sigmoid(tf.matmul(hidden_state,self.w_out) + self.b_out)
 
     def build_graph(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -104,7 +104,7 @@ tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
 
 # ==========Hyper Params=========
 tf.app.flags.DEFINE_integer('batch_size', 16, 'minibatch size')
-tf.app.flags.DEFINE_integer('hidden_dim', 256, 'dimension of hidden states')
+tf.app.flags.DEFINE_integer('hidden_dim', 1024, 'dimension of hidden states')
 tf.app.flags.DEFINE_integer('input_dim', 784, 'size of the input')
 tf.app.flags.DEFINE_integer('output_dim', 784, 'size of the output')
 
