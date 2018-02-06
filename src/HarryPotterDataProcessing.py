@@ -309,6 +309,64 @@ def read_and_prepare_data_word_based_concat(block_ids,word_embedding_dic_file=".
     return np.asarray(avg_word_embeddings), np.asarray(avg_normalized_scans)[:,:], np.asarray(words)
 
 
+def read_and_prepare_data_ith_word_based(i, block_ids,word_embedding_dic_file="../data/word_embedding_dic.npy"):
+    scan_objects = np.load("../data/subject_1_scan_objects.npy")
+    word_embeddings = np.load(word_embedding_dic_file)
+    # print(len(scan_objects.item().get(1)))
+    # print(embeddings.item().get(1))
+    brain_scans = []
+    brain_scan_steps = []
+    scan_words = []
+
+    embeddings = []
+    all_scans = []
+    all_scanned_words = []
+    for block_id in block_ids:
+        for scan_obj in scan_objects.item().get(block_id):
+            if(i < len(scan_obj.all_words)):
+                all_scans.append(scan_obj.activations[0])
+                all_scanned_words.append(scan_obj.all_words[i])
+                if scan_obj.all_words[i] in word_embeddings.item().keys():
+                    brain_scans.append(scan_obj.activations[0])
+                    brain_scan_steps.append(scan_obj.step)
+                    scan_words.append(scan_obj.all_words[i])                
+                    embeddings.append(word_embeddings.item()[scan_obj.all_words[i]])
+
+
+
+    brain_scans = np.asarray(brain_scans)
+    brain_scan_steps = np.asarray(brain_scan_steps)
+    embeddings = np.asarray(embeddings)
+    scan_words = np.asarray(scan_words)
+    normalized_brain_scans =  brain_scans # normalize(brain_scans,'l2')
+
+    normalized_embeddings = embeddings #normalize(embeddings, 'l2')
+
+
+    word_to_scans = {}
+    word_to_embeddings = {}
+    for i in np.arange(len(normalized_brain_scans)):
+        if scan_words[i] not in word_to_scans.keys():
+            word_to_scans[scan_words[i]] = []
+            word_to_embeddings[scan_words[i]] = []
+
+        word_to_scans[scan_words[i]].append(normalized_brain_scans[i])
+        word_to_embeddings[scan_words[i]].append(normalized_embeddings[i])
+
+    words = []
+    avg_normalized_scans = []
+    avg_word_embeddings = []
+    for w in word_to_scans.keys():
+        avg_normalized_scans.append(np.mean(word_to_scans[w],axis=0))
+        avg_word_embeddings.append(np.mean(word_to_embeddings[w],axis=0))
+
+        words.append(w)
+
+
+
+    return np.asarray(avg_word_embeddings), np.asarray(avg_normalized_scans)[:,:], np.asarray(words)
+
+
 def load_data(FLAGS):
     if FLAGS.model == "contextual_1":
         train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based([1, 2, 3],layer_id=1)
@@ -321,15 +379,15 @@ def load_data(FLAGS):
     elif FLAGS.model == "char_word":
         test_embeddings, test_normalized_brain_scans, test_words, \
         train_embeddings, train_normalized_brain_scans, train_size, train_words = \
-            prepare_trainings_for_character_based_word_embeddings()
+            prepare_trainings_for_x_word_embeddings("../data/word_embedding_dic.npy",FLAGS)
     elif FLAGS.model == "word":
         test_embeddings, test_normalized_brain_scans, test_words, \
          train_embeddings, train_normalized_brain_scans, train_size, train_words = \
-             prepare_trainings_for_softmax_word_embeddings()
+             prepare_trainings_for_x_word_embeddings("../data/harry_softmax_embeddings.npy",FLAGS)
     elif FLAGS.model == "glove":
         test_embeddings, test_normalized_brain_scans, test_words, \
          train_embeddings, train_normalized_brain_scans, train_size, train_words = \
-             prepare_trainings_for_glove_word_embeddings()
+             prepare_trainings_for_x_word_embeddings("../data/glove_word_embedding_dic.npy",FLAGS)
     elif FLAGS.model == "contextual_01":
         print("contextual_01")
         train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_concat_concat([1, 2, 3])
@@ -375,48 +433,24 @@ def load_data(FLAGS):
                train_embeddings, train_normalized_brain_scans, train_size, train_words
 
 
-def prepare_trainings_for_character_based_word_embeddings():
-    word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4])
+
+def prepare_trainings_for_x_word_embeddings(filename,FLAGS):
+    if int(FLAGS.ith) == -1:
+        word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4],filename)
+    else:
+        word_embeddings, normalized_brain_scans, words = read_and_prepare_data_ith_word_based(int(FLAGS.ith),[1, 2, 3, 4],filename)
+     
     indexes = np.arange(len(normalized_brain_scans))
     random.shuffle(indexes)
     train_size = (len(indexes) // 4) * 3
     train_indexes = indexes[: train_size]
     test_indexes = indexes[train_size:]
-    train_embeddings, train_normalized_brain_scans, train_words = \
-        word_embeddings[train_indexes], normalized_brain_scans[train_indexes], words[train_indexes]
+    train_embeddings, train_normalized_brain_scans, train_words = word_embeddings[train_indexes], normalized_brain_scans[train_indexes], words[train_indexes]
     test_embeddings, test_normalized_brain_scans, test_words = \
-        word_embeddings[test_indexes], normalized_brain_scans[test_indexes], words[test_indexes]
-    return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words
-
-
-
-def prepare_trainings_for_softmax_word_embeddings():
-     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4],"../data/harry_softmax_embeddings.npy")
-     indexes = np.arange(len(normalized_brain_scans))
-     random.shuffle(indexes)
-     train_size = (len(indexes) // 4) * 3
-     train_indexes = indexes[: train_size]
-     test_indexes = indexes[train_size:]
-     train_embeddings, train_normalized_brain_scans, train_words = word_embeddings[train_indexes], normalized_brain_scans[train_indexes], words[train_indexes]
-     test_embeddings, test_normalized_brain_scans, test_words = \
-         word_embeddings[test_indexes], normalized_brain_scans[test_indexes], words[test_indexes]
-     return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words    
-
-
-
-def prepare_trainings_for_glove_word_embeddings():
-     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4],"../data/glove_word_embedding_dic.npy")
-     indexes = np.arange(len(normalized_brain_scans))
-     random.shuffle(indexes)
-     train_size = (len(indexes) // 4) * 3
-     train_indexes = indexes[: train_size]
-     test_indexes = indexes[train_size:]
-     train_embeddings, train_normalized_brain_scans, train_words = word_embeddings[train_indexes], normalized_brain_scans[train_indexes], words[train_indexes]
-     test_embeddings, test_normalized_brain_scans, test_words = \
          word_embeddings[test_indexes], normalized_brain_scans[test_indexes], words[test_indexes]
      
 
-     return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words
+    return test_embeddings, test_normalized_brain_scans, test_words, train_embeddings, train_normalized_brain_scans, train_size, train_words
 
 
 def select_best_features(brain_scans,scan_words,k):

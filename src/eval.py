@@ -74,6 +74,8 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 
 	print("binary accuracy: ", np.mean(b_acc)," ", np.mean(e_b_acc))
 
+	return np.mean(b_acc)
+
 
 
 

@@ -37,8 +37,6 @@ class VanillaIntendedMapper(object):
 
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
 
-        
-
         return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
 
     def build_mapping_model(self):
