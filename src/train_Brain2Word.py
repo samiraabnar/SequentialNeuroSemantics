@@ -4,7 +4,7 @@ import numpy as np
 from eval import *
 
 
-def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_words,FLAGS,best_saver):
+def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_words,FLAGS,best_saver,best_dir):
     # Use the session to train the graph.
     training_step = 0
     while not sv.should_stop():

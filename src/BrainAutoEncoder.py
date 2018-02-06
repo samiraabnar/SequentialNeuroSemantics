@@ -132,7 +132,9 @@ def main(unused_argv):
     with tf.Graph().as_default():
         # Create a Supervisor that will checkpoint the model in '/tmp/mydir'.
         train_dir = os.path.join(FLAGS.log_root, "train")
+        best_dir = os.path.join(FLAGS.log_root, "best")
         if not os.path.exists(train_dir): os.makedirs(train_dir)
+        if not os.path.exists(best_dir): os.makedirs(best_dir)
 
 
         mapper = StateMapper(hps)
@@ -151,7 +153,7 @@ def main(unused_argv):
         # Get a TensorFlow session managed by the supervisor.
         with sv.managed_session() as sess:
 			train(mapper, sess, sv, train_normalized_brain_scans,
-                        test_normalized_brain_scans,FLAGS=FLAGS,best_saver=best_saver)
+                        test_normalized_brain_scans,FLAGS=FLAGS,best_saver=best_saver,best_dir=best_dir)
 
 
 
