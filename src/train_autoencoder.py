@@ -30,14 +30,14 @@ def train(model, sess, sv, train_x, test_x, train_words, test_words, FLAGS,best_
         sv.summary_computed(sess, summary)
         print(test_x.shape)
         print("epoch: ",i)
-        qualitative_eval(model, sess, test_x, test_x, training_step,test_words,FLAGS)
+        #qualitative_eval(model, sess, test_x, test_x, training_step,test_words,FLAGS)
         qualitative_eval(model, sess, train_x, train_x, training_step,train_words,FLAGS,"train")
 
-        test_accuracy = quantitative_eval(model, sess, test_x, test_x, training_step,test_words,FLAGS)
+        #test_accuracy = quantitative_eval(model, sess, test_x, test_x, training_step,test_words,FLAGS)
         print("evaluation on the training set:")
-        quantitative_eval(model, sess, train_x, train_x, training_step,train_words,FLAGS)
-        if test_accuracy >= current_best:
+        accuracy = quantitative_eval(model, sess, train_x, train_x, training_step,train_words,FLAGS)
+        if accuracy >= current_best:
             best_saver.save(sess,best_dir+"/best_model_epoch"+str(i))
-            current_best = test_accuracy
+            current_best = accuracy
 
 
