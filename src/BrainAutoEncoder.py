@@ -11,6 +11,7 @@ from collections import namedtuple
 class BrainAutoEncoder(object):
     def __init__(self,hparams):
 		    self.hparams = hparams
+            tf.logging.info(hparams)
 
     def variable_summaries(self, var, name):
         """
