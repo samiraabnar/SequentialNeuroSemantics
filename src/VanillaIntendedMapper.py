@@ -30,13 +30,10 @@ class VanillaIntendedMapper(object):
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
         """
 
-        h = tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h)
-
+        h = tf.matmul(input, self.w_h) + self.b_h
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
-
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
-
         return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
 
     def build_mapping_model(self):

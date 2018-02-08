@@ -464,6 +464,17 @@ def load_data(FLAGS):
         test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],"../data/glove_word_embedding_dic.npy",FLAGS.linear_steps)
         train_size = len(train_embeddings)
         print("train size: ",train_size)
+    elif FLAGS.model == "char_word_linear":
+        train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],"../data/word_embedding_dic.npy",FLAGS.linear_steps)
+        test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],"../data/word_embedding_dic.npy",FLAGS.linear_steps)
+        train_size = len(train_embeddings)
+        print("train size: ",train_size)
+    elif FLAGS.model == "word_linear":
+        train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],"../data/harry_softmax_embeddings.npy",FLAGS.linear_steps)
+        test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],"../data/harry_softmax_embeddings.npy",FLAGS.linear_steps)
+        train_size = len(train_embeddings)
+        print("train size: ",train_size)
+
 
 
 
