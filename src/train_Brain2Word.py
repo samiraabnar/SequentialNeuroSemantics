@@ -12,7 +12,6 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
 
         indexes = np.arange(train_x.shape[0])
         np.random.shuffle(indexes)
-        print(i)
         start_index = 0;
         end_index = start_index + model.hparams.batch_size
         while end_index < len(train_x):
@@ -26,6 +25,7 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
             training_step += 1
 
         sv.summary_computed(sess, summary)
+        print("epoch:",i)
         print(test_x.shape)
         print(test_y.shape)
         qualitative_eval(model, sess, test_x, test_y, training_step,test_words,FLAGS)
