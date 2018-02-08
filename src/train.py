@@ -17,9 +17,8 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
         start_index = 0;
         end_index = start_index + model.hparams.batch_size
         print("input_size",len(indexes))
-        if train_x.shape > 2:
         while end_index < len(indexes):
-            if train_x.shape > 2:
+            if len(train_x.shape) > 2:
                 summary, _, mse = sess.run([model.summ_op,model.train_op, model.mean_squared_loss],
                                         feed_dict={model.input_states_batch: train_x[:,indexes[start_index:end_index]],
                                                    model.output_states_batch: train_y[indexes[start_index:end_index]], model.batch_size: len(indexes[start_index:end_index]),
