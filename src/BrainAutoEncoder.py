@@ -107,7 +107,8 @@ tf.app.flags.DEFINE_integer('batch_size', 16, 'minibatch size')
 tf.app.flags.DEFINE_integer('hidden_dim', 512, 'dimension of hidden states')
 tf.app.flags.DEFINE_integer('input_dim', 784, 'size of the input')
 tf.app.flags.DEFINE_integer('output_dim', 784, 'size of the output')
-
+tf.app.flags.DEFINE_float('p_keep_input',0.9,'positive float')
+tf.app.flags.DEFINE_float('p_keep_hidden',0.6,'positive float')
 # ===== Training Setup=======
 tf.app.flags.DEFINE_integer('number_of_epochs', 20, 'number_of_epochs')
 tf.app.flags.DEFINE_integer('training_size', 20, 'training_size')
