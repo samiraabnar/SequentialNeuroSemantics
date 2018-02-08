@@ -41,8 +41,8 @@ class BrainAutoEncoder(object):
         return tf.sigmoid(tf.matmul(hidden_state,self.w_out) + self.b_out)
 
     def build_graph(self):
-        self.input_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, self.hparams.input_dim])
-        self.output_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, self.hparams.input_dim])
+        self.input_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, int(self.hparams.input_dim)])
+        self.output_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, int(self.hparams.input_dim)])
 
         self.p_keep_input = tf.placeholder("float")
         self.p_keep_hidden = tf.placeholder("float")
