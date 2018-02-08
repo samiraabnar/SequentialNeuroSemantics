@@ -42,7 +42,7 @@ class BrainAutoEncoder(object):
         return tf.sigmoid(tf.matmul(hidden_state,self.w_out) + self.b_out)
 
     def build_graph(self):
-        self.input_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, int(self.hparams['input_dim'])])
+        self.input_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, int(self.hparams.input_dim)])
         self.output_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, int(self.hparams.input_dim)])
 
         self.p_keep_input = tf.placeholder("float")
@@ -144,7 +144,8 @@ def compile_params(train_embeddings, train_normalized_brain_scans, train_size):
     hps_dict = {}
     for key, val in FLAGS.__flags.items():  # for each flag
         if key in hparam_list:  # if it's in the list
-            hps_dict[key] = val  # add it to the dict
+            print(val.value)
+            hps_dict[key] = val.value  # add it to the dict
     hps = namedtuple("HParams", hps_dict.keys())(**hps_dict)
     return hps
 
