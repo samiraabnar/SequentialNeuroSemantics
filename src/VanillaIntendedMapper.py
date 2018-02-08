@@ -30,7 +30,7 @@ class VanillaIntendedMapper(object):
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
         """
 
-        h = tf.relu(tf.matmul(input, self.w_h) + self.b_h)
+        h = tf.nn.relu(tf.matmul(input, self.w_h) + self.b_h)
 
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
