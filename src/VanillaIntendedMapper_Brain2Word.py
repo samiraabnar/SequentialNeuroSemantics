@@ -39,7 +39,7 @@ class VanillaIntendedMapper(object):
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
 
         
-        return tf.tanh(tf.matmul(h, self.w_o) + self.b_o), h
+        return tf.matmul(h, self.w_o) + self.b_o, h
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
