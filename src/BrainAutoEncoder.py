@@ -115,6 +115,7 @@ tf.app.flags.DEFINE_integer('training_size', 20, 'training_size')
 tf.app.flags.DEFINE_string('model','autoencoder', 'autoencoder')
 
 
+FLAGS = tf.app.flags.FLAGS
 
 def prepare(FLAGS):
     tf.logging.set_verbosity(tf.logging.INFO)  # choose what level of logging you want
