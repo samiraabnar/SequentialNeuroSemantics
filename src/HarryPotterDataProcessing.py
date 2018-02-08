@@ -214,7 +214,7 @@ def prepare_linear(block_ids,embeddings_file,steps):
                 while len(all_embeddings) < 4:
                     all_embeddings.append(np.zeros(all_embeddings[-1].shape))
                 #print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
-                word_embeddings.append(np.mean(all_embeddings,axis=0))
+                word_embeddings.append(np.concatenate(all_embeddings,axis=0))
                 words.append('_'.join(scan_obj.all_words))
 
     

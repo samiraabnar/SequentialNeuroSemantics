@@ -70,7 +70,7 @@ class LinearMapper(object):
         self.hidden_dists = tf.losses.mean_pairwise_squared_error(labels=self.h,predictions=self.h)
         self.descrimination_loss = 0.001 * tf.reduce_mean(tf.abs(self.hidden_dists - self.pred_dists))
 
-        all_vars = [self.w_h, self.w_o]
+        all_vars = [self.w_h, self.w_o, self.step_weights]
         
         self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
         #tf.summary.scalar("sigmoid_loss", self.cost)
