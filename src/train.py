@@ -11,16 +11,16 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
     current_best = 0
     for i in range(model.hparams.number_of_epochs):
 
-        XY = list(zip(train_x, train_y))
-        np.random.shuffle(XY)
-        train_x, train_y = zip(*XY)
+        indexes = np.arange(train_y.shape[0])
+        np.random.shuffle(indexes)
         print(i)
         start_index = 0;
         end_index = start_index + model.hparams.batch_size
-        while end_index < len(train_x):
+        print("input_size",len(indexes))
+        while end_index < len(indexes):
             summary, _, mse = sess.run([model.summ_op,model.train_op, model.mean_squared_loss],
-                                    feed_dict={model.input_states_batch: train_x[start_index:end_index],
-                                               model.output_states_batch: train_y[start_index:end_index], model.batch_size: len(train_x[start_index:end_index]),
+                                    feed_dict={model.input_states_batch: train_x[:,indexes[start_index:end_index]],
+                                               model.output_states_batch: train_y[indexes[start_index:end_index]], model.batch_size: len(indexes[start_index:end_index]),
                                                model.p_keep_input: .6, model.p_keep_hidden: 0.9})
             print("mse %f" % mse)
             start_index = end_index

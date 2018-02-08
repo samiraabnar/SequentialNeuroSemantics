@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 
-class VanillaIntendedMapper(object):
+class LinearMapper(object):
     def __init__(self, hparams):
         self.hparams = hparams
 
@@ -18,43 +18,34 @@ class VanillaIntendedMapper(object):
         # extra hidden layer + dropout
         input = tf.nn.dropout(input, p_keep_input)
 
-        # input_attention = tf.nn.relu(tf.matmul(input, self.w_I) + self.b_I)
-        # attended_input = tf.multiply(input_attention, input)
-        # tf.summary.image("attended_input",attended_input)
-        # tf.summary.image("w_h",self.w_h)
-
-        """input = tf.layers.batch_normalization(input,
-        axis=1,
-        center=True,
-        scale=False,
-        training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
-        """
-
         h = tf.matmul(input, self.w_h) + self.b_h
-
         h = tf.nn.dropout(h, p_keep_hidden)
-        #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
-
-        #h2 = tf.nn.dropout(h2, p_keep_hidden)
 
         return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
 
     def build_mapping_model(self):
-        self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
+        self.input_states_batch = tf.placeholder("float", [self.hparams.linear_steps,None,self.hparams.input_dim])
+        #for i in np.arange(self.hparams.linear_steps):
+        #    self.input_states_batch_steps[i] = tf.placeholder("float", [None,self.hparams.input_dim])
         self.output_states_batch = tf.placeholder("float", [None, self.hparams.output_dim])
         self.p_keep_input = tf.placeholder("float")
         self.p_keep_hidden = tf.placeholder("float")
         self.batch_size = tf.placeholder("int32")
 
-        with tf.variable_scope("hidden_layers"):
-            self.w_I = self.init_weights(name="w_I",shape=[self.hparams.input_dim, self.hparams.input_dim])
-            self.b_I = self.init_weights(name="b_I",shape=[self.hparams.input_dim],bias=True)
+        with tf.variable_scope("step_weights"):
+            self.step_weights = tf.get_variable(name="w_step",shape=(self.hparams.linear_steps), initializer=tf.ones_initializer())
 
+
+        #self.input_states_batch_steps = tf.unstack(self.input_states_batch_steps)
+        weighted_input_states_batch = [w_step * input_step for input_step, w_step in  zip(tf.unstack(self.input_states_batch),tf.unstack(self.step_weights))]
+        self.input_states_batch_combined = tf.reduce_mean(weighted_input_states_batch,axis=0)
+        #self.input_states_batch = tf.reduce_mean([ self.input_states_batch_steps[i] * step_weights[i] for i in np.arange(self.hparams.linear_steps)],axis=0)
+        tf.logging.info('input shape')
+        tf.logging.info(self.input_states_batch.shape)
+        with tf.variable_scope("hidden_layers"):
             self.w_h = self.init_weights(name="w_h",shape=[self.hparams.input_dim, self.hparams.hidden_dim])
             self.b_h = self.init_weights(name="b_h",shape=[self.hparams.hidden_dim],bias=True)
 
-            self.variable_summaries(self.w_I, "w_I")
-            self.variable_summaries(self.b_I, "b_I")
             self.variable_summaries(self.w_h, "w_h")
             self.variable_summaries(self.b_h, "b_h")
 
@@ -65,7 +56,7 @@ class VanillaIntendedMapper(object):
             self.variable_summaries(self.w_o, "w_o")
             self.variable_summaries(self.b_o, "b_o")
 
-        self.predicted_output, self.h = self.model(self.input_states_batch, self.p_keep_input, self.p_keep_hidden)
+        self.predicted_output, self.h = self.model(self.input_states_batch_combined, self.p_keep_input, self.p_keep_hidden)
         #self.predicted_output = tf.nn.l2_normalize(self.predicted_output, dim=1)
         self.mean_error, self.sd_error = tf.nn.moments(tf.subtract(self.predicted_output, self.output_states_batch), axes=[1,0])
 

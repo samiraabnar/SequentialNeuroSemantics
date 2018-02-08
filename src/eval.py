@@ -22,8 +22,12 @@ def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS):
 
 def qualitative_eval(model, sess, test_x, test_y, train_step,test_words,FLAGS,mode="test"):
 	test_size = 100
+	if len(test_x.shape) == 2:
+		test = test_x[:test_size]
+	elif len(test_x.shape) == 3:
+		test = test_x[:,:test_size]
 	predicted_output = sess.run([model.predicted_output],
-                                feed_dict={model.input_states_batch: test_x[:test_size], model.batch_size: test_size,
+                                feed_dict={model.input_states_batch: test, model.batch_size: test_size,
                                            model.p_keep_input: 1.0, model.p_keep_hidden: 1.0}
                                 )
 	print(predicted_output[0].shape)
@@ -42,13 +46,12 @@ def compare_brain_vectors(model, sess, test_x, test_y, train_step,test_words,FLA
 
 
 def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS):
-	test_size = len(test_x)
-	predicted_output, mse , sd_error, mean_error = sess.run([ model.predicted_output, model.mean_squared_loss, model.sd_error,model.mean_error],feed_dict={model.input_states_batch: test_x[:test_size], model.output_states_batch: test_y[:test_size], model.batch_size: test_size, model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
+	predicted_output, mse , sd_error, mean_error = sess.run([ model.predicted_output, model.mean_squared_loss, model.sd_error,model.mean_error],feed_dict={model.input_states_batch: test_x, model.output_states_batch: test_y, model.batch_size: len(test_x), model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
 	#print("check_dist",check_dist)
-	e_dists = cdist(predicted_output, test_y[:test_size], 'euclidean')
+	e_dists = cdist(predicted_output, test_y, 'euclidean')
 
 
-	dists = cdist(predicted_output, test_y[:test_size], 'cosine')
+	dists = cdist(predicted_output, test_y, 'cosine')
 	nn_index = np.argmin(dists,axis=1)
 	#print(nn_index)
 	#print("truth:",np.argmax(np.eye(len(nn_index)),axis=1))
@@ -61,7 +64,7 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 
 	b_acc = []
 	e_b_acc = []
-	for i,j in itertools.combinations(np.arange(test_size), 2):
+	for i,j in itertools.combinations(np.arange(len(test_y)), 2):
 		right_match = dists[i,i] + dists[j,j]
 		wrong_match = dists[i,j] + dists[j,i]
 		b_acc.append(right_match < wrong_match)
