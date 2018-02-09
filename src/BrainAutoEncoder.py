@@ -5,7 +5,7 @@ import os
 from train_autoencoder import train
 from HarryPotterDataProcessing import *
 from collections import namedtuple
-
+from eval import *
 
 
 class BrainAutoEncoder(object):
@@ -100,7 +100,7 @@ tf.app.flags.DEFINE_string('exp_name', 'simple_drop_connect', 'Name for experime
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
-                                               'train/test/save_vectors')
+                                               'train/eval/test/save_vectors')
 tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
 
 # ==========Hyper Params=========
@@ -178,7 +178,10 @@ def main(unused_argv):
 
         # Get a TensorFlow session managed by the supervisor.
         with sv.managed_session() as sess:
-            train(mapper, sess, sv, train_normalized_brain_scans,train_normalized_brain_scans,train_words, train_words,FLAGS=FLAGS,best_saver=best_saver,best_dir=best_dir)
+            if FLAGS.mode == "train":
+                train(mapper, sess, sv, train_normalized_brain_scans,train_normalized_brain_scans,train_words, train_words,FLAGS=FLAGS,best_saver=best_saver,best_dir=best_dir)
+            elif FLAGS.mode == "eval":
+                quantitative_eval(mapper, sess, train_normalized_brain_scans, train_normalized_brain_scans, 0,train_words,FLAGS)
 
 
 

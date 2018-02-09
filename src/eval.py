@@ -17,6 +17,20 @@ def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS):
 	np.save(FLAGS.log_root+"words",test_words)
 
 
+def extract_plotting_output(model,sess,x,y,words,output_name):
+	predicted_outputs = sess.run([model.predicted_output],
+                                feed_dict={model.input_states_batch: x, model.batch_size: len(words),
+                                           model.p_keep_input: 1.0, model.p_keep_hidden: 1.0}
+                                )
+	e_dists = cdist(predicted_output, y, 'euclidean')
+	c_dists = cdist(predicted_output, y, 'cosine')
+
+	with open(output_name,'w') as fout:
+		for i in np.arange(x_len):
+			line_str = words[i] +" "+str(c_dist[i][i])+" "+str(e_dist[i][i])
+			fout.write(line_str)
+
+
 
 
 
