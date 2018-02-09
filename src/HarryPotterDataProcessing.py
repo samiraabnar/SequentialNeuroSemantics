@@ -303,7 +303,7 @@ def read_and_prepare_data_word_based(block_ids,word_embedding_dic_file="../data/
 
 
 
-def read_and_prepare_data_word_based_concat(block_ids,word_embedding_dic_file="../data/word_embedding_dic.npy"):
+def read_and_prepare_data_word_based_concat(block_ids,word_embedding_dic_file="../data/word_embedding_dic.npy",avg=False):
     scan_objects = np.load("../data/subject_1_scan_objects.npy")
     word_embeddings = np.load(word_embedding_dic_file)
     # print(len(scan_objects.item().get(1)))
@@ -330,7 +330,10 @@ def read_and_prepare_data_word_based_concat(block_ids,word_embedding_dic_file=".
                 while( len(all_word_embeddings) < 4):
                     all_word_embeddings.append(np.zeros(all_word_embeddings[-1].shape))
 
-                embeddings.append(np.concatenate(all_word_embeddings,axis=0))
+                if avg == True:
+                    embeddings.append(np.mean(all_word_embeddings,axis=0))
+                else:
+                    embeddings.append(np.concatenate(all_word_embeddings,axis=0))
 
 
     brain_scans = np.asarray(brain_scans)
@@ -445,6 +448,18 @@ def load_data(FLAGS):
         test_embeddings, test_normalized_brain_scans, test_words, \
          train_embeddings, train_normalized_brain_scans, train_size, train_words = \
              prepare_trainings_for_x_word_embeddings("../data/glove_word_embedding_dic.npy",FLAGS)
+    elif FLAGS.model == "char_word_avg":
+        test_embeddings, test_normalized_brain_scans, test_words, \
+        train_embeddings, train_normalized_brain_scans, train_size, train_words = \
+            prepare_trainings_for_x_word_embeddings("../data/word_embedding_dic.npy",FLAGS, avg=True)
+    elif FLAGS.model == "word_avg":
+        test_embeddings, test_normalized_brain_scans, test_words, \
+         train_embeddings, train_normalized_brain_scans, train_size, train_words = \
+             prepare_trainings_for_x_word_embeddings("../data/harry_softmax_embeddings.npy",FLAGS, avg=True)
+    elif FLAGS.model == "glove_avg":
+        test_embeddings, test_normalized_brain_scans, test_words, \
+         train_embeddings, train_normalized_brain_scans, train_size, train_words = \
+             prepare_trainings_for_x_word_embeddings("../data/glove_word_embedding_dic.npy",FLAGS, avg=True)
     elif FLAGS.model == "contextual_01":
         print("contextual_01")
         train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_concat_concat([1, 2, 3])
@@ -529,9 +544,9 @@ def load_data(FLAGS):
 
 
 
-def prepare_trainings_for_x_word_embeddings(filename,FLAGS):
+def prepare_trainings_for_x_word_embeddings(filename,FLAGS,avg=False):
     if int(FLAGS.ith) == -1:
-        word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4],filename)
+        word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4],filename,avg)
     else:
         word_embeddings, normalized_brain_scans, words = read_and_prepare_data_ith_word_based(int(FLAGS.ith),[1, 2, 3, 4],filename)
      
