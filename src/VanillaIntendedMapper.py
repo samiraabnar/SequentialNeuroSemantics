@@ -6,11 +6,12 @@ class VanillaIntendedMapper(object):
         self.hparams = hparams
 
     def init_weights(self, shape, name,bias=False):
-        if bias == True:
-            return tf.get_variable(name=name, shape=shape, initializer=tf.zeros_initializer())
+        """if bias == True:
+            return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
         else:
             return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
-
+        """
+        return tf.Variable(tf.truncated_normal(shape, stddev=0.01))
 
     def model(self, input, p_keep_input,
               p_keep_hidden):
@@ -78,7 +79,7 @@ class VanillaIntendedMapper(object):
 
         all_vars = [self.w_h, self.w_o]
         
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.001
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 

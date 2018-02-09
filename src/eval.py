@@ -60,8 +60,9 @@ def compare_brain_vectors(model, sess, test_x, test_y, train_step,test_words,FLA
 
 
 def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS):
-	predicted_output, mse , sd_error, mean_error = sess.run([ model.predicted_output, model.mean_squared_loss, model.sd_error,model.mean_error],feed_dict={model.input_states_batch: test_x, model.output_states_batch: test_y, model.batch_size: len(test_x), model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
-	#print("check_dist",check_dist)
+	predicted_output, mse , sd_error, mean_error = sess.run([ model.predicted_output, model.mean_squared_loss, model.sd_error,model.mean_error],feed_dict={model.input_states_batch: test_x, model.output_states_batch: test_y, model.batch_size: len(test_words), model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
+	print("predicted output shape:",predicted_output.shape)
+
 	e_dists = cdist(predicted_output, test_y, 'euclidean')
 
 

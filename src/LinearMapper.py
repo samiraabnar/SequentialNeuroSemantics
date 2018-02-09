@@ -16,10 +16,10 @@ class LinearMapper(object):
               p_keep_hidden):
         # this network is the same as the previous one except with an
         # extra hidden layer + dropout
-        input = tf.nn.dropout(input, p_keep_input)
+        #input = tf.nn.dropout(input, p_keep_input)
 
         h = tf.matmul(input, self.w_h) + self.b_h
-        h = tf.nn.dropout(h, p_keep_hidden)
+        #h = tf.nn.dropout(h, p_keep_hidden)
 
         return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
 
@@ -33,15 +33,15 @@ class LinearMapper(object):
         self.batch_size = tf.placeholder("int32")
 
         with tf.variable_scope("step_weights"):
-            self.step_weights = tf.get_variable(name="w_step",shape=(self.hparams.linear_steps), initializer=tf.ones_initializer())
+            self.step_weights = tf.get_variable(name="w_step",shape=(self.hparams.linear_steps), initializer=tf.truncated_normal_initializer(0.01))
 
         #self.step_weights = tf.nn.softmax(self.step_weights)
         #self.input_states_batch_steps = tf.unstack(self.input_states_batch_steps)
-        weighted_input_states_batch = [w_step * input_step for input_step, w_step in  zip(tf.unstack(self.input_states_batch),tf.unstack(self.step_weights))]
+        weighted_input_states_batch = [input_step for input_step, w_step in  zip(tf.unstack(self.input_states_batch),tf.unstack(self.step_weights))]
         self.input_states_batch_combined = tf.reduce_mean(weighted_input_states_batch,axis=0)
         #self.input_states_batch = tf.reduce_mean([ self.input_states_batch_steps[i] * step_weights[i] for i in np.arange(self.hparams.linear_steps)],axis=0)
         tf.logging.info('input shape')
-        tf.logging.info(self.input_states_batch.shape)
+        tf.logging.info(self.input_states_batch_combined.shape)
         with tf.variable_scope("hidden_layers"):
             self.w_h = self.init_weights(name="w_h",shape=[self.hparams.input_dim, self.hparams.hidden_dim])
             self.b_h = self.init_weights(name="b_h",shape=[self.hparams.hidden_dim],bias=True)
@@ -62,15 +62,15 @@ class LinearMapper(object):
 
         tf.summary.histogram("predicted_outputs", self.predicted_output)
 
-        #self.cost = tf.reduce_mean(tf.losses.cosine_distance(predictions=self.predicted_output, labels=self.output_states_batch,dim=1)) 
         self.mean_squared_loss = tf.reduce_mean(tf.losses.mean_squared_error(labels=self.output_states_batch, predictions=self.predicted_output))
+        
         self.pred_dists = tf.losses.mean_pairwise_squared_error(labels=self.predicted_output,predictions=self.predicted_output)
         self.target_dists = tf.losses.mean_pairwise_squared_error(labels=self.output_states_batch,predictions=self.output_states_batch)
         self.corelation_loss = 0.0001 * tf.reduce_mean(tf.abs(self.pred_dists - self.target_dists))
         self.hidden_dists = tf.losses.mean_pairwise_squared_error(labels=self.h,predictions=self.h)
         self.descrimination_loss = 0.001 * tf.reduce_mean(tf.abs(self.hidden_dists - self.pred_dists))
 
-        all_vars = [self.w_h, self.w_o, self.step_weights]
+        all_vars = [self.w_h, self.w_o]
         
         self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
         #tf.summary.scalar("sigmoid_loss", self.cost)
