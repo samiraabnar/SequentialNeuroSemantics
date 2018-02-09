@@ -186,7 +186,7 @@ def read_and_prepare_data_block_based_avg_concat(block_ids):
     return lstm_embeddings, brain_scans, words
 
 
-def prepare_linear(block_ids,embeddings_file,steps):
+def prepare_linear(block_ids,embeddings_file,steps, avg=False):
     scan_objects = np.load("../data/subject_1_scan_objects.npy")
     embeddings = np.load(embeddings_file)
     # print(len(scan_objects.item().get(1)))
@@ -214,7 +214,10 @@ def prepare_linear(block_ids,embeddings_file,steps):
                 while len(all_embeddings) < 4:
                     all_embeddings.append(np.zeros(all_embeddings[-1].shape))
                 #print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
-                word_embeddings.append(np.concatenate(all_embeddings,axis=0))
+                if avg == True:
+                    word_embeddings.append(np.mean(all_embeddings,axis=0))
+                else:
+                    word_embeddings.append(np.concatenate(all_embeddings,axis=0))
                 words.append('_'.join(scan_obj.all_words))
 
     
@@ -472,6 +475,21 @@ def load_data(FLAGS):
     elif FLAGS.model == "word_linear":
         train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],"../data/harry_softmax_embeddings.npy",FLAGS.linear_steps)
         test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],"../data/harry_softmax_embeddings.npy",FLAGS.linear_steps)
+        train_size = len(train_embeddings)
+        print("train size: ",train_size)
+    elif FLAGS.model == "glove_linear_avg":
+        train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],"../data/glove_word_embedding_dic.npy",FLAGS.linear_steps,avg=True)
+        test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],"../data/glove_word_embedding_dic.npy",FLAGS.linear_steps,avg=True)
+        train_size = len(train_embeddings)
+        print("train size: ",train_size)
+    elif FLAGS.model == "char_word_linear_avg":
+        train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],"../data/word_embedding_dic.npy",FLAGS.linear_steps,avg=True)
+        test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],"../data/word_embedding_dic.npy",FLAGS.linear_steps,avg=True)
+        train_size = len(train_embeddings)
+        print("train size: ",train_size)
+    elif FLAGS.model == "word_linear_avg":
+        train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],"../data/harry_softmax_embeddings.npy",FLAGS.linear_steps,avg=True)
+        test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],"../data/harry_softmax_embeddings.npy",FLAGS.linear_steps,avg=True)
         train_size = len(train_embeddings)
         print("train size: ",train_size)
 

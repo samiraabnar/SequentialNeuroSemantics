@@ -28,8 +28,8 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
         print("epoch:",i)
         print(test_x.shape)
         print(test_y.shape)
-        qualitative_eval(model, sess, test_x, test_y, training_step,test_words,FLAGS)
-        qualitative_eval(model, sess, train_x, train_y, training_step,train_words,FLAGS,"train")
+        #qualitative_eval(model, sess, test_x, test_y, training_step,test_words,FLAGS)
+        #qualitative_eval(model, sess, train_x, train_y, training_step,train_words,FLAGS,"train")
 
         test_accuracy = quantitative_eval(model, sess, test_x, test_y, training_step,test_words,FLAGS)
 
