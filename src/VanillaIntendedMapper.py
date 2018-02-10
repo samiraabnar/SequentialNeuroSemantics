@@ -79,7 +79,7 @@ class VanillaIntendedMapper(object):
 
         all_vars = [self.w_h, self.w_o]
         
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * self.hparams.l2_factor
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
