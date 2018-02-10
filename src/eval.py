@@ -6,15 +6,20 @@ import numpy as np
 from sklearn.preprocessing import *
 
 
+def save_pred_and_target_brain_vectors(model, sess,train_x, train_y,
+               		  test_x, test_y,
+                      test_words,train_words,FLAGS):
+	save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS,"test")
+	save_pred_and_target_labesl(model, sess, train_x, train_y,train_words,FLAGS,"train")
 
-def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS):
-	test_size = len(test_x)
+
+def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS,label):
 	predicted_output = sess.run([model.predicted_output],
-                                feed_dict={model.input_states_batch: test_x[:test_size], model.batch_size: test_size,
+                                feed_dict={model.input_states_batch: test_x, model.batch_size: len(test_x),
                                            model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
-	np.save(FLAGS.log_root+"predicted_output",predicted_output)
-	np.save(FLAGS.log_root+"target_output",test_y)
-	np.save(FLAGS.log_root+"words",test_words)
+	np.save(FLAGS.log_root+"/predicted_output_"+label,predicted_output)
+	np.save(FLAGS.log_root+"/target_output_"+label,test_y)
+	np.save(FLAGS.log_root+"/words_"+label,test_words)
 
 
 def extract_plotting_output(model,sess,x,y,words,output_name):

@@ -91,7 +91,7 @@ class VanillaIntendedMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
