@@ -64,9 +64,8 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 	print("predicted output shape:",predicted_output.shape)
 
 	e_dists = cdist(predicted_output, test_y, 'euclidean')
-
-
 	dists = cdist(predicted_output, test_y, 'cosine')
+	
 	nn_index = np.argmin(dists,axis=1)
 	#print(nn_index)
 	#print("truth:",np.argmax(np.eye(len(nn_index)),axis=1))
