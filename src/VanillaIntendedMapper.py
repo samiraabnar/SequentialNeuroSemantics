@@ -6,12 +6,12 @@ class VanillaIntendedMapper(object):
         self.hparams = hparams
 
     def init_weights(self, shape, name,bias=False):
-        """if bias == True:
+        if bias == True:
             return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
         else:
             return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
-        """
-        return tf.Variable(tf.truncated_normal(shape, stddev=0.01))
+        
+        #return tf.Variable(tf.truncated_normal(shape, stddev=0.01))
 
     def model(self, input, p_keep_input,
               p_keep_hidden):
