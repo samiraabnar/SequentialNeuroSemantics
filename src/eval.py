@@ -6,11 +6,22 @@ import numpy as np
 from sklearn.preprocessing import *
 
 
-def save_pred_and_target_brain_vectors(model, sess,train_x, train_y,
-               		  test_x, test_y,
-                      test_words,train_words,FLAGS):
-	save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS,"test")
-	save_pred_and_target_labesl(model, sess, train_x, train_y,train_words,FLAGS,"train")
+def save_pred_and_target_brain_vectors(model, sess,train_x, train_y,test_x, test_y,test_words,train_words,FLAGS):
+	w_in = sess.run(graph.get_tensor_by_name("hidden_layers/w_h:0"))
+	w_out = sess.run(graph.get_tensor_by_name("output_layaer/w_o:0"))
+	b_in = sess.run(graph.get_tensor_by_name("hidden_layers/b_h:0"))
+	b_out = sess.run(graph.get_tensor_by_name("output_layaer/b_o:0"))
+
+	train_normalized_brain_scans = sigmoid(np.matmul(np.matmul(train_x,w_in) + b_in,w_out) + b_out)
+	test_normalized_brain_scans = sigmoid(np.matmul(np.matmul(test_x,w_in) + b_in,w_out) + b_out)
+
+	np.save(FLAGS.log_root+"/predicted_output_"+label,test_predicted_brain_vector)
+	np.save(FLAGS.log_root+"/target_output_"+label,test_y)
+	np.save(FLAGS.log_root+"/words_"+label,test_words)
+
+	np.save(FLAGS.log_root+"/predicted_output_"+label,predicted_output)
+	np.save(FLAGS.log_root+"/target_output_"+label,test_y)
+	np.save(FLAGS.log_root+"/words_"+label,test_words)
 
 
 def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS,label):
