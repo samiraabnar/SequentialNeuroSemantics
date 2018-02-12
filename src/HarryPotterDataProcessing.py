@@ -222,12 +222,7 @@ def prepare_linear(block_ids,embeddings_file,steps, avg=False):
                 words.append('_'.join(scan_obj.all_words))
 
     
-    all_brain_scans = np.asarray(all_brain_scans)
-    brain_scans = np.asarray(brain_scans)
-    brain_scan_steps = np.asarray(brain_scan_steps)
-    current_word = np.asarray(current_word)
-    word_embeddings = np.asarray(word_embeddings)
-    words = np.asarray(words)
+    
 
     for i in np.arange(steps - 1):
         word_embeddings.insert(0,np.zeros_like(word_embeddings[0]))
@@ -237,6 +232,12 @@ def prepare_linear(block_ids,embeddings_file,steps, avg=False):
         combined_word_embeddings.append(word_embeddings[i:len(word_embeddings)-(steps -i) + 1] )
 
 
+    all_brain_scans = np.asarray(all_brain_scans)
+    brain_scans = np.asarray(brain_scans)
+    brain_scan_steps = np.asarray(brain_scan_steps)
+    current_word = np.asarray(current_word)
+    word_embeddings = np.asarray(word_embeddings)
+    words = np.asarray(words)
     combined_word_embeddings = np.asarray(combined_word_embeddings)
 
     print(combined_word_embeddings.shape,brain_scans.shape)
