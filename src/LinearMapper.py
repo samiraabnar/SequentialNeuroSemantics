@@ -16,10 +16,10 @@ class LinearMapper(object):
               p_keep_hidden):
         # this network is the same as the previous one except with an
         # extra hidden layer + dropout
-        #input = tf.nn.dropout(input, p_keep_input)
+        input = tf.nn.dropout(input, p_keep_input)
 
         h = tf.matmul(input, self.w_h) + self.b_h
-        #h = tf.nn.dropout(h, p_keep_hidden)
+        h = tf.nn.dropout(h, p_keep_hidden)
 
         return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
 
@@ -72,7 +72,7 @@ class LinearMapper(object):
 
         all_vars = [self.w_h, self.w_o]
         
-        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * 0.0001
+        self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in all_vars ]) * self.hparams.l2_factor
         #tf.summary.scalar("sigmoid_loss", self.cost)
         tf.summary.scalar("mse", self.mean_squared_loss)
 
@@ -84,7 +84,7 @@ class LinearMapper(object):
             decay_rate=0.95,
             staircase=True)
         tf.summary.scalar("learning_rate", self.learning_rate)
-        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss, global_step=self.global_step)
+        self.train_op = tf.train.AdamOptimizer(self.learning_rate).minimize( self.mean_squared_loss + self.l2_loss, global_step=self.global_step)
 
         self.summ_op = tf.summary.merge_all()
 
