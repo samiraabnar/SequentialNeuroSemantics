@@ -37,7 +37,7 @@ class LinearMapper(object):
 
         #self.step_weights = tf.nn.softmax(self.step_weights)
         #self.input_states_batch_steps = tf.unstack(self.input_states_batch_steps)
-        weighted_input_states_batch = [w_step * input_step for input_step, w_step in  zip(tf.unstack(self.input_states_batch),tf.unstack(self.step_weights))]
+        weighted_input_states_batch = [input_step for input_step, w_step in  zip(tf.unstack(self.input_states_batch),tf.unstack(self.step_weights))]
         self.input_states_batch_combined = tf.reduce_mean(weighted_input_states_batch,axis=0)
         #self.input_states_batch = tf.reduce_mean([ self.input_states_batch_steps[i] * step_weights[i] for i in np.arange(self.hparams.linear_steps)],axis=0)
         tf.logging.info('input shape')

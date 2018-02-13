@@ -248,6 +248,8 @@ def prepare_linear(block_ids,embeddings_file,steps, avg=False):
 def read_and_prepare_data_word_based(block_ids,word_embedding_dic_file="../data/word_embedding_dic.npy"):
     scan_objects = np.load("../data/subject_1_scan_objects.npy")
     word_embeddings = np.load(word_embedding_dic_file)
+    word_embeddings.item()[""] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
+    word_embeddings.item()["+"] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
     brain_scans = []
     brain_scan_steps = []
     scan_words = []
@@ -308,6 +310,9 @@ def read_and_prepare_data_word_based(block_ids,word_embedding_dic_file="../data/
 def read_and_prepare_data_word_based_concat(block_ids,word_embedding_dic_file="../data/word_embedding_dic.npy",avg=False):
     scan_objects = np.load("../data/subject_1_scan_objects.npy")
     word_embeddings = np.load(word_embedding_dic_file)
+    word_embeddings.item()[""] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
+    word_embeddings.item()["+"] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
+
     # print(len(scan_objects.item().get(1)))
     # print(embeddings.item().get(1))
     brain_scans = []
@@ -374,6 +379,9 @@ def read_and_prepare_data_word_based_concat(block_ids,word_embedding_dic_file=".
 def read_and_prepare_data_ith_word_based(i, block_ids,word_embedding_dic_file="../data/word_embedding_dic.npy"):
     scan_objects = np.load("../data/subject_1_scan_objects.npy")
     word_embeddings = np.load(word_embedding_dic_file)
+    word_embeddings.item()[""] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
+    word_embeddings.item()["+"] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
+
     # print(len(scan_objects.item().get(1)))
     # print(embeddings.item().get(1))
     brain_scans = []
