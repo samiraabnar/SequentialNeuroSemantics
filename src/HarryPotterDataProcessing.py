@@ -187,8 +187,11 @@ def read_and_prepare_data_block_based_avg_concat(block_ids):
 
 
 def prepare_linear(block_ids,embeddings_file,steps, avg=False):
+    print("##### prepare linear #####")
     scan_objects = np.load("../data/subject_1_scan_objects.npy")
     embeddings = np.load(embeddings_file)
+    embeddings.item()[""] = np.zeros_like(embeddings.item()[list(embeddings.item().keys())[0]])
+    embeddings.item()["+"] = np.zeros_like(embeddings.item()[list(embeddings.item().keys())[0]])
     # print(len(scan_objects.item().get(1)))
     # print(embeddings.item().get(1))
     all_brain_scans = []
@@ -220,9 +223,7 @@ def prepare_linear(block_ids,embeddings_file,steps, avg=False):
                 else:
                     word_embeddings.append(np.concatenate(all_embeddings,axis=0))
                 words.append('_'.join(scan_obj.all_words))
-
-    
-    
+   
 
     for i in np.arange(steps - 1):
         word_embeddings.insert(0,np.zeros_like(word_embeddings[0]))
@@ -240,7 +241,7 @@ def prepare_linear(block_ids,embeddings_file,steps, avg=False):
     words = np.asarray(words)
     combined_word_embeddings = np.asarray(combined_word_embeddings)
 
-    print(combined_word_embeddings.shape,brain_scans.shape)
+    print("combined shape:",combined_word_embeddings.shape,all_brain_scans.shape)
     return combined_word_embeddings, brain_scans, words
 
 #words, word embeddings, associated brain scans
