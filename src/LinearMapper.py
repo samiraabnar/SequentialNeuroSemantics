@@ -7,7 +7,7 @@ class LinearMapper(object):
 
     def init_weights(self, shape, name,bias=False):
         if bias == True:
-            return tf.get_variable(name=name, shape=shape, initializer=tf.zeros_initializer())
+            return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer())
         else:
             return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
 
