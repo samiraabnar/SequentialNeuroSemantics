@@ -42,9 +42,13 @@ def save_pred_and_target_brain_vectors(sess,train_x, train_y,test_x, test_y,test
 
 
 def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS,label):
+	print("x shape:",test_x.shape)
+	print("y shape:", test_y.shape)
 	predicted_output = sess.run([model.predicted_output],
-                                feed_dict={model.input_states_batch: test_x, model.batch_size: len(test_x),
+                                feed_dict={model.input_states_batch: test_x, model.batch_size: len(test_words),
                                            model.p_keep_input: 1.0, model.p_keep_hidden: 1.0})
+	
+	print("pred shape:",predicted_output[0].shape)
 	np.save(FLAGS.log_root+"/predicted_output_"+label,predicted_output)
 	np.save(FLAGS.log_root+"/target_output_"+label,test_y)
 	np.save(FLAGS.log_root+"/words_"+label,test_words)
