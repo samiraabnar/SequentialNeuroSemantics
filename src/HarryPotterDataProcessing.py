@@ -163,6 +163,7 @@ def read_and_prepare_data_block_based_avg_concat(block_ids,scan_objects,FLAGS):
                 brain_scans.append(scan_obj.activations[0])
                 brain_scan_steps.append(scan_obj.step)
                 all_embeddings = []
+                print("step: ",scan_obj.step)
                 for state0,state1 in zip(embeddings_0.item().get(block_id)[scan_obj.step],embeddings_1.item().get(block_id)[scan_obj.step]):
                     state = np.concatenate([state0,state1],axis=0)
                     all_embeddings.append(state)
