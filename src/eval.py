@@ -53,6 +53,7 @@ def save_pred_and_target_labesl(model, sess, test_x, test_y,test_words,FLAGS,lab
 	np.save(FLAGS.log_root+"/target_output_"+label,test_y)
 	np.save(FLAGS.log_root+"/words_"+label,test_words)
 
+	quantitative_eval(model, sess, test_x, test_y, 0, test_words, FLAGS)
 
 def extract_plotting_output(model,sess,x,y,words,output_name):
 	predicted_outputs = sess.run([model.predicted_output],
