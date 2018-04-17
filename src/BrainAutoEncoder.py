@@ -96,7 +96,7 @@ FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string('log_root', '../log_root/', 'Root directory for all logging.')
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
-tf.app.flags.DEFINE_string('exp_name', 'simple_drop_connect', 'Name for experiment. Logs will '
+tf.app.flags.DEFINE_string('exp_name', 'detrended', 'Name for experiment. Logs will '
                                                           'be saved in a directory with this'
                                                           ' name, under log_root.')
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '

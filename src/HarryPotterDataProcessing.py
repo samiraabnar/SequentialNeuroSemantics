@@ -8,6 +8,7 @@ from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import f_regression
 from sklearn.preprocessing import *
 
+import nilearn.signal
 
 class Scan(object):
   def __init__(self, activations, timestamp, step, prev_words=None, next_words=None, all_words=None):
@@ -571,9 +572,17 @@ def load_data(FLAGS):
   print("len of train:", len(train_normalized_brain_scans))
   print("len of test:", len(test_normalized_brain_scans))
 
-  train_normalized_brain_scans = (train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
+  train_normalized_brain_scans = nilearn.signal.clean(train_normalized_brain_scans, sessions=None,
+                     detrend=True, standardize=True,
+                     confounds=None, low_pass=None,
+                     high_pass=0.005, t_r=2.0, ensure_finite=False)
+  #(train_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
   if (len(test_normalized_brain_scans) > 0):
-    test_normalized_brain_scans = (test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
+    test_normalized_brain_scans = nilearn.signal.clean(test_normalized_brain_scans, sessions=None,
+                     detrend=True, standardize=True,
+                     confounds=None, low_pass=None,
+                     high_pass=0.005, t_r=2.0, ensure_finite=False)
+      #(test_normalized_brain_scans - columns_min) / (columns_max - columns_min + 0.000001)
 
   selected_indices = select_best_features(train_normalized_brain_scans, train_words, k=int(FLAGS.select))
 
