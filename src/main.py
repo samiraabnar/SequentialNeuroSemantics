@@ -155,6 +155,7 @@ def main(unused_argv):
     with sv.managed_session() as sess:
       if FLAGS.direction == "word2brain":
         if FLAGS.mode == "train":
+          print("number of train and test examples:",len(train_normalized_brain_scans),len(test_normalized_brain_scans))
           train(mapper, sess, sv, train_embeddings, train_normalized_brain_scans,
                 test_embeddings, test_normalized_brain_scans,
                 test_words=test_words, train_words=train_words, FLAGS=FLAGS, best_saver=best_saver, best_dir=best_dir)
@@ -172,6 +173,7 @@ def main(unused_argv):
       elif FLAGS.direction == "brain2word":
         if FLAGS.mode == "train":
           print("brain2word training...")
+          print("number of train and test examples:",len(train_normalized_brain_scans),len(test_normalized_brain_scans))
           train(mapper, sess, sv, train_normalized_brain_scans, train_embeddings,
                 test_normalized_brain_scans, test_embeddings,
                 test_words=test_words, train_words=train_words, FLAGS=FLAGS, best_saver=best_saver, best_dir=best_dir)
