@@ -33,10 +33,10 @@ class BrainAutoEncoder(object):
       return tf.get_variable(name=name, shape=shape, initializer=tf.truncated_normal_initializer(stddev=0.01))
 
   def encode(self, input):
-    return tf.matmul(input, self.w_in) + self.b_in
+    return tf.matmul(input, tf.nn.dropout(self.w_in,self.p_keep_input)) + self.b_in
 
   def decode(self, hidden_state):
-    return tf.sigmoid(tf.matmul(hidden_state, self.w_out) + self.b_out)
+    return tf.matmul(hidden_state, tf.nn.dropout(self.w_out,self.p_keep_hidden)) + self.b_out
 
   def build_graph(self):
     self.input_states_batch = tf.placeholder(dtype=tf.float32, shape=[None, int(self.hparams.input_dim)])
@@ -103,8 +103,8 @@ tf.app.flags.DEFINE_integer('batch_size', 16, 'minibatch size')
 tf.app.flags.DEFINE_integer('hidden_dim', 512, 'dimension of hidden states')
 tf.app.flags.DEFINE_integer('input_dim', 784, 'size of the input')
 tf.app.flags.DEFINE_integer('output_dim', 784, 'size of the output')
-tf.app.flags.DEFINE_float('p_keep_input', 0.9, 'positive float')
-tf.app.flags.DEFINE_float('p_keep_hidden', 0.6, 'positive float')
+tf.app.flags.DEFINE_float('p_keep_input', 0.8, 'positive float')
+tf.app.flags.DEFINE_float('p_keep_hidden', 0.8, 'positive float')
 # ===== Training Setup=======
 tf.app.flags.DEFINE_string('subject_id', '1', 'subject_id')
 
