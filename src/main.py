@@ -23,6 +23,8 @@ tf.app.flags.DEFINE_string('direction', 'word2brain', 'must be one of '
                                                       'brain2word/word2brain')
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
                                             'train/test/save_vectors/eval_voxels')
+tf.app.flags.DEFINE_string('fMRI_preprocess_mode', 'detrend_filter_std', 'must be one of '
+                                            'none/detrend/detrend_filter/detrend_filter_std')
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
 tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
 tf.app.flags.DEFINE_string('features', 'selected', 'dim_reducted/selected')
@@ -58,11 +60,11 @@ def prepare(FLAGS):
 
   test_embeddings, test_normalized_brain_scans, test_words, \
   train_embeddings, train_normalized_brain_scans, train_size, train_words = load_data(FLAGS)
-
+  print("feature flag:", FLAGS.features)
   if FLAGS.features == "dim_reducted":
     with tf.Session() as sess:
       # Restore the model from last checkpoints
-      dir = os.path.join(encoder_decoder_dir, "BrainAutoEncoder/dropout/best/")
+      dir = os.path.join(encoder_decoder_dir, "BrainAutoEncoder/detrended_standardized/best/")
       saver = tf.train.import_meta_graph(dir + 'best_model_epoch19.meta')
       saver.restore(sess, tf.train.latest_checkpoint(dir))
 
@@ -76,7 +78,7 @@ def prepare(FLAGS):
       train_normalized_brain_scans = np.matmul(train_normalized_brain_scans, w_in) + b_in
       test_normalized_brain_scans = np.matmul(test_normalized_brain_scans, w_in) + b_in
 
-      print(train_normalized_brain_scans.shape)
+      print("shape after reduction:",train_normalized_brain_scans.shape)
 
   hps = compile_params(train_embeddings, train_normalized_brain_scans, train_size)
 
@@ -155,7 +157,7 @@ def main(unused_argv):
     with sv.managed_session() as sess:
       if FLAGS.direction == "word2brain":
         if FLAGS.mode == "train":
-          print("number of train and test examples:",len(train_normalized_brain_scans),len(test_normalized_brain_scans))
+          print("number of train and test examples:",train_normalized_brain_scans.shape,len(test_normalized_brain_scans))
           train(mapper, sess, sv, train_embeddings, train_normalized_brain_scans,
                 test_embeddings, test_normalized_brain_scans,
                 test_words=test_words, train_words=train_words, FLAGS=FLAGS, best_saver=best_saver, best_dir=best_dir)

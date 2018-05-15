@@ -21,7 +21,7 @@ class LinearMapper(object):
         h = tf.matmul(input, self.w_h) + self.b_h
         h = tf.nn.dropout(h, p_keep_hidden)
 
-        return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
+        return tf.matmul(h, self.w_o) + self.b_o, h
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [self.hparams.linear_steps,None,self.hparams.input_dim])

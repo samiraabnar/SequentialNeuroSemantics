@@ -47,8 +47,8 @@ def read_and_prepare_data_block_based(block_ids, layer_id, scan_objects, FLAGS):
         while len(all_embeddings) < 4:
           all_embeddings.append(np.zeros_like(all_embeddings[-1]))
         # print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
-        if FLAGS.ith >= 0:
-          lstm_embeddings.append(all_embeddings[FLAGS.ith])
+        if FLAGS.ith_word >= 0:
+          lstm_embeddings.append(all_embeddings[FLAGS.ith_word])
         else:
           lstm_embeddings.append(np.mean(all_embeddings, axis=0))
         words.append('_'.join(scan_obj.all_words))
@@ -107,6 +107,10 @@ def read_and_prepare_data_block_based_concat_concat(block_ids, scan_objects, FLA
   embeddings_1 = np.load("../embeddings/subject_" + FLAGS.subject_id + "_lstm_" + str(1) + "_emb_objects.npy")
   # print(len(scan_objects.item().get(1)))
   # print(embeddings.item().get(1))
+
+
+
+
   all_brain_scans = []
   brain_scans = []
   brain_scan_steps = []
@@ -115,29 +119,35 @@ def read_and_prepare_data_block_based_concat_concat(block_ids, scan_objects, FLA
   words = []
 
   for block_id in block_ids:
+    layer_id = 0
+    lstm_h_0 = np.load(
+      "../../lm1b/text_input_full_state/block_" + str(block_id) + "/lstm_hidden_" + str(layer_id) + ".npy").item()
+    layer_id = 1
+    lstm_h_1 = np.load(
+      "../../lm1b/text_input_full_state/block_" + str(block_id) + "/lstm_hidden_" + str(layer_id) + ".npy").item()
+
     for scan_obj in scan_objects.item().get(block_id):
       # print(scan_obj.step, scan_obj.word, scan_obj.timestamp)
-      all_brain_scans.append(scan_obj.activations[0])
       current_word.append('_'.join(scan_obj.all_words))
-      if scan_obj.step in embeddings_0.item().get(block_id).keys():
-        brain_scans.append(scan_obj.activations[0])
-        brain_scan_steps.append(scan_obj.step)
-        all_embeddings = []
-        for state0, state1 in zip(embeddings_0.item().get(block_id)[scan_obj.step],
-                                  embeddings_1.item().get(block_id)[scan_obj.step]):
-          state = np.concatenate([state0, state1], axis=0)
-          all_embeddings.append(state)
+      current_block_step = scan_obj.step - scan_objects.item()[block_id][0].step
+      print("current block step:",current_block_step)
+      brain_scans.append(scan_obj.activations[0])
+      all_embeddings = []
 
-        while len(all_embeddings) < 4:
-          all_embeddings.append(np.zeros(all_embeddings[-1].shape))
+      i = 0
+      while i < 4 and (current_block_step+i) < len(lstm_h_0.keys()):
+        print(lstm_h_0[current_block_step+i].shape)
+        print(lstm_h_1[current_block_step + i].shape)
+        all_embeddings.append(np.concatenate([lstm_h_0[current_block_step+i][0],lstm_h_1[current_block_step+i][0]]))
+        i += 1
 
-        lstm_embeddings.append(np.concatenate(all_embeddings, axis=0))
-        words.append('_'.join(scan_obj.all_words))
+      while len(all_embeddings) < 4:
+        all_embeddings.append(np.zeros(all_embeddings[-1].shape))
 
-  all_brain_scans = np.asarray(all_brain_scans)
+      lstm_embeddings.append(np.concatenate(all_embeddings, axis=0))
+      words.append('_'.join(scan_obj.all_words))
+
   brain_scans = np.asarray(brain_scans)
-  brain_scan_steps = np.asarray(brain_scan_steps)
-  current_word = np.asarray(current_word)
   lstm_embeddings = np.asarray(lstm_embeddings)
   words = np.asarray(words)
 
@@ -228,8 +238,8 @@ def read_and_prepare_data_block_based_brain_scans(block_ids, scan_objects, FLAGS
 def prepare_linear(block_ids, embeddings_file, steps, scan_objects, avg=False):
   print("##### prepare linear #####")
   embeddings = np.load(embeddings_file)
-  embeddings.item()[""] = np.zeros_like(embeddings.item()[list(embeddings.item().keys())[0]])
-  embeddings.item()["+"] = np.zeros_like(embeddings.item()[list(embeddings.item().keys())[0]])
+  #embeddings.item()[""] = np.zeros_like(embeddings.item()[list(embeddings.item().keys())[0]])
+  #embeddings.item()["+"] = np.zeros_like(embeddings.item()[list(embeddings.item().keys())[0]])
   # print(len(scan_objects.item().get(1)))
   # print(embeddings.item().get(1))
   all_brain_scans = []
@@ -243,15 +253,22 @@ def prepare_linear(block_ids, embeddings_file, steps, scan_objects, avg=False):
     for scan_obj in scan_objects.item().get(block_id):
       # print(scan_obj.step, scan_obj.word, scan_obj.timestamp)
       all_brain_scans.append(scan_obj.activations[0])
-      current_word.append('_'.join(scan_obj.all_words))
-      if set(scan_obj.all_words).issubset(embeddings.item().keys()):
+      all_words = []
+      for ww in scan_obj.current_translated_words:
+        all_words.extend(ww)
+
+      current_word.append('_'.join(all_words))
+
+      if set(all_words).issubset(embeddings.item().keys()):
         brain_scans.append(scan_obj.activations[0])
         brain_scan_steps.append(scan_obj.step)
         all_embeddings = []
-        for word in scan_obj.all_words:
+        for word in all_words:
           all_embeddings.append(embeddings.item()[word])
 
-        # print("step embedding length:",len(all_embeddings))
+
+        print("step embedding length:",len(all_embeddings))
+
         while len(all_embeddings) < 4:
           all_embeddings.append(np.zeros(all_embeddings[-1].shape))
         # print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
@@ -339,8 +356,8 @@ def read_and_prepare_data_word_based(block_ids, word_embedding_dic_file, scan_ob
 
 def read_and_prepare_data_word_based_concat(block_ids, word_embedding_dic_file, scan_objects, ith_step=0, avg=False):
   word_embeddings = np.load(word_embedding_dic_file)
-  word_embeddings.item()[""] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
-  word_embeddings.item()["+"] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
+  #word_embeddings.item()[""] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
+  #word_embeddings.item()["+"] = np.zeros_like(word_embeddings.item()[list(word_embeddings.item().keys())[0]])
 
   # print(len(scan_objects.item().get(1)))
   # print(embeddings.item().get(1))
@@ -357,20 +374,29 @@ def read_and_prepare_data_word_based_concat(block_ids, word_embedding_dic_file, 
       if word_index < len(scan_objects.item()[block_id]) and word_index > 0:
         all_scans.append(scan_obj.activations[0])
         associated_word_scan = scan_objects.item()[block_id][word_index]
-        all_scanned_words.append('_'.join(associated_word_scan.all_words))
-        if set(associated_word_scan.all_words).issubset(word_embeddings.item().keys()):
+        all_words = []
+        for ww in associated_word_scan.current_translated_words:
+          all_words.extend(ww)
+
+        print(all_words)
+        all_scanned_words.append('_'.join(all_words))
+        if set(all_words).issubset(word_embeddings.item().keys()):
           brain_scans.append(scan_obj.activations[0])
           brain_scan_steps.append(scan_obj.step)
-          scan_words.append('_'.join(associated_word_scan.all_words))
+          scan_words.append('_'.join(all_words))
           all_word_embeddings = []
-          for word in scan_obj.all_words:
+          for word in all_words:
+            print("1 word embedding shape:",word_embeddings.item()[word].shape)
             all_word_embeddings.append(word_embeddings.item()[word])
 
           while (len(all_word_embeddings) < 4):
             all_word_embeddings.append(np.zeros(all_word_embeddings[-1].shape))
 
+          all_word_embeddings = np.asarray(all_word_embeddings)
+          print("all_word_embeddings shape",all_word_embeddings.shape,avg)
           if avg == True:
             embeddings.append(np.mean(all_word_embeddings, axis=0))
+            print("averaged all_word_embeddings shape", np.mean(all_word_embeddings, axis=0).shape)
           else:
             embeddings.append(np.concatenate(all_word_embeddings, axis=0))
 
@@ -396,11 +422,14 @@ def read_and_prepare_data_word_based_concat(block_ids, word_embedding_dic_file, 
   avg_normalized_scans = []
   avg_word_embeddings = []
   for w in word_to_scans.keys():
+    word_to_embeddings[w] = np.asarray(word_to_embeddings[w])
+    print(w,word_to_embeddings[w].shape)
     avg_normalized_scans.append(np.mean(word_to_scans[w], axis=0))
     avg_word_embeddings.append(np.mean(word_to_embeddings[w], axis=0))
 
     words.append(w)
 
+  print("embedding shape:",np.asarray(avg_word_embeddings).shape)
   return np.asarray(avg_word_embeddings), np.asarray(avg_normalized_scans)[:, :], np.asarray(words)
 
 
@@ -460,8 +489,10 @@ def read_and_prepare_data_ith_word_based(i, block_ids, word_embedding_dic_file, 
 
 
 def load_data(FLAGS):
+
+  print("model:", FLAGS.model)
   scan_objects = np.load(
-    "../processed_data/subject_" + FLAGS.subject_id + "/subject_" + FLAGS.subject_id + "_scan_objects.npy")
+    "../processed_data/subject_" + FLAGS.subject_id + "/"+FLAGS.fMRI_preprocess_mode+"subject_" + FLAGS.subject_id + "_scan_objects.npy")
 
   if FLAGS.model == "contextual_1":
     train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based([1, 2, 3],
@@ -494,7 +525,7 @@ def load_data(FLAGS):
   elif FLAGS.model == "glove":
     test_embeddings, test_normalized_brain_scans, test_words, \
     train_embeddings, train_normalized_brain_scans, train_size, train_words = \
-      prepare_trainings_for_x_word_embeddings("../embeddings/glove_word_embedding_dic.npy", FLAGS, scan_objects)
+      prepare_trainings_for_x_word_embeddings("../embeddings/filtered_glove_embedding_dic.npy", FLAGS, scan_objects)
   elif FLAGS.model == "char_word_avg":
     test_embeddings, test_normalized_brain_scans, test_words, \
     train_embeddings, train_normalized_brain_scans, train_size, train_words = \
@@ -508,7 +539,7 @@ def load_data(FLAGS):
   elif FLAGS.model == "glove_avg":
     test_embeddings, test_normalized_brain_scans, test_words, \
     train_embeddings, train_normalized_brain_scans, train_size, train_words = \
-      prepare_trainings_for_x_word_embeddings("../embeddings/glove_word_embedding_dic.npy", FLAGS, scan_objects,
+      prepare_trainings_for_x_word_embeddings("../embeddings/filtered_glove_embedding_dic.npy", FLAGS, scan_objects,
                                               avg=True)
   elif FLAGS.model == "contextual_01":
     print("contextual_01")
@@ -563,11 +594,11 @@ def load_data(FLAGS):
     print("train size: ", train_size)
   elif FLAGS.model == "glove_linear_avg":
     train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],
-                                                                                 "../embeddings/glove_word_embedding_dic.npy",
+                                                                                 "../embeddings/filtered_glove_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,
                                                                                  avg=True)
     test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],
-                                                                              "../embeddings/glove_word_embedding_dic.npy",
+                                                                              "../embeddings/filtered_glove_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,
                                                                               avg=True)
     train_size = train_embeddings.shape[1]
@@ -611,8 +642,8 @@ def load_data(FLAGS):
 def prepare_trainings_for_x_word_embeddings(filename, FLAGS, scan_objects, avg=False):
   if int(FLAGS.ith_word) == -1:
     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_word_based_concat([1, 2, 3, 4], filename,
-                                                                                             scan_objects, avg,
-                                                                                             FLAGS.ith_step)
+                                                                                             scan_objects,
+                                                                                             FLAGS.ith_step,avg)
   else:
     word_embeddings, normalized_brain_scans, words = read_and_prepare_data_ith_word_based(int(FLAGS.ith), [1, 2, 3, 4],
                                                                                           filename, scan_objects,

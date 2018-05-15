@@ -35,7 +35,7 @@ class VanillaIntendedMapper(object):
         h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
-        return tf.sigmoid(tf.matmul(h, self.w_o) + self.b_o), h
+        return tf.matmul(h, self.w_o) + self.b_o, h
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -85,7 +85,7 @@ class VanillaIntendedMapper(object):
 
         self.global_step = tf.Variable(0, name='global_step', trainable=False)
         self.learning_rate = tf.train.exponential_decay(
-            learning_rate=0.001,
+            learning_rate=0.0001,
             global_step=self.global_step,
             decay_steps=self.hparams.training_size,
             decay_rate=0.95,

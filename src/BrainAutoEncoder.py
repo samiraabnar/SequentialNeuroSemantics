@@ -6,6 +6,8 @@ from HarryPotterDataProcessing import *
 from collections import namedtuple
 from eval import *
 
+import numpy as np
+
 
 class BrainAutoEncoder(object):
   def __init__(self, hparams):
@@ -179,6 +181,17 @@ def main(unused_argv):
       elif FLAGS.mode == "eval":
         quantitative_eval(mapper, sess, train_normalized_brain_scans, train_normalized_brain_scans, 0, train_words,
                           FLAGS)
+      elif FLAGS.mode == "save":
+        reduced_brain = sess.run([mapper.encoded_input],feed_dict={mapper.input_states_batch: train_normalized_brain_scans,
+                                                                   mapper.batch_size: len(train_normalized_brain_scans),
+                                                                   mapper.p_keep_input: FLAGS.p_keep_input,
+                                                                   mapper.p_keep_hidden: FLAGS.p_keep_hidden
+                                                                   })
+
+        print(len(reduced_brain))
+        print(reduced_brain[0].shape)
+        np.save(str(reduced_brain[0].shape[1])+"reducted_brain_scans",reduced_brain[0])
+        np.save("reducted_words",train_words)
 
 
 if __name__ == '__main__':
