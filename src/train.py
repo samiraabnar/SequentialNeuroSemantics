@@ -11,12 +11,13 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
     current_best = 0
     for i in range(model.hparams.number_of_epochs):
 
+        print("train_y.shape",train_y.shape)
         indexes = np.arange(train_y.shape[0])
         np.random.shuffle(indexes)
 
         start_index = 0;
         end_index = start_index + model.hparams.batch_size
-        print("input_size",len(indexes))
+        print("input_size",len(indexes),train_x.shape)
         print("batch size:", model.hparams.batch_size)
         while end_index < len(indexes):
             if len(train_x.shape) > 2:

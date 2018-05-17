@@ -17,25 +17,25 @@ class VanillaIntendedMapper(object):
               p_keep_hidden):
         # this network is the same as the previous one except with an
         # extra hidden layer + dropout
-        input = tf.nn.dropout(input, p_keep_input)
+        input = input
 
         # input_attention = tf.nn.relu(tf.matmul(input, self.w_I) + self.b_I)
         # attended_input = tf.multiply(input_attention, input)
         # tf.summary.image("attended_input",attended_input)
         # tf.summary.image("w_h",self.w_h)
 
-        """input = tf.layers.batch_normalization(input,
+        input = tf.layers.batch_normalization(input,
         axis=1,
         center=True,
-        scale=False,
+        scale=True,
         training=(self.hparams.mode == tf.estimator.ModeKeys.TRAIN))
-        """
 
-        h = tf.matmul(input, self.w_h) + self.b_h
-        h = tf.nn.dropout(h, p_keep_hidden)
+
+        h = tf.matmul(input, tf.nn.dropout(self.w_h, p_keep_input)) + self.b_h
+        #h = tf.nn.dropout(h, p_keep_hidden)
         #h2 = tf.nn.relu(tf.matmul(h, self.w_h2) + self.b_h2)
         #h2 = tf.nn.dropout(h2, p_keep_hidden)
-        return tf.matmul(h, self.w_o) + self.b_o, h
+        return tf.matmul(h, tf.nn.dropout(self.w_o, p_keep_hidden)) + self.b_o, h
 
     def build_mapping_model(self):
         self.input_states_batch = tf.placeholder("float", [None, self.hparams.input_dim])
@@ -85,7 +85,7 @@ class VanillaIntendedMapper(object):
 
         self.global_step = tf.Variable(0, name='global_step', trainable=False)
         self.learning_rate = tf.train.exponential_decay(
-            learning_rate=0.0001,
+            learning_rate=0.001,
             global_step=self.global_step,
             decay_steps=self.hparams.training_size,
             decay_rate=0.95,

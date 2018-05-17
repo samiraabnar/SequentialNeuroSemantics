@@ -99,7 +99,8 @@ tf.app.flags.DEFINE_string('exp_name', 'detrended', 'Name for experiment. Logs w
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
                                             'train/eval/test/save_vectors')
 tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
-
+tf.app.flags.DEFINE_string('fMRI_preprocess_mode', 'detrend_filter_std', 'must be one of '
+                                            'none/detrend/detrend_filter/detrend_filter_std')
 # ==========Hyper Params=========
 tf.app.flags.DEFINE_integer('batch_size', 16, 'minibatch size')
 tf.app.flags.DEFINE_integer('hidden_dim', 512, 'dimension of hidden states')

@@ -34,7 +34,7 @@ tf.app.flags.DEFINE_integer('ith_word', '-1', 'which word to look at (-1 means a
 tf.app.flags.DEFINE_integer('ith_step', '0', 'which word to look at (0 means current step!')
 
 # ==========Hyper Params=========
-tf.app.flags.DEFINE_integer('batch_size', 16, 'minibatch size')
+tf.app.flags.DEFINE_integer('batch_size', 32, 'minibatch size')
 tf.app.flags.DEFINE_integer('hidden_dim', 256, 'dimension of hidden states')
 tf.app.flags.DEFINE_integer('input_dim', 784, 'size of the input')
 tf.app.flags.DEFINE_integer('output_dim', 784, 'size of the output')
