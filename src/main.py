@@ -52,7 +52,7 @@ def prepare(FLAGS):
   tf.logging.set_verbosity(tf.logging.INFO)  # choose what level of logging you want
 
   # Change log_root to FLAGS.log_root/FLAGS.exp_name and create the dir if necessary
-  encoder_decoder_dir = os.path.join(FLAGS.log_root, 'subject_' + FLAGS.subject_id)
+  encoder_decoder_dir = os.path.join(FLAGS.log_root,FLAGS.fold_id, 'subject_' + FLAGS.subject_id)
   FLAGS.log_root = os.path.join(FLAGS.log_root, 'subject_' + FLAGS.subject_id, FLAGS.direction, FLAGS.model,
                                 FLAGS.mapper, FLAGS.exp_name, )
   if not os.path.exists(FLAGS.log_root):

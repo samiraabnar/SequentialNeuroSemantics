@@ -11,6 +11,11 @@ from sklearn.decomposition import *
 
 import nilearn.signal
 
+fold= {}
+fold["1"] = {'train':[1,2,3],'test':[4]}
+fold["2"] = {'train':[2,3,4],'test':[1]}
+fold["3"] = {'train':[1,3,4],'test':[2]}
+fold["4"] = {'train':[1,2,4],'test':[3]}
 
 class Scan(object):
   def __init__(self, activations, timestamp, step, prev_words=None, next_words=None, all_words=None):
@@ -343,16 +348,18 @@ def prepare_linear_lstm(block_ids, steps, scan_objects, avg=False, one_step=Fals
       words.append('_'.join(scan_obj.all_words))
       current_embeddings = []
       i = 0
-      print(len(lstm_h_0))
-      while i < 4 and (current_step+i) < len(lstm_h_0):
+      while i < 4 and (current_step+i) < len(lstm_h_0) and i < len(scan_obj.all_words):
+        print("unit shape:",np.concatenate([lstm_h_0[current_step+i][0],lstm_m_0[current_step+i][0],lstm_h_1[current_step+i][0],lstm_m_1[current_step+i][0]]).shape)
         current_embeddings.append(np.concatenate([lstm_h_0[current_step+i][0],lstm_m_0[current_step+i][0],lstm_h_1[current_step+i][0],lstm_m_1[current_step+i][0]]))
         i += 1
 
-      print(current_step,current_step+i,"step embedding length:",len(current_embeddings))
+      print(current_step,current_step+i,"step embedding shape:",np.asarray(current_embeddings).shape)
 
       while len(current_embeddings) < 4:
         current_embeddings.append(np.zeros(current_embeddings[-1].shape))
         # print("avg phrase emb shape:",np.mean(all_embeddings,axis=0).shape)
+      print(current_step,current_step+i,"extended step embedding length:",np.asarray(current_embeddings).shape)
+
       if avg == True:
         word_embeddings.append(np.mean(current_embeddings, axis=0))
       else:
@@ -364,21 +371,24 @@ def prepare_linear_lstm(block_ids, steps, scan_objects, avg=False, one_step=Fals
 
   combined_word_embeddings = []
 
+  word_embeddings = np.asarray(word_embeddings)
+  print("word em shape",word_embeddings.shape)
   if one_step == True:
     for i in np.arange(4):
-      combined_word_embeddings.append(word_embeddings[i:len(word_embeddings) - (fine_steps - i) + 1])
+      print(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,4)].shape)
+      combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,4)])
   else:
     for i in np.arange(fine_steps):
-      combined_word_embeddings.append(word_embeddings[i:len(word_embeddings) - (fine_steps - i) + 1])
+      print(i,word_embeddings[np.arange(i, len(word_embeddings) - (fine_steps - i) + 1, 4)].shape)
+      combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,4)])
 
-  all_brain_scans = np.asarray(all_brain_scans)
   brain_scans = np.asarray(brain_scans)
   brain_scan_steps = np.asarray(brain_scan_steps)
   word_embeddings = np.asarray(word_embeddings)
   words = np.asarray(words)
   combined_word_embeddings = np.asarray(combined_word_embeddings)
 
-  print("combined shape:", combined_word_embeddings.shape, all_brain_scans.shape)
+  print("combined shape:", combined_word_embeddings.shape, brain_scans.shape)
   return combined_word_embeddings, brain_scans, words
 
 
@@ -580,27 +590,27 @@ def load_data(FLAGS):
     "../processed_data/subject_" + FLAGS.subject_id + "/"+FLAGS.fMRI_preprocess_mode+"subject_" + FLAGS.subject_id + "_scan_objects.npy")
 
   if FLAGS.model == "contextual_1":
-    train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based(fold[FLAGS.fold_id]['train'],
                                                                                                     layer_id=1,
                                                                                                     scan_objects=scan_objects,
                                                                                                     FLAGS=FLAGS)
-    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based([4], layer_id=1,
+    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based(fold[FLAGS.fold_id]['test'], layer_id=1,
                                                                                                  scan_objects=scan_objects,
                                                                                                  FLAGS=FLAGS)
     train_size = len(train_embeddings)
   elif FLAGS.model == "contextual_0":
-    train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based(fold[FLAGS.fold_id]['train'],
                                                                                                     layer_id=0,
                                                                                                     scan_objects=scan_objects,
                                                                                                     FLAGS=FLAGS)
-    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based([4], layer_id=0,
+    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based(fold[FLAGS.fold_id]['test'], layer_id=0,
                                                                                                  scan_objects=scan_objects,
                                                                                                  FLAGS=FLAGS)
   elif FLAGS.model == "all_lstm":
     print("all_lstm")
     train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_concat_concat(
-      [1, 2, 3], scan_objects, FLAGS)
-    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_concat_concat([4],
+      fold[FLAGS.fold_id]['train'], scan_objects, FLAGS)
+    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_concat_concat(fold[FLAGS.fold_id]['test'],
                                                                                                                scan_objects,
                                                                                                                FLAGS)
     train_size = len(train_embeddings)
@@ -639,8 +649,8 @@ def load_data(FLAGS):
   elif FLAGS.model == "contextual_01":
     print("contextual_01")
     train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_concat_concat(
-      [1, 2, 3], scan_objects, FLAGS)
-    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_concat_concat([4],
+      fold[FLAGS.fold_id]['train'], scan_objects, FLAGS)
+    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_concat_concat(fold[FLAGS.fold_id]['test'],
                                                                                                                scan_objects,
                                                                                                                FLAGS)
     train_size = len(train_embeddings)
@@ -648,8 +658,8 @@ def load_data(FLAGS):
   elif FLAGS.model == "contextual_01_avg":
     print("contextual_01_avg")
     train_embeddings, train_normalized_brain_scans, train_words = read_and_prepare_data_block_based_avg_concat(
-      [1, 2, 3], scan_objects, FLAGS)
-    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_avg_concat([4],
+      fold[FLAGS.fold_id]['train'], scan_objects, FLAGS)
+    test_embeddings, test_normalized_brain_scans, test_words = read_and_prepare_data_block_based_avg_concat(fold[FLAGS.fold_id]['test'],
                                                                                                             scan_objects,
                                                                                                             FLAGS)
     train_size = len(train_embeddings)
@@ -662,72 +672,72 @@ def load_data(FLAGS):
     print("train size: ", train_size)
   elif FLAGS.model == "glove_linear":
     print("one step:",FLAGS.one_step)
-    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
                                                                                  "../embeddings/filtered_glove_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,avg=False,one_step=FLAGS.one_step)
-    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],
+    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
                                                                               "../embeddings/filtered_glove_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,avg=False,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
   elif FLAGS.model == "char_word_linear":
-    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
                                                                                  "../embeddings/word_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,one_step=FLAGS.one_step)
-    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],
+    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
                                                                               "../embeddings/word_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
   elif FLAGS.model == "word_linear":
-    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
                                                                                  "../embeddings/subject_" + FLAGS.subject_id + "_softmax_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,one_step=FLAGS.one_step)
-    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],
+    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
                                                                               "../embeddings/subject_" + FLAGS.subject_id + "_softmax_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
   elif FLAGS.model == "glove_linear_avg":
-    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
                                                                                  "../embeddings/filtered_glove_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,
                                                                                  avg=True,one_step=FLAGS.one_step)
-    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],
+    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
                                                                               "../embeddings/filtered_glove_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,
                                                                               avg=True,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
   elif FLAGS.model == "char_word_linear_avg":
-    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
                                                                                  "../embeddings/word_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,
                                                                                  avg=True,one_step=FLAGS.one_step)
-    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],
+    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
                                                                               "../embeddings/word_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,
                                                                               avg=True,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
   elif FLAGS.model == "word_linear_avg":
-    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
                                                                                  "../embeddings/subject_" + FLAGS.subject_id + "_softmax_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,
                                                                                  avg=True,one_step=FLAGS.one_step)
-    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear([4],
+    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
                                                                               "../embeddings/subject_" + FLAGS.subject_id + "_softmax_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,
                                                                               avg=True,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
   elif FLAGS.model == "lstm_linear":
-    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear_lstm([1, 2, 3],
+    train_embeddings, train_normalized_brain_scans, train_words = prepare_linear_lstm(fold[FLAGS.fold_id]['train'],
                                                                                  FLAGS.linear_steps, scan_objects,
-                                                                                 avg=True,one_step=FLAGS.one_step)
-    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear_lstm([4],
+                                                                                 avg=False,one_step=FLAGS.one_step)
+    test_embeddings, test_normalized_brain_scans, test_words = prepare_linear_lstm(fold[FLAGS.fold_id]['test'],
                                                                                  FLAGS.linear_steps, scan_objects,
-                                                                                 avg=True,one_step=FLAGS.one_step)
+                                                                                 avg=False,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
 
@@ -740,8 +750,9 @@ def load_data(FLAGS):
 
   print("size of brain scans:", train_normalized_brain_scans.shape)
 
-  #train_normalized_brain_scans = train_normalized_brain_scans - np.mean(train_normalized_brain_scans, axis=0)
-  #test_normalized_brain_scans = test_normalized_brain_scans - np.mean(test_normalized_brain_scans, axis=0)
+  #if FLAGS.fMRI_preprocess_mode == "none":
+  #  train_normalized_brain_scans = train_normalized_brain_scans - np.mean(train_normalized_brain_scans, axis=0)
+  #  test_normalized_brain_scans = test_normalized_brain_scans - np.mean(test_normalized_brain_scans, axis=0)
 
 
   print("before:",train_embeddings.shape)

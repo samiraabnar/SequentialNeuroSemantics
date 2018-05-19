@@ -1,0 +1,22 @@
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear  --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name one_step_1 --mode train  --hidden_dim 512 --one_step True --fold_id 2  --linear_steps 1 > result_linear_lstm_one_step_1_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear  --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name one_step_2 --mode train  --hidden_dim 512 --one_step True --fold_id 2 --linear_steps 2 > result_linear_lstm_one_step_2_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name one_step_3 --mode train  --hidden_dim 512 --one_step True --fold_id 2 --linear_steps 3 > result_linear_lstm_one_step_3_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name one_step_4 --mode train  --hidden_dim 512 --one_step True --fold_id 2 --linear_steps 4 > result_linear_lstm_one_step_4_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name one_step_5 --mode train  --hidden_dim 512 --one_step True --fold_id 2 --linear_steps 5 > result_linear_lstm_one_step_5_fold_2_sub1
+
+
+
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name all_step_1 --mode train  --hidden_dim 512 --one_step False --fold_id 2 --fold_id 2 --linear_steps 1 > result_linear_lstm_all_step_1_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name all_step_2 --mode train  --hidden_dim 512 --one_step False --fold_id 2 --linear_steps 2 > result_linear_lstm_all_step_2_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name all_step_3 --mode train  --hidden_dim 512 --one_step False --fold_id 2 --linear_steps 3 > result_linear_lstm_all_step_3_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name all_step_4 --mode train  --hidden_dim 512 --one_step False --fold_id 2 --linear_steps 4 > result_linear_lstm_all_step_4_fold_2_sub1
+
+python linear_main.py --direction word2brain --mapper intended --model lstm_linear   --batch_size 32 --l2_factor 0.00001 --p_keep_input 0.85 --p_keep_hidden 0.4 --exp_name all_step_5 --mode train  --hidden_dim 512 --one_step False --fold_id 2 --linear_steps 5 > result_linear_lstm_all_step_5_fold_2_sub1
