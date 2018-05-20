@@ -28,7 +28,7 @@ class Scan(object):
 
 
 def read_and_prepare_data_block_based(block_ids, layer_id, scan_objects, FLAGS):
-  embeddings = np.load("../embeddings/subject_" + FLAGS.subject_id + "_lstm_" + str(layer_id) + "_emb_objects.npy")
+  embeddings = np.load("../embeddings/subject_" + "1" + "_lstm_" + str(layer_id) + "_emb_objects.npy")
   # print(len(scan_objects.item().get(1)))
   # print(embeddings.item().get(1))
   all_brain_scans = []
@@ -70,8 +70,8 @@ def read_and_prepare_data_block_based(block_ids, layer_id, scan_objects, FLAGS):
 
 
 def read_and_prepare_data_block_based_concat(block_ids, scan_objects, FLAGS):
-  embeddings_0 = np.load("../embeddings/subject_" + FLAGS.subject_id + "_lstm_" + str(0) + "_emb_objects.npy")
-  embeddings_1 = np.load("../embeddings/subject_" + FLAGS.subject_id + "_lstm_" + str(1) + "_emb_objects.npy")
+  embeddings_0 = np.load("../embeddings/subject_" + "1" + "_lstm_" + str(0) + "_emb_objects.npy")
+  embeddings_1 = np.load("../embeddings/subject_" + "1" + "_lstm_" + str(1) + "_emb_objects.npy")
   # print(len(scan_objects.item().get(1)))
   # print(embeddings.item().get(1))
   all_brain_scans = []
@@ -109,8 +109,6 @@ def read_and_prepare_data_block_based_concat(block_ids, scan_objects, FLAGS):
 
 
 def read_and_prepare_data_block_based_concat_concat(block_ids, scan_objects, FLAGS):
-  embeddings_0 = np.load("../embeddings/subject_" + FLAGS.subject_id + "_lstm_" + str(0) + "_emb_objects.npy")
-  embeddings_1 = np.load("../embeddings/subject_" + FLAGS.subject_id + "_lstm_" + str(1) + "_emb_objects.npy")
   # print(len(scan_objects.item().get(1)))
   # print(embeddings.item().get(1))
 
