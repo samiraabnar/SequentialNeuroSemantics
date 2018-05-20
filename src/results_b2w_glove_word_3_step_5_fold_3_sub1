@@ -1,0 +1,7609 @@
+model: glove
+size of brain scans: (366, 37913)
+before: (366, 300)
+PCA shape:  (366, 37913)
+PCA shape:  (366, 366)
+feature flag: selected
+input dim: 366
+brain2word training...
+number of train and test examples: 366 153
+mse 0.172375
+mse 0.184264
+mse 0.166757
+mse 0.168626
+mse 0.157119
+mse 0.180734
+mse 0.167323
+mse 0.182672
+mse 0.156788
+mse 0.149971
+mse 0.159443
+mse 0.139720
+mse 0.147570
+mse 0.144726
+mse 0.159593
+mse 0.135277
+mse 0.144817
+mse 0.144430
+mse 0.148858
+mse 0.150432
+mse 0.153885
+mse 0.138237
+epoch: 0
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.085623264
+sd_error: 0.085622855
+mean erros: 0.00067182287
+binary accuracy:  0.46826625386996906   0.47549019607843135
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.08576433
+sd_error: 0.08576001
+mean erros: 0.0020635622
+binary accuracy:  0.9734261546522943   0.9767347855378397
+mse 0.093083
+mse 0.098859
+mse 0.107467
+mse 0.096087
+mse 0.104785
+mse 0.104967
+mse 0.098568
+mse 0.104089
+mse 0.090427
+mse 0.104081
+mse 0.111527
+mse 0.107798
+mse 0.101295
+mse 0.110227
+mse 0.100827
+mse 0.108330
+mse 0.099671
+mse 0.091881
+mse 0.093912
+mse 0.103576
+mse 0.094012
+mse 0.091202
+epoch: 1
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.083008476
+sd_error: 0.08300548
+mean erros: 0.0017724114
+binary accuracy:  0.4789301685586515   0.47549019607843135
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.06141919
+sd_error: 0.06141115
+mean erros: 0.002777213
+binary accuracy:  0.9930084587169699   0.9981286024403024
+mse 0.086137
+mse 0.065755
+mse 0.070032
+mse 0.088199
+mse 0.074845
+mse 0.067022
+mse 0.077406
+mse 0.080492
+mse 0.071222
+mse 0.080742
+mse 0.073257
+mse 0.076639
+mse 0.073735
+mse 0.068597
+mse 0.073303
+mse 0.069874
+mse 0.075592
+mse 0.084447
+mse 0.066517
+mse 0.066814
+mse 0.081530
+mse 0.081099
+epoch: 2
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.081744194
+sd_error: 0.08173748
+mean erros: 0.0025825817
+binary accuracy:  0.4562263501891985   0.4540763673890609
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.047212515
+sd_error: 0.047200322
+mean erros: 0.003487016
+binary accuracy:  0.9934276517703421   0.9988322479227487
+mse 0.063747
+mse 0.060107
+mse 0.061741
+mse 0.060469
+mse 0.063907
+mse 0.066267
+mse 0.068051
+mse 0.064662
+mse 0.057937
+mse 0.052691
+mse 0.057336
+mse 0.059418
+mse 0.062324
+mse 0.058380
+mse 0.059440
+mse 0.062318
+mse 0.062898
+mse 0.066037
+mse 0.063623
+mse 0.066725
+mse 0.062149
+mse 0.070362
+epoch: 3
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.08037955
+sd_error: 0.080371976
+mean erros: 0.0027439476
+binary accuracy:  0.4757481940144479   0.47033023735810114
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.038782995
+sd_error: 0.038768366
+mean erros: 0.0038171858
+binary accuracy:  0.9933977094093869   0.9988621902837038
+mse 0.047030
+mse 0.056311
+mse 0.058085
+mse 0.058198
+mse 0.049927
+mse 0.051083
+mse 0.056963
+mse 0.051413
+mse 0.051040
+mse 0.048050
+mse 0.056268
+mse 0.049052
+mse 0.054619
+mse 0.055872
+mse 0.059809
+mse 0.057030
+mse 0.066201
+mse 0.054927
+mse 0.050586
+mse 0.077934
+mse 0.057868
+mse 0.059467
+epoch: 4
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07992155
+sd_error: 0.07991161
+mean erros: 0.0031427953
+binary accuracy:  0.4619883040935672   0.456312349501204
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.03374475
+sd_error: 0.033730786
+mean erros: 0.0037286982
+binary accuracy:  0.9934126805898645   0.9988771614641815
+mse 0.050941
+mse 0.048396
+mse 0.046271
+mse 0.039236
+mse 0.054267
+mse 0.047988
+mse 0.052692
+mse 0.057819
+mse 0.051479
+mse 0.048501
+mse 0.053801
+mse 0.050658
+mse 0.047229
+mse 0.053045
+mse 0.052548
+mse 0.056209
+mse 0.056785
+mse 0.058072
+mse 0.056615
+mse 0.058044
+mse 0.058339
+mse 0.051506
+epoch: 5
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07922737
+sd_error: 0.07921645
+mean erros: 0.0033000447
+binary accuracy:  0.48168214654282765   0.48116615067079466
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.030701524
+sd_error: 0.030687328
+mean erros: 0.0037613944
+binary accuracy:  0.9934575941312973   0.998892132644659
+mse 0.047188
+mse 0.041518
+mse 0.043998
+mse 0.052191
+mse 0.047799
+mse 0.047038
+mse 0.048275
+mse 0.052696
+mse 0.047135
+mse 0.046178
+mse 0.047236
+mse 0.049644
+mse 0.054287
+mse 0.042800
+mse 0.065609
+mse 0.045262
+mse 0.063367
+mse 0.054089
+mse 0.058392
+mse 0.053122
+mse 0.052864
+mse 0.052468
+epoch: 6
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07842366
+sd_error: 0.07841631
+mean erros: 0.0027421806
+binary accuracy:  0.47454420364637084   0.4630202958376333
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.028989881
+sd_error: 0.028978854
+mean erros: 0.003307041
+binary accuracy:  0.9934426229508196   0.9989220750056141
+mse 0.044741
+mse 0.047563
+mse 0.043135
+mse 0.039512
+mse 0.047753
+mse 0.045873
+mse 0.052220
+mse 0.045751
+mse 0.047564
+mse 0.050888
+mse 0.047066
+mse 0.052702
+mse 0.046667
+mse 0.051584
+mse 0.056174
+mse 0.048434
+mse 0.053078
+mse 0.047433
+mse 0.058843
+mse 0.055250
+mse 0.047834
+mse 0.047719
+epoch: 7
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.078029364
+sd_error: 0.07801955
+mean erros: 0.0031374723
+binary accuracy:  0.48993808049535603   0.48211214310285516
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02706487
+sd_error: 0.027051477
+mean erros: 0.003652842
+binary accuracy:  0.9933977094093869   0.9988472191032263
+mse 0.046406
+mse 0.040953
+mse 0.043076
+mse 0.047541
+mse 0.045988
+mse 0.044565
+mse 0.042227
+mse 0.044056
+mse 0.048475
+mse 0.052425
+mse 0.046114
+mse 0.055192
+mse 0.043589
+mse 0.054784
+mse 0.045691
+mse 0.045493
+mse 0.052751
+mse 0.049863
+mse 0.059976
+mse 0.055500
+mse 0.051229
+mse 0.055429
+epoch: 8
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07808119
+sd_error: 0.078074545
+mean erros: 0.0025626125
+binary accuracy:  0.47015823873409013   0.4681802545579635
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026876077
+sd_error: 0.026868613
+mean erros: 0.002730266
+binary accuracy:  0.9934276517703421   0.9988621902837038
+mse 0.045585
+mse 0.044424
+mse 0.035378
+mse 0.041983
+mse 0.049992
+mse 0.044086
+mse 0.048143
+mse 0.043055
+mse 0.051633
+mse 0.046892
+mse 0.050863
+mse 0.050021
+mse 0.049464
+mse 0.055912
+mse 0.056066
+mse 0.054302
+mse 0.055298
+mse 0.046290
+mse 0.050022
+mse 0.049296
+mse 0.042824
+mse 0.052047
+epoch: 9
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07818092
+sd_error: 0.07817586
+mean erros: 0.0022580675
+binary accuracy:  0.4831441348469212   0.478672170622635
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026773397
+sd_error: 0.026766121
+mean erros: 0.0026893462
+binary accuracy:  0.9933977094093869   0.998787334381316
+mse 0.041855
+mse 0.052148
+mse 0.049471
+mse 0.046600
+mse 0.051552
+mse 0.052466
+mse 0.040635
+mse 0.047215
+mse 0.045740
+mse 0.042251
+mse 0.049986
+mse 0.049770
+mse 0.048814
+mse 0.055881
+mse 0.050249
+mse 0.048689
+mse 0.045411
+mse 0.049080
+mse 0.050129
+mse 0.047865
+mse 0.053368
+mse 0.058453
+epoch: 10
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07782723
+sd_error: 0.07782364
+mean erros: 0.0019403661
+binary accuracy:  0.46792225662194703   0.4629342965256278
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02625437
+sd_error: 0.026247527
+mean erros: 0.0025984864
+binary accuracy:  0.9933677670484318   0.998787334381316
+mse 0.046392
+mse 0.041912
+mse 0.044174
+mse 0.040041
+mse 0.048257
+mse 0.040152
+mse 0.049085
+mse 0.050925
+mse 0.047147
+mse 0.041975
+mse 0.049176
+mse 0.043480
+mse 0.056975
+mse 0.047980
+mse 0.046441
+mse 0.056131
+mse 0.047393
+mse 0.044607
+mse 0.053077
+mse 0.053093
+mse 0.059488
+mse 0.050518
+epoch: 11
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077529885
+sd_error: 0.077526666
+mean erros: 0.0018146882
+binary accuracy:  0.489250085999312   0.4789301685586515
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026501203
+sd_error: 0.026496945
+mean erros: 0.0020520354
+binary accuracy:  0.9934126805898645   0.9988621902837038
+mse 0.042288
+mse 0.041894
+mse 0.043500
+mse 0.038084
+mse 0.042346
+mse 0.050631
+mse 0.044546
+mse 0.049797
+mse 0.048697
+mse 0.048549
+mse 0.041567
+mse 0.051063
+mse 0.038703
+mse 0.049880
+mse 0.063073
+mse 0.055094
+mse 0.057753
+mse 0.058352
+mse 0.056560
+mse 0.045552
+mse 0.057629
+mse 0.055050
+epoch: 12
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07702709
+sd_error: 0.07702329
+mean erros: 0.0019139957
+binary accuracy:  0.49260405916752664   0.4852941176470588
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026414631
+sd_error: 0.02640959
+mean erros: 0.0022229566
+binary accuracy:  0.9934126805898645   0.9988172767422712
+mse 0.047577
+mse 0.043817
+mse 0.042179
+mse 0.042415
+mse 0.044518
+mse 0.051699
+mse 0.037740
+mse 0.048172
+mse 0.050166
+mse 0.046825
+mse 0.047865
+mse 0.049246
+mse 0.052549
+mse 0.049714
+mse 0.058382
+mse 0.049668
+mse 0.043875
+mse 0.043169
+mse 0.048053
+mse 0.050474
+mse 0.050340
+mse 0.062814
+epoch: 13
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07762759
+sd_error: 0.07762224
+mean erros: 0.0023427075
+binary accuracy:  0.4624183006535948   0.4569143446852425
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026260028
+sd_error: 0.026254445
+mean erros: 0.0023586708
+binary accuracy:  0.9933677670484318   0.9987723632008384
+mse 0.045386
+mse 0.051601
+mse 0.041471
+mse 0.042295
+mse 0.047591
+mse 0.051479
+mse 0.045795
+mse 0.055159
+mse 0.050463
+mse 0.053519
+mse 0.041149
+mse 0.047888
+mse 0.053348
+mse 0.053655
+mse 0.041956
+mse 0.050384
+mse 0.050168
+mse 0.055456
+mse 0.053146
+mse 0.060153
+mse 0.041065
+mse 0.045230
+epoch: 14
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07714413
+sd_error: 0.077141136
+mean erros: 0.0017157391
+binary accuracy:  0.4942380460956312   0.49054007567939456
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026530651
+sd_error: 0.026527274
+mean erros: 0.0018259403
+binary accuracy:  0.9933677670484318   0.9988472191032263
+mse 0.043837
+mse 0.049032
+mse 0.049817
+mse 0.039637
+mse 0.046821
+mse 0.047085
+mse 0.045971
+mse 0.054385
+mse 0.045634
+mse 0.049093
+mse 0.049498
+mse 0.050967
+mse 0.053080
+mse 0.056186
+mse 0.042162
+mse 0.049370
+mse 0.050369
+mse 0.054966
+mse 0.056974
+mse 0.064708
+mse 0.044888
+mse 0.052048
+epoch: 15
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07685493
+sd_error: 0.07685208
+mean erros: 0.0017079501
+binary accuracy:  0.49965600275197797   0.4962160302717578
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026587762
+sd_error: 0.026584446
+mean erros: 0.0018142279
+binary accuracy:  0.9934126805898645   0.9988172767422712
+mse 0.040793
+mse 0.045800
+mse 0.046374
+mse 0.048826
+mse 0.045069
+mse 0.048171
+mse 0.041710
+mse 0.054913
+mse 0.047684
+mse 0.050709
+mse 0.045674
+mse 0.050273
+mse 0.049589
+mse 0.048937
+mse 0.050869
+mse 0.054456
+mse 0.056776
+mse 0.050838
+mse 0.055971
+mse 0.045962
+mse 0.057024
+mse 0.056442
+epoch: 16
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07650294
+sd_error: 0.076501936
+mean erros: 0.0010476011
+binary accuracy:  0.4950980392156863   0.4888200894392845
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026821094
+sd_error: 0.026819523
+mean erros: 0.0012386743
+binary accuracy:  0.9934426229508196   0.998892132644659
+mse 0.045986
+mse 0.044647
+mse 0.043748
+mse 0.039687
+mse 0.040411
+mse 0.047362
+mse 0.049428
+mse 0.043340
+mse 0.053162
+mse 0.052485
+mse 0.041643
+mse 0.051685
+mse 0.044790
+mse 0.054453
+mse 0.054805
+mse 0.049101
+mse 0.056595
+mse 0.059047
+mse 0.049277
+mse 0.050890
+mse 0.046696
+mse 0.051445
+epoch: 17
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076888464
+sd_error: 0.076885924
+mean erros: 0.0015895842
+binary accuracy:  0.49853801169590645   0.4827141382868937
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026236597
+sd_error: 0.026233373
+mean erros: 0.0017853567
+binary accuracy:  0.9935174788532076   0.9989819597275245
+mse 0.036021
+mse 0.040387
+mse 0.044252
+mse 0.048072
+mse 0.047983
+mse 0.048141
+mse 0.056848
+mse 0.047353
+mse 0.044962
+mse 0.045520
+mse 0.048078
+mse 0.047978
+mse 0.044987
+mse 0.048728
+mse 0.047360
+mse 0.047625
+mse 0.054380
+mse 0.051720
+mse 0.050676
+mse 0.059671
+mse 0.057078
+mse 0.043854
+epoch: 18
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07656316
+sd_error: 0.076561615
+mean erros: 0.0012539608
+binary accuracy:  0.4862401100791194   0.4748882008943928
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025810318
+sd_error: 0.02580838
+mean erros: 0.0013673143
+binary accuracy:  0.9935174788532076   0.9989669885470469
+mse 0.049138
+mse 0.051161
+mse 0.045010
+mse 0.043791
+mse 0.045733
+mse 0.044425
+mse 0.051018
+mse 0.047843
+mse 0.042136
+mse 0.050224
+mse 0.046004
+mse 0.052002
+mse 0.049263
+mse 0.044521
+mse 0.054573
+mse 0.056534
+mse 0.046948
+mse 0.051254
+mse 0.050184
+mse 0.049066
+mse 0.053617
+mse 0.051741
+epoch: 19
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07707745
+sd_error: 0.07707737
+mean erros: 0.00033254025
+binary accuracy:  0.4914860681114551   0.4851221190230478
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025776153
+sd_error: 0.025776034
+mean erros: 0.00031694843
+binary accuracy:  0.9934126805898645   0.9989071038251366
+mse 0.044080
+mse 0.045142
+mse 0.049690
+mse 0.052507
+mse 0.039840
+mse 0.046282
+mse 0.049346
+mse 0.038016
+mse 0.048238
+mse 0.057286
+mse 0.045429
+mse 0.048773
+mse 0.050067
+mse 0.049383
+mse 0.041908
+mse 0.053979
+mse 0.050891
+mse 0.052379
+mse 0.045450
+mse 0.051770
+mse 0.053667
+mse 0.057228
+epoch: 20
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07722154
+sd_error: 0.07722002
+mean erros: 0.0012590798
+binary accuracy:  0.4952700378396973   0.48787409700722395
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02586259
+sd_error: 0.025860736
+mean erros: 0.0013392746
+binary accuracy:  0.9934426229508196   0.9989370461860918
+mse 0.043176
+mse 0.040405
+mse 0.052629
+mse 0.047126
+mse 0.047842
+mse 0.044601
+mse 0.041944
+mse 0.040715
+mse 0.049625
+mse 0.048444
+mse 0.047251
+mse 0.048426
+mse 0.050010
+mse 0.056410
+mse 0.047138
+mse 0.052362
+mse 0.046500
+mse 0.054911
+mse 0.044539
+mse 0.047194
+mse 0.050896
+mse 0.049034
+epoch: 21
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07687089
+sd_error: 0.07687088
+mean erros: 0.00015613314
+binary accuracy:  0.4953560371517028   0.47781217750258
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025264595
+sd_error: 0.025264286
+mean erros: 0.00052600884
+binary accuracy:  0.9933827382289093   0.9988621902837038
+mse 0.039025
+mse 0.041622
+mse 0.042438
+mse 0.046695
+mse 0.044113
+mse 0.048913
+mse 0.047285
+mse 0.044286
+mse 0.045062
+mse 0.045652
+mse 0.049526
+mse 0.051320
+mse 0.049254
+mse 0.050437
+mse 0.040914
+mse 0.049948
+mse 0.055479
+mse 0.047213
+mse 0.053495
+mse 0.049148
+mse 0.052808
+mse 0.058934
+epoch: 22
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07671345
+sd_error: 0.076713294
+mean erros: 5.8102047e-05
+binary accuracy:  0.511781905744754   0.5068799449604403
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025737494
+sd_error: 0.025737254
+mean erros: 0.00048459467
+binary accuracy:  0.9934725653117749   0.9989071038251366
+mse 0.043408
+mse 0.042868
+mse 0.049294
+mse 0.042952
+mse 0.056592
+mse 0.046499
+mse 0.045045
+mse 0.050993
+mse 0.049608
+mse 0.042161
+mse 0.046301
+mse 0.044581
+mse 0.052433
+mse 0.051170
+mse 0.053468
+mse 0.047843
+mse 0.041892
+mse 0.049795
+mse 0.052026
+mse 0.053057
+mse 0.053376
+mse 0.055151
+epoch: 23
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07711359
+sd_error: 0.07711313
+mean erros: 0.0005563854
+binary accuracy:  0.4742002063983488   0.45992432060543514
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025929011
+sd_error: 0.025928589
+mean erros: 0.0005611677
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.041529
+mse 0.047445
+mse 0.044670
+mse 0.044744
+mse 0.052320
+mse 0.038260
+mse 0.049309
+mse 0.048828
+mse 0.043483
+mse 0.049996
+mse 0.042983
+mse 0.053579
+mse 0.053733
+mse 0.048100
+mse 0.052306
+mse 0.052768
+mse 0.047022
+mse 0.055681
+mse 0.055302
+mse 0.062727
+mse 0.045608
+mse 0.048994
+epoch: 24
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077357784
+sd_error: 0.07735657
+mean erros: 0.0011401433
+binary accuracy:  0.4808221534227726   0.4606123151014792
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026397116
+sd_error: 0.026394732
+mean erros: 0.0015257294
+binary accuracy:  0.9934426229508196   0.9989520173665694
+mse 0.047383
+mse 0.049335
+mse 0.048210
+mse 0.051044
+mse 0.043896
+mse 0.046747
+mse 0.050050
+mse 0.054053
+mse 0.048531
+mse 0.046777
+mse 0.047312
+mse 0.037996
+mse 0.048366
+mse 0.058844
+mse 0.051123
+mse 0.048860
+mse 0.045298
+mse 0.053847
+mse 0.044243
+mse 0.056383
+mse 0.054408
+mse 0.052236
+epoch: 25
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076798014
+sd_error: 0.07679777
+mean erros: 0.0005190326
+binary accuracy:  0.47764017887856897   0.4709322325421397
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025933124
+sd_error: 0.025932942
+mean erros: 0.00041187071
+binary accuracy:  0.9933977094093869   0.9989220750056141
+mse 0.042918
+mse 0.043945
+mse 0.040034
+mse 0.041385
+mse 0.045088
+mse 0.050053
+mse 0.049823
+mse 0.042249
+mse 0.051876
+mse 0.057395
+mse 0.047809
+mse 0.052356
+mse 0.044588
+mse 0.047517
+mse 0.055936
+mse 0.048669
+mse 0.047153
+mse 0.056424
+mse 0.043668
+mse 0.050987
+mse 0.046039
+mse 0.055668
+epoch: 26
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077002026
+sd_error: 0.077001356
+mean erros: 0.00080115156
+binary accuracy:  0.46164430684554525   0.4503783969728242
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026035123
+sd_error: 0.026034845
+mean erros: 0.0004424288
+binary accuracy:  0.9934426229508196   0.9989220750056141
+mse 0.043957
+mse 0.053789
+mse 0.045648
+mse 0.039243
+mse 0.049518
+mse 0.043516
+mse 0.044643
+mse 0.041752
+mse 0.045328
+mse 0.048672
+mse 0.048262
+mse 0.053722
+mse 0.049757
+mse 0.051790
+mse 0.048464
+mse 0.044841
+mse 0.044987
+mse 0.056803
+mse 0.049262
+mse 0.058356
+mse 0.052821
+mse 0.060698
+epoch: 27
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07738469
+sd_error: 0.07738404
+mean erros: 0.0008189667
+binary accuracy:  0.4826281389748882   0.4720502235982112
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026029047
+sd_error: 0.026028695
+mean erros: 0.00053633004
+binary accuracy:  0.9933827382289093   0.9988621902837038
+mse 0.051185
+mse 0.043117
+mse 0.041357
+mse 0.040608
+mse 0.035794
+mse 0.043726
+mse 0.047571
+mse 0.051764
+mse 0.047174
+mse 0.048148
+mse 0.055457
+mse 0.050693
+mse 0.056668
+mse 0.047528
+mse 0.050377
+mse 0.053126
+mse 0.052301
+mse 0.055462
+mse 0.048843
+mse 0.051061
+mse 0.051896
+mse 0.048970
+epoch: 28
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07742111
+sd_error: 0.07742103
+mean erros: -0.0003889299
+binary accuracy:  0.47342621259029927   0.46843825249398
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025873473
+sd_error: 0.0258734
+mean erros: -0.0001357986
+binary accuracy:  0.9933527958679542   0.9988172767422712
+mse 0.045871
+mse 0.045722
+mse 0.047779
+mse 0.045839
+mse 0.049497
+mse 0.034668
+mse 0.045874
+mse 0.037391
+mse 0.040064
+mse 0.055832
+mse 0.045413
+mse 0.051823
+mse 0.055176
+mse 0.048577
+mse 0.044715
+mse 0.046370
+mse 0.051411
+mse 0.054918
+mse 0.059050
+mse 0.049551
+mse 0.053109
+mse 0.052008
+epoch: 29
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07676035
+sd_error: 0.076760285
+mean erros: 0.00031537548
+binary accuracy:  0.5020639834881321   0.49630202958376335
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026264274
+sd_error: 0.026263805
+mean erros: 0.00067988056
+binary accuracy:  0.9933527958679542   0.998787334381316
+mse 0.047645
+mse 0.042466
+mse 0.047387
+mse 0.051656
+mse 0.046006
+mse 0.052970
+mse 0.046802
+mse 0.050132
+mse 0.049886
+mse 0.043880
+mse 0.046309
+mse 0.043223
+mse 0.052909
+mse 0.037268
+mse 0.051687
+mse 0.060405
+mse 0.053011
+mse 0.063572
+mse 0.045738
+mse 0.046680
+mse 0.047220
+mse 0.050481
+epoch: 30
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07722916
+sd_error: 0.07722838
+mean erros: 0.0008228912
+binary accuracy:  0.5041279669762642   0.4866701066391469
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026075015
+sd_error: 0.026073975
+mean erros: 0.0010059341
+binary accuracy:  0.9933527958679542   0.9988172767422712
+mse 0.047010
+mse 0.041656
+mse 0.048937
+mse 0.038231
+mse 0.041762
+mse 0.052189
+mse 0.048333
+mse 0.045189
+mse 0.052732
+mse 0.057430
+mse 0.042287
+mse 0.046829
+mse 0.050280
+mse 0.045030
+mse 0.048140
+mse 0.053221
+mse 0.045797
+mse 0.045036
+mse 0.055613
+mse 0.052403
+mse 0.052654
+mse 0.046099
+epoch: 31
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07666837
+sd_error: 0.07666839
+mean erros: -0.0001657281
+binary accuracy:  0.4870141038871689   0.4846061231510148
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026198575
+sd_error: 0.026198493
+mean erros: 0.00015192793
+binary accuracy:  0.9934126805898645   0.9988621902837038
+mse 0.047254
+mse 0.042929
+mse 0.041679
+mse 0.047187
+mse 0.054119
+mse 0.050684
+mse 0.045509
+mse 0.041697
+mse 0.046319
+mse 0.042725
+mse 0.046529
+mse 0.053243
+mse 0.057643
+mse 0.050235
+mse 0.053671
+mse 0.055682
+mse 0.045345
+mse 0.050379
+mse 0.048752
+mse 0.050655
+mse 0.062856
+mse 0.053668
+epoch: 32
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07700014
+sd_error: 0.077
+mean erros: 0.00031628678
+binary accuracy:  0.466890264877881   0.4606123151014792
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.026770813
+sd_error: 0.026770722
+mean erros: 0.00013985134
+binary accuracy:  0.9934426229508196   0.9988771614641815
+mse 0.048493
+mse 0.042426
+mse 0.041428
+mse 0.049560
+mse 0.047415
+mse 0.044903
+mse 0.042978
+mse 0.046778
+mse 0.056588
+mse 0.053448
+mse 0.052993
+mse 0.059033
+mse 0.045354
+mse 0.042851
+mse 0.043297
+mse 0.055115
+mse 0.053660
+mse 0.050642
+mse 0.048937
+mse 0.055533
+mse 0.051246
+mse 0.058197
+epoch: 33
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07756845
+sd_error: 0.077568404
+mean erros: -0.0004000643
+binary accuracy:  0.45588235294117646   0.45476436188510494
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02620079
+sd_error: 0.026200647
+mean erros: -0.00032106222
+binary accuracy:  0.9934276517703421   0.9988023055617935
+mse 0.046913
+mse 0.043922
+mse 0.052069
+mse 0.043454
+mse 0.047441
+mse 0.044423
+mse 0.043870
+mse 0.046436
+mse 0.047161
+mse 0.049544
+mse 0.049120
+mse 0.048227
+mse 0.046788
+mse 0.053227
+mse 0.044809
+mse 0.043361
+mse 0.044645
+mse 0.052870
+mse 0.053711
+mse 0.051197
+mse 0.055781
+mse 0.057744
+epoch: 34
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07794792
+sd_error: 0.07794782
+mean erros: 9.0673275e-05
+binary accuracy:  0.5029239766081871   0.49458204334365324
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025810631
+sd_error: 0.025810327
+mean erros: 0.0005301819
+binary accuracy:  0.9933977094093869   0.9988322479227487
+mse 0.045552
+mse 0.047452
+mse 0.044959
+mse 0.045838
+mse 0.041617
+mse 0.042314
+mse 0.039425
+mse 0.040102
+mse 0.049250
+mse 0.053809
+mse 0.054279
+mse 0.054255
+mse 0.042892
+mse 0.053567
+mse 0.042821
+mse 0.053202
+mse 0.050254
+mse 0.050941
+mse 0.051858
+mse 0.040840
+mse 0.052179
+mse 0.055675
+epoch: 35
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077277936
+sd_error: 0.07727773
+mean erros: 0.0004953754
+binary accuracy:  0.45571035431716544   0.4521843825249398
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025591092
+sd_error: 0.025590777
+mean erros: 0.00048762074
+binary accuracy:  0.9934276517703421   0.9988621902837038
+mse 0.043563
+mse 0.042826
+mse 0.051510
+mse 0.047374
+mse 0.048063
+mse 0.040180
+mse 0.045151
+mse 0.049449
+mse 0.049221
+mse 0.040016
+mse 0.046860
+mse 0.052491
+mse 0.054094
+mse 0.054748
+mse 0.059905
+mse 0.050402
+mse 0.050539
+mse 0.045310
+mse 0.049377
+mse 0.044006
+mse 0.054122
+mse 0.049512
+epoch: 36
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07669073
+sd_error: 0.0766895
+mean erros: -0.0011136526
+binary accuracy:  0.5201238390092879   0.5185758513931888
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025317539
+sd_error: 0.025317421
+mean erros: -0.00015876173
+binary accuracy:  0.9933527958679542   0.9988172767422712
+mse 0.047612
+mse 0.043593
+mse 0.045743
+mse 0.044570
+mse 0.050777
+mse 0.045671
+mse 0.037653
+mse 0.043597
+mse 0.047405
+mse 0.041945
+mse 0.052413
+mse 0.052795
+mse 0.048625
+mse 0.051590
+mse 0.052440
+mse 0.049412
+mse 0.042776
+mse 0.055953
+mse 0.045675
+mse 0.048951
+mse 0.049168
+mse 0.053693
+epoch: 37
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07644568
+sd_error: 0.07644534
+mean erros: 0.00061612885
+binary accuracy:  0.499140006879945   0.49079807361541106
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02498617
+sd_error: 0.024985641
+mean erros: 0.0006869433
+binary accuracy:  0.9933527958679542   0.9988023055617935
+mse 0.044664
+mse 0.043514
+mse 0.042655
+mse 0.044470
+mse 0.040247
+mse 0.044466
+mse 0.046026
+mse 0.046419
+mse 0.059048
+mse 0.039354
+mse 0.045423
+mse 0.043664
+mse 0.042914
+mse 0.053136
+mse 0.050490
+mse 0.046358
+mse 0.052524
+mse 0.053736
+mse 0.055416
+mse 0.051829
+mse 0.052182
+mse 0.050770
+epoch: 38
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07689857
+sd_error: 0.07689848
+mean erros: -8.257656e-05
+binary accuracy:  0.4935500515995872   0.4806501547987616
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02489578
+sd_error: 0.024895305
+mean erros: 0.0006298051
+binary accuracy:  0.9933827382289093   0.9988322479227487
+mse 0.044615
+mse 0.044636
+mse 0.043485
+mse 0.041865
+mse 0.051398
+mse 0.039465
+mse 0.044486
+mse 0.050094
+mse 0.042535
+mse 0.037698
+mse 0.044658
+mse 0.049607
+mse 0.042736
+mse 0.049691
+mse 0.051079
+mse 0.050282
+mse 0.051190
+mse 0.054293
+mse 0.043781
+mse 0.054574
+mse 0.043767
+mse 0.053248
+epoch: 39
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07694294
+sd_error: 0.07694174
+mean erros: 0.0011318295
+binary accuracy:  0.5   0.4913140694874441
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.024399625
+sd_error: 0.024398182
+mean erros: 0.0011636668
+binary accuracy:  0.9934276517703421   0.9988621902837038
+mse 0.041835
+mse 0.045477
+mse 0.041287
+mse 0.037595
+mse 0.054155
+mse 0.048301
+mse 0.036998
+mse 0.037506
+mse 0.041739
+mse 0.046482
+mse 0.049558
+mse 0.048157
+mse 0.047214
+mse 0.046019
+mse 0.051885
+mse 0.048271
+mse 0.049405
+mse 0.050693
+mse 0.054762
+mse 0.052934
+mse 0.051542
+mse 0.045511
+epoch: 40
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07757829
+sd_error: 0.077578165
+mean erros: -0.00018463093
+binary accuracy:  0.4742002063983488   0.45700034399724804
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.024587542
+sd_error: 0.024587369
+mean erros: -0.00040787563
+binary accuracy:  0.9933677670484318   0.9988172767422712
+mse 0.040701
+mse 0.040810
+mse 0.047141
+mse 0.047175
+mse 0.042669
+mse 0.042907
+mse 0.044026
+mse 0.043046
+mse 0.042273
+mse 0.040793
+mse 0.050092
+mse 0.047695
+mse 0.042805
+mse 0.046478
+mse 0.049811
+mse 0.054308
+mse 0.055709
+mse 0.059610
+mse 0.042937
+mse 0.049531
+mse 0.044738
+mse 0.053852
+epoch: 41
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07706821
+sd_error: 0.07706702
+mean erros: -0.0010822071
+binary accuracy:  0.47918816649466806   0.47058823529411764
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.024931584
+sd_error: 0.024930885
+mean erros: -0.0007728824
+binary accuracy:  0.9933827382289093   0.9988172767422712
+mse 0.040739
+mse 0.047453
+mse 0.042296
+mse 0.045200
+mse 0.038435
+mse 0.049144
+mse 0.045777
+mse 0.043288
+mse 0.047851
+mse 0.041741
+mse 0.045915
+mse 0.043909
+mse 0.045473
+mse 0.047945
+mse 0.052809
+mse 0.053089
+mse 0.048529
+mse 0.064385
+mse 0.046497
+mse 0.049749
+mse 0.041906
+mse 0.053313
+epoch: 42
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0767111
+sd_error: 0.07670878
+mean erros: 0.0015317685
+binary accuracy:  0.47471620227038186   0.466890264877881
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.024724152
+sd_error: 0.024723427
+mean erros: 0.00082896964
+binary accuracy:  0.9933078823265215   0.9987424208398832
+mse 0.048873
+mse 0.051991
+mse 0.045447
+mse 0.039057
+mse 0.048112
+mse 0.042909
+mse 0.046224
+mse 0.042344
+mse 0.046951
+mse 0.044576
+mse 0.047074
+mse 0.044380
+mse 0.047213
+mse 0.046427
+mse 0.049466
+mse 0.051227
+mse 0.045958
+mse 0.045067
+mse 0.044660
+mse 0.051022
+mse 0.048179
+mse 0.051654
+epoch: 43
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0777565
+sd_error: 0.0777564
+mean erros: 0.0003663167
+binary accuracy:  0.47308221534227723   0.46431028551771586
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.024536168
+sd_error: 0.024536073
+mean erros: 0.0002909193
+binary accuracy:  0.9933078823265215   0.9987723632008384
+mse 0.040261
+mse 0.049701
+mse 0.045561
+mse 0.048597
+mse 0.041267
+mse 0.043156
+mse 0.041617
+mse 0.052281
+mse 0.048003
+mse 0.046301
+mse 0.050296
+mse 0.040581
+mse 0.048025
+mse 0.047308
+mse 0.055303
+mse 0.056226
+mse 0.048157
+mse 0.045051
+mse 0.049720
+mse 0.052383
+mse 0.047494
+mse 0.045570
+epoch: 44
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07695875
+sd_error: 0.07695861
+mean erros: 0.00040064027
+binary accuracy:  0.48520811833505334   0.48125214998280014
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025008416
+sd_error: 0.02500827
+mean erros: 0.0002687325
+binary accuracy:  0.9933527958679542   0.9988023055617935
+mse 0.043178
+mse 0.047443
+mse 0.049417
+mse 0.050439
+mse 0.045871
+mse 0.039518
+mse 0.051229
+mse 0.040292
+mse 0.048264
+mse 0.043241
+mse 0.053762
+mse 0.048393
+mse 0.053238
+mse 0.046102
+mse 0.045630
+mse 0.050037
+mse 0.045411
+mse 0.042123
+mse 0.050284
+mse 0.049529
+mse 0.051223
+mse 0.061588
+epoch: 45
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07701327
+sd_error: 0.07701308
+mean erros: -0.0004984384
+binary accuracy:  0.4820261437908497   0.4740282077743378
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02504085
+sd_error: 0.025040824
+mean erros: 5.0185416e-05
+binary accuracy:  0.9934276517703421   0.998892132644659
+mse 0.038399
+mse 0.036313
+mse 0.045528
+mse 0.047210
+mse 0.044145
+mse 0.045336
+mse 0.046223
+mse 0.051007
+mse 0.036834
+mse 0.048091
+mse 0.051532
+mse 0.053717
+mse 0.048439
+mse 0.048622
+mse 0.043694
+mse 0.043306
+mse 0.050083
+mse 0.051215
+mse 0.058741
+mse 0.059478
+mse 0.048753
+mse 0.043695
+epoch: 46
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07693267
+sd_error: 0.07693245
+mean erros: 0.00046979252
+binary accuracy:  0.5097179222566219   0.5018059855521155
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02486012
+sd_error: 0.024859214
+mean erros: 0.0009191229
+binary accuracy:  0.9933827382289093   0.9988322479227487
+mse 0.047283
+mse 0.041918
+mse 0.046817
+mse 0.049968
+mse 0.050917
+mse 0.055315
+mse 0.043761
+mse 0.052011
+mse 0.039921
+mse 0.043186
+mse 0.043107
+mse 0.041820
+mse 0.049880
+mse 0.045994
+mse 0.046298
+mse 0.055063
+mse 0.058446
+mse 0.047837
+mse 0.049489
+mse 0.046366
+mse 0.046354
+mse 0.055556
+epoch: 47
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07665902
+sd_error: 0.07665888
+mean erros: -0.0001768276
+binary accuracy:  0.5066219470244238   0.49810801513587893
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025477525
+sd_error: 0.025477462
+mean erros: 7.137793e-05
+binary accuracy:  0.9933677670484318   0.9988322479227487
+mse 0.046883
+mse 0.042668
+mse 0.040249
+mse 0.048801
+mse 0.049841
+mse 0.038457
+mse 0.051211
+mse 0.045578
+mse 0.045414
+mse 0.045082
+mse 0.041800
+mse 0.051339
+mse 0.040818
+mse 0.049526
+mse 0.052845
+mse 0.049382
+mse 0.045547
+mse 0.047350
+mse 0.047968
+mse 0.047623
+mse 0.057229
+mse 0.052139
+epoch: 48
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07719885
+sd_error: 0.07719861
+mean erros: 0.00035903344
+binary accuracy:  0.46628826969384246   0.4548503611971104
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.025462257
+sd_error: 0.025462141
+mean erros: 0.00017249613
+binary accuracy:  0.9933977094093869   0.9988322479227487
+mse 0.047971
+mse 0.046110
+mse 0.047327
+mse 0.044422
+mse 0.046725
+mse 0.043399
+mse 0.039744
+mse 0.044548
+mse 0.044583
+mse 0.055647
+mse 0.045261
+mse 0.044415
+mse 0.048384
+mse 0.044822
+mse 0.045088
+mse 0.056818
+mse 0.037140
+mse 0.047178
+mse 0.051219
+mse 0.064341
+mse 0.055181
+mse 0.052807
+epoch: 49
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07678813
+sd_error: 0.07678802
+mean erros: 0.00014607498
+binary accuracy:  0.49217406260749913   0.4848641210870313
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02566419
+sd_error: 0.025664115
+mean erros: 4.117284e-05
+binary accuracy:  0.9933378246874766   0.9988322479227487
+mse 0.053943
+mse 0.042250
+mse 0.047534
+mse 0.045327
+mse 0.040098
+mse 0.047951
+mse 0.051283
+mse 0.050818
+mse 0.046335
+mse 0.037975
+mse 0.053453
+mse 0.041655
+mse 0.038029
+mse 0.043665
+mse 0.048215
+mse 0.044209
+mse 0.046702
+mse 0.042052
+mse 0.052021
+mse 0.052445
+mse 0.052511
+mse 0.054467
+epoch: 50
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0772354
+sd_error: 0.077234946
+mean erros: 0.00063215924
+binary accuracy:  0.488218094255246   0.4800481596147231
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02466819
+sd_error: 0.02466696
+mean erros: 0.0010807014
+binary accuracy:  0.9933827382289093   0.9988322479227487
+mse 0.041421
+mse 0.046901
+mse 0.041714
+mse 0.039468
+mse 0.043555
+mse 0.039191
+mse 0.037733
+mse 0.044349
+mse 0.040069
+mse 0.039366
+mse 0.055088
+mse 0.045205
+mse 0.045837
+mse 0.044933
+mse 0.045513
+mse 0.056189
+mse 0.042727
+mse 0.051020
+mse 0.053040
+mse 0.054223
+mse 0.045423
+mse 0.058225
+epoch: 51
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077362634
+sd_error: 0.07736247
+mean erros: -0.0003610797
+binary accuracy:  0.5067079463364293   0.5000859993120055
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023805147
+sd_error: 0.02380495
+mean erros: 0.00034077428
+binary accuracy:  0.9933378246874766   0.9988023055617935
+mse 0.035637
+mse 0.036800
+mse 0.048232
+mse 0.045735
+mse 0.043143
+mse 0.039840
+mse 0.045338
+mse 0.039772
+mse 0.039857
+mse 0.052599
+mse 0.037941
+mse 0.052003
+mse 0.048092
+mse 0.045446
+mse 0.047911
+mse 0.042796
+mse 0.050279
+mse 0.050973
+mse 0.049730
+mse 0.052286
+mse 0.047557
+mse 0.047469
+epoch: 52
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07666349
+sd_error: 0.07666191
+mean erros: -0.0012809244
+binary accuracy:  0.511437908496732   0.4934640522875817
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023663951
+sd_error: 0.0236636
+mean erros: -0.00056593516
+binary accuracy:  0.993322853506999   0.9988172767422712
+mse 0.046789
+mse 0.040324
+mse 0.044656
+mse 0.043182
+mse 0.043984
+mse 0.044676
+mse 0.048292
+mse 0.044515
+mse 0.047423
+mse 0.053299
+mse 0.044190
+mse 0.039629
+mse 0.038418
+mse 0.047404
+mse 0.040059
+mse 0.042726
+mse 0.047814
+mse 0.049469
+mse 0.047269
+mse 0.041818
+mse 0.055217
+mse 0.047730
+epoch: 53
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07736991
+sd_error: 0.07736973
+mean erros: -0.00043121088
+binary accuracy:  0.4827141382868937   0.47970416236670105
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02371944
+sd_error: 0.02371915
+mean erros: 0.00050210895
+binary accuracy:  0.993322853506999   0.9987573920203608
+mse 0.053530
+mse 0.040795
+mse 0.039128
+mse 0.045330
+mse 0.043164
+mse 0.035834
+mse 0.042621
+mse 0.043973
+mse 0.036710
+mse 0.044216
+mse 0.045354
+mse 0.045370
+mse 0.047103
+mse 0.044731
+mse 0.042325
+mse 0.050348
+mse 0.046712
+mse 0.042681
+mse 0.047398
+mse 0.056984
+mse 0.051974
+mse 0.048676
+epoch: 54
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07720269
+sd_error: 0.07720289
+mean erros: 0.00015404442
+binary accuracy:  0.48581011351909187   0.47970416236670105
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023507461
+sd_error: 0.023507388
+mean erros: 0.000126057
+binary accuracy:  0.9933378246874766   0.9988172767422712
+mse 0.041603
+mse 0.041796
+mse 0.036838
+mse 0.042319
+mse 0.039594
+mse 0.044615
+mse 0.049169
+mse 0.044158
+mse 0.048281
+mse 0.048050
+mse 0.058269
+mse 0.045230
+mse 0.051341
+mse 0.053345
+mse 0.045757
+mse 0.049987
+mse 0.046345
+mse 0.044148
+mse 0.048150
+mse 0.042194
+mse 0.042009
+mse 0.048675
+epoch: 55
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076833755
+sd_error: 0.076831535
+mean erros: -0.0014981187
+binary accuracy:  0.5   0.49518403852769177
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023818176
+sd_error: 0.02381748
+mean erros: -0.00079632853
+binary accuracy:  0.9934575941312973   0.9989520173665694
+mse 0.041473
+mse 0.039638
+mse 0.034912
+mse 0.043087
+mse 0.042270
+mse 0.038346
+mse 0.046612
+mse 0.042398
+mse 0.047789
+mse 0.041594
+mse 0.041143
+mse 0.051839
+mse 0.042224
+mse 0.055572
+mse 0.041416
+mse 0.048006
+mse 0.050983
+mse 0.053073
+mse 0.052922
+mse 0.046011
+mse 0.054510
+mse 0.048267
+epoch: 56
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07694378
+sd_error: 0.07694349
+mean erros: 0.00051043736
+binary accuracy:  0.4949260405916753   0.4826281389748882
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023727631
+sd_error: 0.023727244
+mean erros: 0.00059977046
+binary accuracy:  0.9933677670484318   0.9988172767422712
+mse 0.041320
+mse 0.037991
+mse 0.041993
+mse 0.039745
+mse 0.039013
+mse 0.052286
+mse 0.044455
+mse 0.049074
+mse 0.036140
+mse 0.053042
+mse 0.050556
+mse 0.054921
+mse 0.042822
+mse 0.052942
+mse 0.040586
+mse 0.044484
+mse 0.050546
+mse 0.047803
+mse 0.045592
+mse 0.051183
+mse 0.045100
+mse 0.040499
+epoch: 57
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07723034
+sd_error: 0.07723026
+mean erros: 8.363956e-05
+binary accuracy:  0.4953560371517028   0.49054007567939456
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02374675
+sd_error: 0.023746623
+mean erros: 5.580497e-06
+binary accuracy:  0.9932629687850887   0.9987274496594056
+mse 0.041576
+mse 0.038564
+mse 0.044147
+mse 0.047305
+mse 0.047400
+mse 0.048836
+mse 0.045555
+mse 0.042212
+mse 0.037656
+mse 0.043682
+mse 0.041353
+mse 0.041059
+mse 0.050206
+mse 0.048283
+mse 0.044849
+mse 0.048910
+mse 0.055539
+mse 0.044594
+mse 0.052039
+mse 0.052880
+mse 0.038865
+mse 0.045625
+epoch: 58
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07740356
+sd_error: 0.0774035
+mean erros: 0.00025467508
+binary accuracy:  0.47248022015823876   0.4698142414860681
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02389718
+sd_error: 0.023896683
+mean erros: 0.00064258015
+binary accuracy:  0.9933078823265215   0.9987274496594056
+mse 0.044882
+mse 0.045137
+mse 0.046846
+mse 0.041227
+mse 0.034683
+mse 0.047486
+mse 0.042562
+mse 0.044431
+mse 0.046338
+mse 0.045737
+mse 0.038982
+mse 0.041648
+mse 0.041646
+mse 0.042470
+mse 0.048501
+mse 0.058530
+mse 0.046816
+mse 0.047000
+mse 0.042299
+mse 0.058150
+mse 0.046390
+mse 0.049845
+epoch: 59
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07702699
+sd_error: 0.077027105
+mean erros: -9.023043e-05
+binary accuracy:  0.4909700722394221   0.4864121087031304
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023611795
+sd_error: 0.023611741
+mean erros: 5.0486797e-05
+binary accuracy:  0.9933677670484318   0.9988322479227487
+mse 0.042116
+mse 0.043225
+mse 0.040966
+mse 0.046546
+mse 0.041602
+mse 0.036516
+mse 0.041209
+mse 0.044655
+mse 0.045831
+mse 0.039803
+mse 0.055813
+mse 0.052879
+mse 0.055438
+mse 0.042360
+mse 0.041756
+mse 0.044431
+mse 0.046221
+mse 0.054682
+mse 0.047555
+mse 0.048870
+mse 0.047663
+mse 0.053512
+epoch: 60
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07724129
+sd_error: 0.07724107
+mean erros: 0.00026319208
+binary accuracy:  0.478156174750602   0.47213622291021673
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023585109
+sd_error: 0.023585012
+mean erros: -0.00029352526
+binary accuracy:  0.9933977094093869   0.9988322479227487
+mse 0.043741
+mse 0.050670
+mse 0.043690
+mse 0.039630
+mse 0.040965
+mse 0.044957
+mse 0.037801
+mse 0.048391
+mse 0.037045
+mse 0.049557
+mse 0.045386
+mse 0.042005
+mse 0.041326
+mse 0.042303
+mse 0.048676
+mse 0.039841
+mse 0.046052
+mse 0.050427
+mse 0.048015
+mse 0.052586
+mse 0.052574
+mse 0.047299
+epoch: 61
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07715713
+sd_error: 0.077156894
+mean erros: 0.00039512644
+binary accuracy:  0.49836601307189543   0.4864121087031304
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023350317
+sd_error: 0.02335007
+mean erros: -0.0004991898
+binary accuracy:  0.9934126805898645   0.9988621902837038
+mse 0.048259
+mse 0.039128
+mse 0.047247
+mse 0.037706
+mse 0.043978
+mse 0.041345
+mse 0.040708
+mse 0.044615
+mse 0.042585
+mse 0.040419
+mse 0.043103
+mse 0.051633
+mse 0.056018
+mse 0.052544
+mse 0.039056
+mse 0.055779
+mse 0.051213
+mse 0.046386
+mse 0.050312
+mse 0.047082
+mse 0.048821
+mse 0.049671
+epoch: 62
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07655185
+sd_error: 0.07655179
+mean erros: -0.00025747364
+binary accuracy:  0.5060199518403853   0.49724802201582385
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02390836
+sd_error: 0.02390832
+mean erros: -0.0001518068
+binary accuracy:  0.9934126805898645   0.9988621902837038
+mse 0.046320
+mse 0.046242
+mse 0.039949
+mse 0.036933
+mse 0.045351
+mse 0.040176
+mse 0.040054
+mse 0.042334
+mse 0.043899
+mse 0.050267
+mse 0.047392
+mse 0.044841
+mse 0.055895
+mse 0.051626
+mse 0.047649
+mse 0.046072
+mse 0.042044
+mse 0.052776
+mse 0.041717
+mse 0.051644
+mse 0.044187
+mse 0.043443
+epoch: 63
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077437796
+sd_error: 0.077437215
+mean erros: 0.00061378285
+binary accuracy:  0.4978500171998624   0.48632610939112486
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023551987
+sd_error: 0.023551948
+mean erros: 0.00011901996
+binary accuracy:  0.9933378246874766   0.9988322479227487
+mse 0.044660
+mse 0.046605
+mse 0.041063
+mse 0.043972
+mse 0.042064
+mse 0.040273
+mse 0.045370
+mse 0.042847
+mse 0.041295
+mse 0.038721
+mse 0.053133
+mse 0.047916
+mse 0.046404
+mse 0.050141
+mse 0.040450
+mse 0.046811
+mse 0.041711
+mse 0.057133
+mse 0.048530
+mse 0.052232
+mse 0.049700
+mse 0.043606
+epoch: 64
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07665516
+sd_error: 0.07665506
+mean erros: 0.00033804984
+binary accuracy:  0.5137598899208806   0.5009459924320605
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023575624
+sd_error: 0.023575561
+mean erros: 0.00013086006
+binary accuracy:  0.9933977094093869   0.998892132644659
+mse 0.047005
+mse 0.037957
+mse 0.039802
+mse 0.039092
+mse 0.044763
+mse 0.047099
+mse 0.047812
+mse 0.043936
+mse 0.048969
+mse 0.037548
+mse 0.040659
+mse 0.041473
+mse 0.043265
+mse 0.046722
+mse 0.051346
+mse 0.052457
+mse 0.041502
+mse 0.048664
+mse 0.043670
+mse 0.044909
+mse 0.047099
+mse 0.062491
+epoch: 65
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07656717
+sd_error: 0.07656717
+mean erros: 0.000105589075
+binary accuracy:  0.5018059855521155   0.49406604747162025
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02432332
+sd_error: 0.024323028
+mean erros: 0.0005191933
+binary accuracy:  0.9933677670484318   0.9988172767422712
+mse 0.039190
+mse 0.041324
+mse 0.044350
+mse 0.038854
+mse 0.037357
+mse 0.047601
+mse 0.048350
+mse 0.044043
+mse 0.039086
+mse 0.043078
+mse 0.047498
+mse 0.053355
+mse 0.047204
+mse 0.046811
+mse 0.048893
+mse 0.051904
+mse 0.047405
+mse 0.051021
+mse 0.038875
+mse 0.060317
+mse 0.046299
+mse 0.049956
+epoch: 66
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076752685
+sd_error: 0.07675255
+mean erros: 0.0003049542
+binary accuracy:  0.510749914000688   0.5047299621603027
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023807772
+sd_error: 0.023807611
+mean erros: 0.00035203103
+binary accuracy:  0.9934276517703421   0.998892132644659
+mse 0.044859
+mse 0.042348
+mse 0.047030
+mse 0.044667
+mse 0.043822
+mse 0.040662
+mse 0.039474
+mse 0.041449
+mse 0.041149
+mse 0.042619
+mse 0.040346
+mse 0.036287
+mse 0.048512
+mse 0.044951
+mse 0.049734
+mse 0.046594
+mse 0.051830
+mse 0.039561
+mse 0.046135
+mse 0.046032
+mse 0.051948
+mse 0.045044
+epoch: 67
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077326216
+sd_error: 0.07732584
+mean erros: 0.00065247103
+binary accuracy:  0.5018919848641211   0.4950980392156863
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022514608
+sd_error: 0.022513768
+mean erros: 0.00090009207
+binary accuracy:  0.9934725653117749   0.9988771614641815
+mse 0.037911
+mse 0.042981
+mse 0.047144
+mse 0.045551
+mse 0.047301
+mse 0.046833
+mse 0.040738
+mse 0.045589
+mse 0.042060
+mse 0.039127
+mse 0.038393
+mse 0.046720
+mse 0.037556
+mse 0.047240
+mse 0.048367
+mse 0.048090
+mse 0.039002
+mse 0.044407
+mse 0.046747
+mse 0.044670
+mse 0.053926
+mse 0.046726
+epoch: 68
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07701726
+sd_error: 0.077016085
+mean erros: 0.0011203301
+binary accuracy:  0.5096319229446165   0.5039559683522532
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.023149751
+sd_error: 0.023149295
+mean erros: 0.0006394296
+binary accuracy:  0.9934276517703421   0.9989071038251366
+mse 0.037882
+mse 0.044852
+mse 0.039164
+mse 0.044836
+mse 0.044832
+mse 0.042381
+mse 0.043531
+mse 0.035054
+mse 0.047784
+mse 0.042383
+mse 0.041301
+mse 0.039677
+mse 0.050385
+mse 0.042598
+mse 0.046609
+mse 0.045611
+mse 0.049204
+mse 0.046208
+mse 0.044912
+mse 0.036871
+mse 0.049639
+mse 0.052529
+epoch: 69
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07646916
+sd_error: 0.07646864
+mean erros: 0.0007158148
+binary accuracy:  0.4872721018231854   0.4802201582387341
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02305576
+sd_error: 0.023055285
+mean erros: 0.00066371955
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.043288
+mse 0.041850
+mse 0.039970
+mse 0.041219
+mse 0.047189
+mse 0.039393
+mse 0.040477
+mse 0.046616
+mse 0.047722
+mse 0.042381
+mse 0.041294
+mse 0.045452
+mse 0.039488
+mse 0.046852
+mse 0.037441
+mse 0.045781
+mse 0.042624
+mse 0.050025
+mse 0.038644
+mse 0.045970
+mse 0.049022
+mse 0.047792
+epoch: 70
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0769946
+sd_error: 0.07699446
+mean erros: 0.00024221948
+binary accuracy:  0.49630202958376335   0.4866701066391469
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022719353
+sd_error: 0.022719162
+mean erros: 0.00034640165
+binary accuracy:  0.9935174788532076   0.9989520173665694
+mse 0.041347
+mse 0.041467
+mse 0.037389
+mse 0.043942
+mse 0.038510
+mse 0.045394
+mse 0.042732
+mse 0.039406
+mse 0.042963
+mse 0.038516
+mse 0.047021
+mse 0.039816
+mse 0.043754
+mse 0.050561
+mse 0.041508
+mse 0.049069
+mse 0.049570
+mse 0.046235
+mse 0.049100
+mse 0.048764
+mse 0.051270
+mse 0.043009
+epoch: 71
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077269696
+sd_error: 0.07726952
+mean erros: 0.00051462266
+binary accuracy:  0.4924320605435156   0.4823701410388717
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022648849
+sd_error: 0.02264846
+mean erros: 0.0005904021
+binary accuracy:  0.9935474212141627   0.9989669885470469
+mse 0.049705
+mse 0.035120
+mse 0.042466
+mse 0.042171
+mse 0.044399
+mse 0.038118
+mse 0.038354
+mse 0.041277
+mse 0.043560
+mse 0.051381
+mse 0.041799
+mse 0.048825
+mse 0.039059
+mse 0.044501
+mse 0.044843
+mse 0.044893
+mse 0.045317
+mse 0.041436
+mse 0.047318
+mse 0.041004
+mse 0.040959
+mse 0.047775
+epoch: 72
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07674865
+sd_error: 0.076747976
+mean erros: -0.0007298041
+binary accuracy:  0.47308221534227723   0.4633642930856553
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02309054
+sd_error: 0.023090215
+mean erros: -0.0005066354
+binary accuracy:  0.9934875364922524   0.9989370461860918
+mse 0.035575
+mse 0.043327
+mse 0.043371
+mse 0.044338
+mse 0.046154
+mse 0.040924
+mse 0.044084
+mse 0.037078
+mse 0.044224
+mse 0.043366
+mse 0.044613
+mse 0.047743
+mse 0.048387
+mse 0.045094
+mse 0.051326
+mse 0.048364
+mse 0.044051
+mse 0.037652
+mse 0.047642
+mse 0.048279
+mse 0.039133
+mse 0.046670
+epoch: 73
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07683907
+sd_error: 0.07683853
+mean erros: -0.0007341525
+binary accuracy:  0.5030099759201926   0.4950980392156863
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02234762
+sd_error: 0.022347525
+mean erros: -0.00022137199
+binary accuracy:  0.9934725653117749   0.9989520173665694
+mse 0.042439
+mse 0.040660
+mse 0.045541
+mse 0.038456
+mse 0.038409
+mse 0.036349
+mse 0.040776
+mse 0.038469
+mse 0.046547
+mse 0.047236
+mse 0.042909
+mse 0.041068
+mse 0.045744
+mse 0.044022
+mse 0.044632
+mse 0.042441
+mse 0.046971
+mse 0.048114
+mse 0.054809
+mse 0.044440
+mse 0.042490
+mse 0.047286
+epoch: 74
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07670906
+sd_error: 0.07670908
+mean erros: -7.305935e-06
+binary accuracy:  0.4952700378396973   0.4895080839353285
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022687744
+sd_error: 0.022687597
+mean erros: 0.00034753553
+binary accuracy:  0.9934426229508196   0.9989370461860918
+mse 0.041881
+mse 0.035446
+mse 0.046339
+mse 0.037854
+mse 0.037552
+mse 0.045110
+mse 0.046184
+mse 0.041336
+mse 0.041047
+mse 0.040009
+mse 0.041035
+mse 0.039058
+mse 0.052439
+mse 0.040698
+mse 0.044749
+mse 0.045236
+mse 0.043730
+mse 0.042923
+mse 0.054910
+mse 0.050386
+mse 0.041296
+mse 0.050427
+epoch: 75
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07642534
+sd_error: 0.07642524
+mean erros: -0.00043520975
+binary accuracy:  0.4957860337117303   0.48434812521499826
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02254493
+sd_error: 0.022544743
+mean erros: -0.00031930025
+binary accuracy:  0.99350250767273   0.9989520173665694
+mse 0.038947
+mse 0.040777
+mse 0.045160
+mse 0.048075
+mse 0.043144
+mse 0.047561
+mse 0.043420
+mse 0.041434
+mse 0.044559
+mse 0.038435
+mse 0.042390
+mse 0.041870
+mse 0.036458
+mse 0.045667
+mse 0.046383
+mse 0.045075
+mse 0.043965
+mse 0.047841
+mse 0.042793
+mse 0.042760
+mse 0.043970
+mse 0.047884
+epoch: 76
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07732686
+sd_error: 0.07732683
+mean erros: 9.205762e-05
+binary accuracy:  0.5   0.4924320605435156
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022695664
+sd_error: 0.022695491
+mean erros: 0.00029452285
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.034809
+mse 0.042210
+mse 0.043332
+mse 0.042325
+mse 0.039049
+mse 0.049636
+mse 0.038491
+mse 0.043461
+mse 0.042751
+mse 0.039730
+mse 0.041649
+mse 0.043612
+mse 0.040511
+mse 0.046657
+mse 0.049158
+mse 0.041155
+mse 0.052598
+mse 0.050674
+mse 0.042079
+mse 0.044623
+mse 0.044751
+mse 0.047482
+epoch: 77
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07653899
+sd_error: 0.076537594
+mean erros: -0.0011446818
+binary accuracy:  0.5055899552803578   0.48770209838321293
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022998454
+sd_error: 0.022997977
+mean erros: -0.00068815716
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.044413
+mse 0.035475
+mse 0.038913
+mse 0.042531
+mse 0.043056
+mse 0.046057
+mse 0.043800
+mse 0.035963
+mse 0.037992
+mse 0.049679
+mse 0.045882
+mse 0.050525
+mse 0.050163
+mse 0.047790
+mse 0.040976
+mse 0.050237
+mse 0.045628
+mse 0.051353
+mse 0.040619
+mse 0.042216
+mse 0.042830
+mse 0.050266
+epoch: 78
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076715976
+sd_error: 0.076716006
+mean erros: -0.00018395954
+binary accuracy:  0.4944100447196422   0.48658410732714136
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022863334
+sd_error: 0.0228632
+mean erros: 0.00027757447
+binary accuracy:  0.9934575941312973   0.9989669885470469
+mse 0.035254
+mse 0.042525
+mse 0.039572
+mse 0.040134
+mse 0.045289
+mse 0.040180
+mse 0.040862
+mse 0.040681
+mse 0.044418
+mse 0.037351
+mse 0.039523
+mse 0.047815
+mse 0.055575
+mse 0.051244
+mse 0.048192
+mse 0.050242
+mse 0.039378
+mse 0.048478
+mse 0.051466
+mse 0.039707
+mse 0.050241
+mse 0.043378
+epoch: 79
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07748926
+sd_error: 0.077488914
+mean erros: -0.00062337815
+binary accuracy:  0.5015479876160991   0.48968008255933954
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022322135
+sd_error: 0.022322088
+mean erros: 0.00014187
+binary accuracy:  0.9934725653117749   0.998892132644659
+mse 0.037784
+mse 0.037874
+mse 0.040451
+mse 0.034873
+mse 0.040455
+mse 0.044067
+mse 0.043257
+mse 0.049011
+mse 0.046324
+mse 0.044262
+mse 0.045864
+mse 0.038793
+mse 0.039379
+mse 0.042493
+mse 0.044310
+mse 0.041371
+mse 0.048408
+mse 0.053040
+mse 0.047320
+mse 0.041899
+mse 0.046943
+mse 0.047778
+epoch: 80
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07670743
+sd_error: 0.07670732
+mean erros: -0.00030298153
+binary accuracy:  0.48615411076711385   0.478156174750602
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02245383
+sd_error: 0.022453815
+mean erros: -1.9898302e-05
+binary accuracy:  0.9934276517703421   0.9988771614641815
+mse 0.039996
+mse 0.043359
+mse 0.038879
+mse 0.040297
+mse 0.040106
+mse 0.043722
+mse 0.041616
+mse 0.036374
+mse 0.043177
+mse 0.044621
+mse 0.049602
+mse 0.044711
+mse 0.048657
+mse 0.039584
+mse 0.045256
+mse 0.052276
+mse 0.044638
+mse 0.039654
+mse 0.048863
+mse 0.046647
+mse 0.051245
+mse 0.043585
+epoch: 81
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076657265
+sd_error: 0.0766575
+mean erros: 8.531782e-05
+binary accuracy:  0.4949260405916753   0.48796009631922943
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022919688
+sd_error: 0.022919508
+mean erros: 0.0003665673
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.036200
+mse 0.036900
+mse 0.038985
+mse 0.041502
+mse 0.042614
+mse 0.037170
+mse 0.035993
+mse 0.047888
+mse 0.053333
+mse 0.043090
+mse 0.042643
+mse 0.053680
+mse 0.046436
+mse 0.048926
+mse 0.038668
+mse 0.042936
+mse 0.049938
+mse 0.048991
+mse 0.046519
+mse 0.041453
+mse 0.053766
+mse 0.046127
+epoch: 82
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07714116
+sd_error: 0.07714132
+mean erros: 4.7181074e-05
+binary accuracy:  0.48520811833505334   0.47738218094255247
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022462063
+sd_error: 0.022461902
+mean erros: 0.0003400241
+binary accuracy:  0.9934575941312973   0.9989071038251366
+mse 0.039026
+mse 0.040250
+mse 0.037956
+mse 0.040932
+mse 0.038317
+mse 0.035863
+mse 0.036378
+mse 0.041681
+mse 0.043075
+mse 0.045186
+mse 0.044874
+mse 0.038914
+mse 0.047061
+mse 0.047512
+mse 0.050242
+mse 0.045660
+mse 0.049037
+mse 0.044170
+mse 0.050612
+mse 0.043847
+mse 0.051749
+mse 0.048742
+epoch: 83
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07659388
+sd_error: 0.07659361
+mean erros: -0.00049328315
+binary accuracy:  0.5049019607843137   0.4935500515995872
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022323886
+sd_error: 0.022323845
+mean erros: 2.240913e-05
+binary accuracy:  0.9933977094093869   0.9988472191032263
+mse 0.043909
+mse 0.038839
+mse 0.038274
+mse 0.042789
+mse 0.047802
+mse 0.042614
+mse 0.039899
+mse 0.039473
+mse 0.039212
+mse 0.044579
+mse 0.040891
+mse 0.039728
+mse 0.034144
+mse 0.043835
+mse 0.051535
+mse 0.046875
+mse 0.043410
+mse 0.041477
+mse 0.050276
+mse 0.042538
+mse 0.050326
+mse 0.045540
+epoch: 84
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07702955
+sd_error: 0.077029385
+mean erros: -0.00050231925
+binary accuracy:  0.49122807017543857   0.47987616099071206
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021969423
+sd_error: 0.021969354
+mean erros: 0.00014222185
+binary accuracy:  0.9934725653117749   0.9988621902837038
+mse 0.037856
+mse 0.042677
+mse 0.041504
+mse 0.033719
+mse 0.038940
+mse 0.040992
+mse 0.040277
+mse 0.050529
+mse 0.043848
+mse 0.044853
+mse 0.041931
+mse 0.047375
+mse 0.043745
+mse 0.039396
+mse 0.047644
+mse 0.042702
+mse 0.041746
+mse 0.047617
+mse 0.042652
+mse 0.047802
+mse 0.036981
+mse 0.050525
+epoch: 85
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0771698
+sd_error: 0.07716979
+mean erros: -0.00015985011
+binary accuracy:  0.48366013071895425   0.4740282077743378
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021841625
+sd_error: 0.02184151
+mean erros: 0.00024598162
+binary accuracy:  0.9934276517703421   0.998892132644659
+mse 0.038692
+mse 0.046773
+mse 0.034505
+mse 0.039138
+mse 0.038233
+mse 0.043723
+mse 0.039466
+mse 0.034382
+mse 0.039005
+mse 0.047965
+mse 0.044190
+mse 0.054930
+mse 0.047149
+mse 0.040170
+mse 0.041523
+mse 0.044880
+mse 0.041299
+mse 0.048545
+mse 0.044385
+mse 0.037844
+mse 0.053805
+mse 0.047251
+epoch: 86
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07658468
+sd_error: 0.07658462
+mean erros: -0.00022678517
+binary accuracy:  0.499312005503956   0.4893360853113175
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021955153
+sd_error: 0.021955
+mean erros: 0.00034974836
+binary accuracy:  0.9934875364922524   0.9989071038251366
+mse 0.036317
+mse 0.042246
+mse 0.044326
+mse 0.043865
+mse 0.042037
+mse 0.041986
+mse 0.037356
+mse 0.038076
+mse 0.038403
+mse 0.052078
+mse 0.035013
+mse 0.041649
+mse 0.038164
+mse 0.038725
+mse 0.040171
+mse 0.041857
+mse 0.054077
+mse 0.049226
+mse 0.048207
+mse 0.042485
+mse 0.047265
+mse 0.040569
+epoch: 87
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07694182
+sd_error: 0.07694184
+mean erros: -0.00021459605
+binary accuracy:  0.49853801169590645   0.48185414516683867
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022063544
+sd_error: 0.022063477
+mean erros: -0.0001580655
+binary accuracy:  0.9934276517703421   0.9988172767422712
+mse 0.033651
+mse 0.037288
+mse 0.038037
+mse 0.040304
+mse 0.040658
+mse 0.042651
+mse 0.045243
+mse 0.044133
+mse 0.047479
+mse 0.042404
+mse 0.040914
+mse 0.042376
+mse 0.044583
+mse 0.051341
+mse 0.044042
+mse 0.051069
+mse 0.047951
+mse 0.042122
+mse 0.052161
+mse 0.038702
+mse 0.039178
+mse 0.038723
+epoch: 88
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07683931
+sd_error: 0.07683939
+mean erros: -3.9301063e-05
+binary accuracy:  0.48142414860681115   0.47256621947024424
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021664856
+sd_error: 0.02166474
+mean erros: 0.00020829956
+binary accuracy:  0.9934426229508196   0.998892132644659
+mse 0.034938
+mse 0.038881
+mse 0.040304
+mse 0.039382
+mse 0.041728
+mse 0.043750
+mse 0.049925
+mse 0.044569
+mse 0.046602
+mse 0.046743
+mse 0.045223
+mse 0.043776
+mse 0.041900
+mse 0.044325
+mse 0.037624
+mse 0.039825
+mse 0.039128
+mse 0.046666
+mse 0.048858
+mse 0.038750
+mse 0.033946
+mse 0.041714
+epoch: 89
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07695738
+sd_error: 0.076957345
+mean erros: -9.791617e-05
+binary accuracy:  0.5067939456484348   0.4909700722394221
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021619186
+sd_error: 0.021619074
+mean erros: 0.00018726297
+binary accuracy:  0.9934426229508196   0.9989071038251366
+mse 0.034176
+mse 0.034711
+mse 0.044210
+mse 0.040488
+mse 0.037773
+mse 0.043285
+mse 0.041409
+mse 0.038822
+mse 0.049133
+mse 0.043321
+mse 0.042511
+mse 0.048179
+mse 0.045324
+mse 0.046979
+mse 0.041365
+mse 0.040909
+mse 0.045213
+mse 0.043104
+mse 0.045599
+mse 0.041201
+mse 0.047727
+mse 0.046415
+epoch: 90
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07674221
+sd_error: 0.07674206
+mean erros: -0.00057294726
+binary accuracy:  0.49475404196766426   0.48348813209494323
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021669453
+sd_error: 0.021669215
+mean erros: -0.00037267045
+binary accuracy:  0.9934276517703421   0.9989220750056141
+mse 0.041128
+mse 0.038250
+mse 0.037365
+mse 0.036893
+mse 0.041857
+mse 0.039818
+mse 0.037140
+mse 0.039221
+mse 0.047345
+mse 0.040015
+mse 0.043502
+mse 0.037111
+mse 0.049360
+mse 0.041897
+mse 0.050474
+mse 0.047790
+mse 0.047036
+mse 0.042385
+mse 0.051530
+mse 0.038873
+mse 0.043139
+mse 0.043286
+epoch: 91
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07680153
+sd_error: 0.07680159
+mean erros: 0.0001180318
+binary accuracy:  0.4911420708634331   0.4870141038871689
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021626506
+sd_error: 0.02162644
+mean erros: -3.4571112e-05
+binary accuracy:  0.9934276517703421   0.9989220750056141
+mse 0.038405
+mse 0.041657
+mse 0.034939
+mse 0.037780
+mse 0.031595
+mse 0.036305
+mse 0.046245
+mse 0.042655
+mse 0.048335
+mse 0.035401
+mse 0.041676
+mse 0.050033
+mse 0.043626
+mse 0.050730
+mse 0.046889
+mse 0.040629
+mse 0.041103
+mse 0.045158
+mse 0.039905
+mse 0.052879
+mse 0.045277
+mse 0.042835
+epoch: 92
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07703575
+sd_error: 0.07703569
+mean erros: -0.00025730015
+binary accuracy:  0.4766941864465084   0.4681802545579635
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02141159
+sd_error: 0.021411568
+mean erros: -0.00016494204
+binary accuracy:  0.9934126805898645   0.9988322479227487
+mse 0.038862
+mse 0.032547
+mse 0.037703
+mse 0.044217
+mse 0.037958
+mse 0.041112
+mse 0.041519
+mse 0.036902
+mse 0.045055
+mse 0.041693
+mse 0.036783
+mse 0.037789
+mse 0.042651
+mse 0.038088
+mse 0.044024
+mse 0.042909
+mse 0.050026
+mse 0.047008
+mse 0.045394
+mse 0.053057
+mse 0.046315
+mse 0.047371
+epoch: 93
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07710983
+sd_error: 0.07710972
+mean erros: 0.00011743483
+binary accuracy:  0.48796009631922943   0.4828861369109047
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021602781
+sd_error: 0.021602636
+mean erros: 0.0002679324
+binary accuracy:  0.9933827382289093   0.9988771614641815
+mse 0.037261
+mse 0.041992
+mse 0.040360
+mse 0.033310
+mse 0.040962
+mse 0.039306
+mse 0.041694
+mse 0.040609
+mse 0.041284
+mse 0.034357
+mse 0.043675
+mse 0.049628
+mse 0.043656
+mse 0.042185
+mse 0.048902
+mse 0.041353
+mse 0.048214
+mse 0.046699
+mse 0.047474
+mse 0.046444
+mse 0.040393
+mse 0.046866
+epoch: 94
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07723423
+sd_error: 0.077234134
+mean erros: -0.00011512752
+binary accuracy:  0.4820261437908497   0.4628482972136223
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021715282
+sd_error: 0.021715224
+mean erros: 0.00016530567
+binary accuracy:  0.9933527958679542   0.9988472191032263
+mse 0.042032
+mse 0.039064
+mse 0.039558
+mse 0.045430
+mse 0.041993
+mse 0.038182
+mse 0.042750
+mse 0.041906
+mse 0.041214
+mse 0.041352
+mse 0.046767
+mse 0.046249
+mse 0.040767
+mse 0.038804
+mse 0.044358
+mse 0.041409
+mse 0.057930
+mse 0.042460
+mse 0.042754
+mse 0.043988
+mse 0.039432
+mse 0.046590
+epoch: 95
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07687595
+sd_error: 0.07687567
+mean erros: 0.0004709503
+binary accuracy:  0.49707602339181284   0.4855521155830753
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02206641
+sd_error: 0.022066347
+mean erros: 0.00022851682
+binary accuracy:  0.9933827382289093   0.9988621902837038
+mse 0.038388
+mse 0.047939
+mse 0.045541
+mse 0.042374
+mse 0.041357
+mse 0.048950
+mse 0.041281
+mse 0.039828
+mse 0.049153
+mse 0.046264
+mse 0.041501
+mse 0.046276
+mse 0.044777
+mse 0.039999
+mse 0.044144
+mse 0.043390
+mse 0.048621
+mse 0.044742
+mse 0.039018
+mse 0.042152
+mse 0.045366
+mse 0.043868
+epoch: 96
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07725906
+sd_error: 0.07725905
+mean erros: 9.7571894e-05
+binary accuracy:  0.4748882008943928   0.4717062263501892
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02183021
+sd_error: 0.021830006
+mean erros: -0.00037736248
+binary accuracy:  0.9933977094093869   0.9988472191032263
+mse 0.040318
+mse 0.041152
+mse 0.042494
+mse 0.046590
+mse 0.037307
+mse 0.038923
+mse 0.047171
+mse 0.035615
+mse 0.047214
+mse 0.042771
+mse 0.047903
+mse 0.034939
+mse 0.040964
+mse 0.040517
+mse 0.048617
+mse 0.037071
+mse 0.051652
+mse 0.042768
+mse 0.046519
+mse 0.051675
+mse 0.046776
+mse 0.043089
+epoch: 97
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076645255
+sd_error: 0.07664517
+mean erros: -0.0002240261
+binary accuracy:  0.5026659786721707   0.49922600619195046
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022241231
+sd_error: 0.022241162
+mean erros: 0.00023858772
+binary accuracy:  0.9934276517703421   0.9988771614641815
+mse 0.042654
+mse 0.046343
+mse 0.039074
+mse 0.040716
+mse 0.043397
+mse 0.036254
+mse 0.040236
+mse 0.048704
+mse 0.039874
+mse 0.041745
+mse 0.047339
+mse 0.038760
+mse 0.041969
+mse 0.041121
+mse 0.050584
+mse 0.044263
+mse 0.040415
+mse 0.046890
+mse 0.049317
+mse 0.051020
+mse 0.041037
+mse 0.044024
+epoch: 98
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07691126
+sd_error: 0.076911174
+mean erros: -0.00016698168
+binary accuracy:  0.49767801857585137   0.4866701066391469
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022031806
+sd_error: 0.022031717
+mean erros: 0.00019887222
+binary accuracy:  0.9933527958679542   0.9988172767422712
+mse 0.044116
+mse 0.041835
+mse 0.043618
+mse 0.039413
+mse 0.043488
+mse 0.041881
+mse 0.042318
+mse 0.033964
+mse 0.043045
+mse 0.036055
+mse 0.044326
+mse 0.041100
+mse 0.046881
+mse 0.045724
+mse 0.038933
+mse 0.042518
+mse 0.043519
+mse 0.039691
+mse 0.053984
+mse 0.042763
+mse 0.040432
+mse 0.048241
+epoch: 99
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07718511
+sd_error: 0.077184886
+mean erros: -0.0004696261
+binary accuracy:  0.4999140006879945   0.49165806673546614
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.022458203
+sd_error: 0.022458043
+mean erros: -0.0003890814
+binary accuracy:  0.9933378246874766   0.9988172767422712
+mse 0.039779
+mse 0.043494
+mse 0.042616
+mse 0.037134
+mse 0.044821
+mse 0.036061
+mse 0.037827
+mse 0.040171
+mse 0.040696
+mse 0.045249
+mse 0.040229
+mse 0.040723
+mse 0.044940
+mse 0.039225
+mse 0.041829
+mse 0.041961
+mse 0.055860
+mse 0.042379
+mse 0.047968
+mse 0.048901
+mse 0.046807
+mse 0.045121
+epoch: 100
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0769275
+sd_error: 0.0769274
+mean erros: 0.0004043752
+binary accuracy:  0.4872721018231854   0.47875816993464054
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021699833
+sd_error: 0.021699797
+mean erros: -5.0517465e-05
+binary accuracy:  0.9933677670484318   0.9988472191032263
+mse 0.042223
+mse 0.033924
+mse 0.048502
+mse 0.042254
+mse 0.033249
+mse 0.037913
+mse 0.037676
+mse 0.045062
+mse 0.037692
+mse 0.042924
+mse 0.039696
+mse 0.042252
+mse 0.041006
+mse 0.048437
+mse 0.041273
+mse 0.041537
+mse 0.046749
+mse 0.047903
+mse 0.036299
+mse 0.042537
+mse 0.051068
+mse 0.042863
+epoch: 101
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07662096
+sd_error: 0.0766209
+mean erros: 0.00035867287
+binary accuracy:  0.4833161334709322   0.4826281389748882
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02145101
+sd_error: 0.021450907
+mean erros: 0.00012941846
+binary accuracy:  0.9933527958679542   0.9988172767422712
+mse 0.046727
+mse 0.039949
+mse 0.042946
+mse 0.039511
+mse 0.041140
+mse 0.035799
+mse 0.042403
+mse 0.044536
+mse 0.040974
+mse 0.041671
+mse 0.040513
+mse 0.036713
+mse 0.041058
+mse 0.044553
+mse 0.041858
+mse 0.040639
+mse 0.046397
+mse 0.046053
+mse 0.035393
+mse 0.042663
+mse 0.051913
+mse 0.043219
+epoch: 102
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07730706
+sd_error: 0.077306315
+mean erros: 0.00086323044
+binary accuracy:  0.4782421740626075   0.4742862057103543
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021671616
+sd_error: 0.021671126
+mean erros: 0.000678989
+binary accuracy:  0.9934426229508196   0.9989071038251366
+mse 0.040595
+mse 0.040690
+mse 0.037551
+mse 0.038709
+mse 0.038621
+mse 0.039708
+mse 0.036377
+mse 0.044847
+mse 0.041259
+mse 0.052438
+mse 0.041730
+mse 0.035233
+mse 0.040155
+mse 0.040625
+mse 0.042968
+mse 0.047025
+mse 0.045621
+mse 0.040903
+mse 0.044406
+mse 0.047446
+mse 0.037725
+mse 0.051818
+epoch: 103
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077086605
+sd_error: 0.077086434
+mean erros: -0.00014633087
+binary accuracy:  0.4762641898864809   0.46654626762985896
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020929914
+sd_error: 0.02092984
+mean erros: 0.00025517668
+binary accuracy:  0.9933977094093869   0.9988621902837038
+mse 0.037328
+mse 0.035972
+mse 0.042767
+mse 0.037871
+mse 0.032627
+mse 0.042107
+mse 0.038790
+mse 0.042922
+mse 0.045968
+mse 0.040230
+mse 0.042957
+mse 0.045702
+mse 0.041640
+mse 0.040972
+mse 0.044479
+mse 0.044000
+mse 0.044917
+mse 0.034379
+mse 0.039984
+mse 0.042402
+mse 0.045152
+mse 0.043436
+epoch: 104
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076737836
+sd_error: 0.07673793
+mean erros: -4.2872292e-05
+binary accuracy:  0.4911420708634331   0.48434812521499826
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021224843
+sd_error: 0.021224799
+mean erros: 7.608947e-05
+binary accuracy:  0.9933827382289093   0.9988172767422712
+mse 0.034278
+mse 0.044302
+mse 0.045131
+mse 0.033731
+mse 0.041300
+mse 0.042390
+mse 0.043062
+mse 0.040346
+mse 0.043106
+mse 0.035914
+mse 0.036419
+mse 0.043714
+mse 0.038401
+mse 0.037680
+mse 0.044031
+mse 0.039418
+mse 0.049203
+mse 0.041068
+mse 0.038574
+mse 0.037914
+mse 0.044910
+mse 0.040762
+epoch: 105
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07704484
+sd_error: 0.07704462
+mean erros: 0.00035450954
+binary accuracy:  0.4760061919504644   0.4694702442380461
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020970743
+sd_error: 0.020970691
+mean erros: 0.00018187301
+binary accuracy:  0.9933378246874766   0.998787334381316
+mse 0.039006
+mse 0.039258
+mse 0.036625
+mse 0.035958
+mse 0.040505
+mse 0.037831
+mse 0.035419
+mse 0.034596
+mse 0.041150
+mse 0.042883
+mse 0.044073
+mse 0.043929
+mse 0.041603
+mse 0.038024
+mse 0.033258
+mse 0.045914
+mse 0.043461
+mse 0.047601
+mse 0.046048
+mse 0.047090
+mse 0.056738
+mse 0.050014
+epoch: 106
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07672341
+sd_error: 0.07672327
+mean erros: 0.00051737716
+binary accuracy:  0.4913140694874441   0.4855521155830753
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02093027
+sd_error: 0.020930065
+mean erros: 0.00040054022
+binary accuracy:  0.9933527958679542   0.998787334381316
+mse 0.038336
+mse 0.040171
+mse 0.031330
+mse 0.039562
+mse 0.035280
+mse 0.039800
+mse 0.042347
+mse 0.041267
+mse 0.036203
+mse 0.032741
+mse 0.036048
+mse 0.040433
+mse 0.042689
+mse 0.039828
+mse 0.044492
+mse 0.040008
+mse 0.045057
+mse 0.042284
+mse 0.045205
+mse 0.040087
+mse 0.048865
+mse 0.051274
+epoch: 107
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07657619
+sd_error: 0.076576054
+mean erros: 0.00042419398
+binary accuracy:  0.4871861025111799   0.4821981424148607
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021131733
+sd_error: 0.021131657
+mean erros: 0.00028424567
+binary accuracy:  0.993322853506999   0.9988023055617935
+mse 0.037637
+mse 0.040570
+mse 0.040317
+mse 0.039068
+mse 0.038125
+mse 0.043476
+mse 0.049192
+mse 0.033304
+mse 0.043226
+mse 0.042665
+mse 0.043959
+mse 0.043275
+mse 0.038138
+mse 0.040696
+mse 0.050947
+mse 0.044180
+mse 0.041105
+mse 0.042703
+mse 0.048541
+mse 0.046569
+mse 0.038211
+mse 0.045351
+epoch: 108
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077109165
+sd_error: 0.07710917
+mean erros: -0.00020622362
+binary accuracy:  0.47015823873409013   0.4664602683178535
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020963106
+sd_error: 0.020963077
+mean erros: -2.7652213e-05
+binary accuracy:  0.9933677670484318   0.9988322479227487
+mse 0.041096
+mse 0.042292
+mse 0.033887
+mse 0.035192
+mse 0.034549
+mse 0.044446
+mse 0.038922
+mse 0.038876
+mse 0.041232
+mse 0.044988
+mse 0.042855
+mse 0.046376
+mse 0.043579
+mse 0.032759
+mse 0.045414
+mse 0.040093
+mse 0.039177
+mse 0.043385
+mse 0.045426
+mse 0.045319
+mse 0.044075
+mse 0.053261
+epoch: 109
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076380886
+sd_error: 0.0763808
+mean erros: -0.00013905534
+binary accuracy:  0.4955280357757138   0.4910560715514276
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021547703
+sd_error: 0.021547683
+mean erros: 0.00011417344
+binary accuracy:  0.9934875364922524   0.9989520173665694
+mse 0.040956
+mse 0.043658
+mse 0.038557
+mse 0.040374
+mse 0.039343
+mse 0.034044
+mse 0.043863
+mse 0.036717
+mse 0.044387
+mse 0.043646
+mse 0.035964
+mse 0.038615
+mse 0.042109
+mse 0.039256
+mse 0.043886
+mse 0.037336
+mse 0.044873
+mse 0.050809
+mse 0.045253
+mse 0.047757
+mse 0.033991
+mse 0.044944
+epoch: 110
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076501474
+sd_error: 0.07650121
+mean erros: 0.00047944026
+binary accuracy:  0.5067939456484348   0.5006019951840385
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02160488
+sd_error: 0.021604756
+mean erros: 0.00022479834
+binary accuracy:  0.9934875364922524   0.9989669885470469
+mse 0.038261
+mse 0.035785
+mse 0.037153
+mse 0.039138
+mse 0.040654
+mse 0.040625
+mse 0.039171
+mse 0.043591
+mse 0.039146
+mse 0.043308
+mse 0.040146
+mse 0.036272
+mse 0.047805
+mse 0.044019
+mse 0.045152
+mse 0.043375
+mse 0.049056
+mse 0.038314
+mse 0.049598
+mse 0.046323
+mse 0.044734
+mse 0.055448
+epoch: 111
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07708243
+sd_error: 0.07708244
+mean erros: 2.0565707e-05
+binary accuracy:  0.4988820089439284   0.48615411076711385
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021012865
+sd_error: 0.021012824
+mean erros: 6.097626e-05
+binary accuracy:  0.9934126805898645   0.9988472191032263
+mse 0.046430
+mse 0.040436
+mse 0.034475
+mse 0.032326
+mse 0.043760
+mse 0.045625
+mse 0.037478
+mse 0.041649
+mse 0.038219
+mse 0.041376
+mse 0.044467
+mse 0.035115
+mse 0.046452
+mse 0.034127
+mse 0.043784
+mse 0.042235
+mse 0.047493
+mse 0.055434
+mse 0.039047
+mse 0.044173
+mse 0.039137
+mse 0.050312
+epoch: 112
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07698611
+sd_error: 0.07698596
+mean erros: 0.00038715985
+binary accuracy:  0.4886480908152735   0.48632610939112486
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021007344
+sd_error: 0.021007353
+mean erros: 9.396982e-05
+binary accuracy:  0.9933378246874766   0.9987723632008384
+mse 0.045817
+mse 0.039667
+mse 0.035966
+mse 0.046008
+mse 0.040105
+mse 0.038486
+mse 0.036977
+mse 0.045579
+mse 0.044600
+mse 0.034740
+mse 0.042489
+mse 0.041293
+mse 0.040472
+mse 0.039515
+mse 0.044685
+mse 0.041029
+mse 0.042777
+mse 0.046362
+mse 0.045943
+mse 0.043415
+mse 0.047876
+mse 0.040595
+epoch: 113
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07695167
+sd_error: 0.07695125
+mean erros: -0.0006403685
+binary accuracy:  0.4855521155830753   0.47678018575851394
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02148366
+sd_error: 0.021483634
+mean erros: -0.00013036198
+binary accuracy:  0.993322853506999   0.9988322479227487
+mse 0.035918
+mse 0.038685
+mse 0.041869
+mse 0.047028
+mse 0.039708
+mse 0.041689
+mse 0.034017
+mse 0.040211
+mse 0.035910
+mse 0.040407
+mse 0.037602
+mse 0.041790
+mse 0.041050
+mse 0.046557
+mse 0.038919
+mse 0.039516
+mse 0.044610
+mse 0.045264
+mse 0.050758
+mse 0.053618
+mse 0.038426
+mse 0.044011
+epoch: 114
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07690367
+sd_error: 0.07690306
+mean erros: 0.0007390473
+binary accuracy:  0.4995700034399725   0.489594083247334
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020965418
+sd_error: 0.020965373
+mean erros: 0.00013024575
+binary accuracy:  0.9933827382289093   0.9988472191032263
+mse 0.029162
+mse 0.037879
+mse 0.040576
+mse 0.036821
+mse 0.045182
+mse 0.036240
+mse 0.037890
+mse 0.042070
+mse 0.041605
+mse 0.038098
+mse 0.046199
+mse 0.042879
+mse 0.039927
+mse 0.039637
+mse 0.046875
+mse 0.038927
+mse 0.049967
+mse 0.045712
+mse 0.043964
+mse 0.048976
+mse 0.042447
+mse 0.045252
+epoch: 115
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07688304
+sd_error: 0.07688291
+mean erros: 0.00029466528
+binary accuracy:  0.47635018919848643   0.46413828689370484
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.021031627
+sd_error: 0.0210316
+mean erros: -0.00013064119
+binary accuracy:  0.9932629687850887   0.9987573920203608
+mse 0.038461
+mse 0.033561
+mse 0.040285
+mse 0.041764
+mse 0.035096
+mse 0.039364
+mse 0.041902
+mse 0.046744
+mse 0.040111
+mse 0.040997
+mse 0.042399
+mse 0.040139
+mse 0.043894
+mse 0.045037
+mse 0.038492
+mse 0.038073
+mse 0.043907
+mse 0.044958
+mse 0.040544
+mse 0.046636
+mse 0.049976
+mse 0.043365
+epoch: 116
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07715733
+sd_error: 0.07715714
+mean erros: 0.0003702484
+binary accuracy:  0.4791021671826625   0.46843825249398
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020937115
+sd_error: 0.020937014
+mean erros: -0.00029825894
+binary accuracy:  0.9932929111460439   0.9987573920203608
+mse 0.035001
+mse 0.039514
+mse 0.043463
+mse 0.036287
+mse 0.037094
+mse 0.041030
+mse 0.040234
+mse 0.043795
+mse 0.043365
+mse 0.039239
+mse 0.036093
+mse 0.045180
+mse 0.039620
+mse 0.055203
+mse 0.044377
+mse 0.042209
+mse 0.044103
+mse 0.049195
+mse 0.033697
+mse 0.035409
+mse 0.040253
+mse 0.041553
+epoch: 117
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07680128
+sd_error: 0.076800786
+mean erros: -0.00062212127
+binary accuracy:  0.478672170622635   0.4709322325421397
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020930825
+sd_error: 0.020930812
+mean erros: -7.52296e-05
+binary accuracy:  0.9933378246874766   0.998787334381316
+mse 0.041326
+mse 0.044432
+mse 0.035271
+mse 0.036086
+mse 0.041266
+mse 0.045810
+mse 0.038242
+mse 0.036926
+mse 0.033583
+mse 0.035872
+mse 0.038760
+mse 0.038839
+mse 0.043825
+mse 0.046180
+mse 0.038183
+mse 0.044658
+mse 0.044584
+mse 0.035938
+mse 0.053245
+mse 0.052424
+mse 0.044453
+mse 0.046579
+epoch: 118
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077193916
+sd_error: 0.07719383
+mean erros: 0.00035526446
+binary accuracy:  0.4971620227038184   0.48168214654282765
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020835308
+sd_error: 0.020835292
+mean erros: -6.942334e-05
+binary accuracy:  0.9933977094093869   0.9988771614641815
+mse 0.035507
+mse 0.045207
+mse 0.036795
+mse 0.038819
+mse 0.039897
+mse 0.039187
+mse 0.042722
+mse 0.037601
+mse 0.045914
+mse 0.045912
+mse 0.043678
+mse 0.035966
+mse 0.034790
+mse 0.040326
+mse 0.038085
+mse 0.049850
+mse 0.040039
+mse 0.041924
+mse 0.046613
+mse 0.039515
+mse 0.040494
+mse 0.037115
+epoch: 119
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07710827
+sd_error: 0.07710826
+mean erros: -0.00026840734
+binary accuracy:  0.478156174750602   0.467406260749914
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020650998
+sd_error: 0.020650906
+mean erros: -0.00027025712
+binary accuracy:  0.9933977094093869   0.998892132644659
+mse 0.041946
+mse 0.033586
+mse 0.034348
+mse 0.038032
+mse 0.043820
+mse 0.038890
+mse 0.038653
+mse 0.035965
+mse 0.042488
+mse 0.042734
+mse 0.045401
+mse 0.041411
+mse 0.036814
+mse 0.042875
+mse 0.041024
+mse 0.035440
+mse 0.043936
+mse 0.042815
+mse 0.043554
+mse 0.039241
+mse 0.048453
+mse 0.043730
+epoch: 120
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0769194
+sd_error: 0.07691943
+mean erros: 8.786669e-05
+binary accuracy:  0.48761609907120745   0.4780701754385965
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020362422
+sd_error: 0.020362364
+mean erros: 0.00015079524
+binary accuracy:  0.9934575941312973   0.9989220750056141
+mse 0.040748
+mse 0.045647
+mse 0.041080
+mse 0.043939
+mse 0.045916
+mse 0.035919
+mse 0.036787
+mse 0.035187
+mse 0.044486
+mse 0.038851
+mse 0.038894
+mse 0.037848
+mse 0.036118
+mse 0.040272
+mse 0.034671
+mse 0.048257
+mse 0.040009
+mse 0.044464
+mse 0.043581
+mse 0.047713
+mse 0.041010
+mse 0.036752
+epoch: 121
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07745551
+sd_error: 0.07745539
+mean erros: 0.0003507817
+binary accuracy:  0.49028207774337806   0.48374613003095973
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020412764
+sd_error: 0.020412736
+mean erros: 3.3594148e-05
+binary accuracy:  0.9934575941312973   0.9989220750056141
+mse 0.033743
+mse 0.032714
+mse 0.043177
+mse 0.035545
+mse 0.040593
+mse 0.036318
+mse 0.044231
+mse 0.040435
+mse 0.034989
+mse 0.034998
+mse 0.044948
+mse 0.042881
+mse 0.042892
+mse 0.043764
+mse 0.049636
+mse 0.038315
+mse 0.042277
+mse 0.039069
+mse 0.041913
+mse 0.042051
+mse 0.044637
+mse 0.041751
+epoch: 122
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077147596
+sd_error: 0.07714746
+mean erros: 0.00022457688
+binary accuracy:  0.4867561059511524   0.4803921568627451
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02069125
+sd_error: 0.020691186
+mean erros: -0.00014403698
+binary accuracy:  0.99350250767273   0.9989819597275245
+mse 0.032293
+mse 0.034524
+mse 0.034287
+mse 0.043402
+mse 0.044318
+mse 0.038411
+mse 0.038617
+mse 0.042252
+mse 0.036043
+mse 0.037409
+mse 0.043076
+mse 0.036023
+mse 0.035054
+mse 0.046222
+mse 0.043290
+mse 0.040396
+mse 0.046222
+mse 0.040913
+mse 0.039312
+mse 0.039475
+mse 0.044979
+mse 0.047523
+epoch: 123
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077301174
+sd_error: 0.07730091
+mean erros: 0.00060267345
+binary accuracy:  0.4853801169590643   0.477124183006536
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02010335
+sd_error: 0.02010321
+mean erros: 0.00033559295
+binary accuracy:  0.9934875364922524   0.9989819597275245
+mse 0.038898
+mse 0.038443
+mse 0.034832
+mse 0.032768
+mse 0.032536
+mse 0.041515
+mse 0.038922
+mse 0.045339
+mse 0.043652
+mse 0.040141
+mse 0.043911
+mse 0.035787
+mse 0.040641
+mse 0.044292
+mse 0.046119
+mse 0.045665
+mse 0.040335
+mse 0.040202
+mse 0.038612
+mse 0.044643
+mse 0.039315
+mse 0.044586
+epoch: 124
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077015944
+sd_error: 0.07701565
+mean erros: 0.0004288653
+binary accuracy:  0.478156174750602   0.4656002751977984
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020680103
+sd_error: 0.02068009
+mean erros: 0.000119725075
+binary accuracy:  0.9934126805898645   0.9989220750056141
+mse 0.034336
+mse 0.035689
+mse 0.044471
+mse 0.046097
+mse 0.039551
+mse 0.035491
+mse 0.032824
+mse 0.033981
+mse 0.040205
+mse 0.041815
+mse 0.041126
+mse 0.041406
+mse 0.043962
+mse 0.042851
+mse 0.042661
+mse 0.047477
+mse 0.042137
+mse 0.041553
+mse 0.041863
+mse 0.051993
+mse 0.042683
+mse 0.043926
+epoch: 125
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07685481
+sd_error: 0.076854646
+mean erros: -0.00027950518
+binary accuracy:  0.4748882008943928   0.46388028895768835
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020695334
+sd_error: 0.020695275
+mean erros: -0.00018268285
+binary accuracy:  0.9934126805898645   0.998892132644659
+mse 0.034953
+mse 0.037099
+mse 0.037480
+mse 0.036399
+mse 0.040824
+mse 0.044151
+mse 0.035085
+mse 0.040022
+mse 0.034711
+mse 0.044399
+mse 0.039458
+mse 0.039520
+mse 0.040256
+mse 0.042379
+mse 0.048633
+mse 0.045880
+mse 0.044259
+mse 0.036755
+mse 0.039699
+mse 0.039564
+mse 0.037791
+mse 0.044028
+epoch: 126
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07706299
+sd_error: 0.077062465
+mean erros: -0.0007182243
+binary accuracy:  0.48409012727898176   0.47256621947024424
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020506049
+sd_error: 0.020505914
+mean erros: -0.0003260062
+binary accuracy:  0.9933977094093869   0.9988621902837038
+mse 0.041781
+mse 0.039358
+mse 0.034411
+mse 0.038613
+mse 0.036592
+mse 0.040235
+mse 0.041200
+mse 0.040512
+mse 0.037480
+mse 0.041408
+mse 0.038472
+mse 0.039432
+mse 0.036310
+mse 0.050984
+mse 0.048876
+mse 0.040068
+mse 0.040991
+mse 0.039648
+mse 0.045214
+mse 0.045333
+mse 0.044995
+mse 0.041521
+epoch: 127
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07709724
+sd_error: 0.07709727
+mean erros: 1.2585759e-05
+binary accuracy:  0.50171998624011   0.47987616099071206
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020391835
+sd_error: 0.020391759
+mean erros: -2.705363e-05
+binary accuracy:  0.9933378246874766   0.9988322479227487
+mse 0.036374
+mse 0.036862
+mse 0.036911
+mse 0.041573
+mse 0.036827
+mse 0.036399
+mse 0.039072
+mse 0.038447
+mse 0.039925
+mse 0.038192
+mse 0.041899
+mse 0.044215
+mse 0.044452
+mse 0.039893
+mse 0.044029
+mse 0.042404
+mse 0.049111
+mse 0.048605
+mse 0.041171
+mse 0.037645
+mse 0.045447
+mse 0.040317
+epoch: 128
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0772282
+sd_error: 0.07722824
+mean erros: -0.00018775715
+binary accuracy:  0.4928620571035432   0.47944616443068455
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02076201
+sd_error: 0.020761862
+mean erros: -0.00036005868
+binary accuracy:  0.9933977094093869   0.9988621902837038
+mse 0.034819
+mse 0.043860
+mse 0.039831
+mse 0.037467
+mse 0.040452
+mse 0.045884
+mse 0.045043
+mse 0.036632
+mse 0.035795
+mse 0.041531
+mse 0.036723
+mse 0.037643
+mse 0.040713
+mse 0.041585
+mse 0.043331
+mse 0.048407
+mse 0.035543
+mse 0.038890
+mse 0.038445
+mse 0.044601
+mse 0.040405
+mse 0.047997
+epoch: 129
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07721343
+sd_error: 0.07721356
+mean erros: -0.00010227951
+binary accuracy:  0.47875816993464054   0.47144822841417267
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020294707
+sd_error: 0.020294681
+mean erros: -2.0289113e-05
+binary accuracy:  0.9933977094093869   0.9989071038251366
+mse 0.040653
+mse 0.040942
+mse 0.040323
+mse 0.037221
+mse 0.040245
+mse 0.040046
+mse 0.034475
+mse 0.042405
+mse 0.045274
+mse 0.035067
+mse 0.047148
+mse 0.034885
+mse 0.037417
+mse 0.044458
+mse 0.043659
+mse 0.036080
+mse 0.048318
+mse 0.047355
+mse 0.036678
+mse 0.038803
+mse 0.037187
+mse 0.047880
+epoch: 130
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07651181
+sd_error: 0.07651188
+mean erros: -2.5930052e-05
+binary accuracy:  0.5132438940488476   0.5062779497764018
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02085901
+sd_error: 0.020858958
+mean erros: 8.018849e-05
+binary accuracy:  0.9934426229508196   0.9989220750056141
+mse 0.036891
+mse 0.036562
+mse 0.040007
+mse 0.038099
+mse 0.039031
+mse 0.048075
+mse 0.036174
+mse 0.039286
+mse 0.047609
+mse 0.042087
+mse 0.037489
+mse 0.043723
+mse 0.041211
+mse 0.036125
+mse 0.046036
+mse 0.042454
+mse 0.044032
+mse 0.040667
+mse 0.042352
+mse 0.042281
+mse 0.048421
+mse 0.045036
+epoch: 131
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07690596
+sd_error: 0.07690581
+mean erros: 0.0003306568
+binary accuracy:  0.4868421052631579   0.47213622291021673
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020413319
+sd_error: 0.02041328
+mean erros: -0.0001605422
+binary accuracy:  0.9934126805898645   0.9988621902837038
+mse 0.032877
+mse 0.041643
+mse 0.035315
+mse 0.040529
+mse 0.036443
+mse 0.042034
+mse 0.040761
+mse 0.048936
+mse 0.043791
+mse 0.036161
+mse 0.040442
+mse 0.032162
+mse 0.044355
+mse 0.042496
+mse 0.035204
+mse 0.042762
+mse 0.041800
+mse 0.041445
+mse 0.046090
+mse 0.045130
+mse 0.040920
+mse 0.042988
+epoch: 132
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077024974
+sd_error: 0.0770249
+mean erros: -0.00015095464
+binary accuracy:  0.4842621259029928   0.47764017887856897
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020191493
+sd_error: 0.02019147
+mean erros: 1.3844068e-05
+binary accuracy:  0.993322853506999   0.9988023055617935
+mse 0.038939
+mse 0.041827
+mse 0.041805
+mse 0.033595
+mse 0.039697
+mse 0.039184
+mse 0.039593
+mse 0.039330
+mse 0.039761
+mse 0.039098
+mse 0.040706
+mse 0.041703
+mse 0.038813
+mse 0.040965
+mse 0.046116
+mse 0.036092
+mse 0.043539
+mse 0.035343
+mse 0.045343
+mse 0.043762
+mse 0.049585
+mse 0.044340
+epoch: 133
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07701056
+sd_error: 0.07701035
+mean erros: -0.00034878176
+binary accuracy:  0.4826281389748882   0.4760061919504644
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.02008559
+sd_error: 0.020085556
+mean erros: 7.7843186e-05
+binary accuracy:  0.9933527958679542   0.9988023055617935
+mse 0.040096
+mse 0.034236
+mse 0.039627
+mse 0.043601
+mse 0.036858
+mse 0.041299
+mse 0.034351
+mse 0.039954
+mse 0.041802
+mse 0.036580
+mse 0.041682
+mse 0.047029
+mse 0.040358
+mse 0.035402
+mse 0.038688
+mse 0.038712
+mse 0.039233
+mse 0.040159
+mse 0.042675
+mse 0.050351
+mse 0.040283
+mse 0.046211
+epoch: 134
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076962985
+sd_error: 0.07696272
+mean erros: 0.00048488294
+binary accuracy:  0.49905400756793944   0.4893360853113175
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019888563
+sd_error: 0.01988849
+mean erros: 0.0001072055
+binary accuracy:  0.9933527958679542   0.9988322479227487
+mse 0.036803
+mse 0.039915
+mse 0.038939
+mse 0.043097
+mse 0.035462
+mse 0.039741
+mse 0.033122
+mse 0.037027
+mse 0.038232
+mse 0.031449
+mse 0.036826
+mse 0.035303
+mse 0.048073
+mse 0.043513
+mse 0.040755
+mse 0.041177
+mse 0.044470
+mse 0.039033
+mse 0.046445
+mse 0.040457
+mse 0.040685
+mse 0.044620
+epoch: 135
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07663392
+sd_error: 0.07663399
+mean erros: 0.00020978595
+binary accuracy:  0.5196078431372549   0.5102339181286549
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019783303
+sd_error: 0.019783225
+mean erros: 0.00015589467
+binary accuracy:  0.993322853506999   0.9987573920203608
+mse 0.033085
+mse 0.045914
+mse 0.031717
+mse 0.036750
+mse 0.036834
+mse 0.034228
+mse 0.043951
+mse 0.039581
+mse 0.043898
+mse 0.042581
+mse 0.039182
+mse 0.037358
+mse 0.044285
+mse 0.039918
+mse 0.040648
+mse 0.037711
+mse 0.044503
+mse 0.045221
+mse 0.043076
+mse 0.038178
+mse 0.042208
+mse 0.037449
+epoch: 136
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07664638
+sd_error: 0.07664593
+mean erros: -0.0005722396
+binary accuracy:  0.5082559339525283   0.4942380460956312
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020142345
+sd_error: 0.020142175
+mean erros: -0.00034750495
+binary accuracy:  0.9933677670484318   0.9988472191032263
+mse 0.033025
+mse 0.040650
+mse 0.033658
+mse 0.041061
+mse 0.048039
+mse 0.040877
+mse 0.040013
+mse 0.031386
+mse 0.037226
+mse 0.038394
+mse 0.039096
+mse 0.038837
+mse 0.036808
+mse 0.042238
+mse 0.039295
+mse 0.033255
+mse 0.046492
+mse 0.042854
+mse 0.041390
+mse 0.038286
+mse 0.037318
+mse 0.049386
+epoch: 137
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07685032
+sd_error: 0.07685031
+mean erros: -0.00023718782
+binary accuracy:  0.49896800825593396   0.48744410044719644
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019634854
+sd_error: 0.019634772
+mean erros: -0.00017336375
+binary accuracy:  0.9934126805898645   0.9988771614641815
+mse 0.039425
+mse 0.041662
+mse 0.035963
+mse 0.042071
+mse 0.030827
+mse 0.035642
+mse 0.035612
+mse 0.039537
+mse 0.044193
+mse 0.037843
+mse 0.033849
+mse 0.044591
+mse 0.035767
+mse 0.034809
+mse 0.041613
+mse 0.042414
+mse 0.046078
+mse 0.040620
+mse 0.042098
+mse 0.040418
+mse 0.037003
+mse 0.040399
+epoch: 138
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076668344
+sd_error: 0.07666776
+mean erros: -0.0007314344
+binary accuracy:  0.4828861369109047   0.47721018231854145
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019680358
+sd_error: 0.019680193
+mean erros: -0.00031496037
+binary accuracy:  0.9933677670484318   0.9988621902837038
+mse 0.034813
+mse 0.034245
+mse 0.037165
+mse 0.047148
+mse 0.038882
+mse 0.039478
+mse 0.037204
+mse 0.034980
+mse 0.035703
+mse 0.040623
+mse 0.039685
+mse 0.042512
+mse 0.037480
+mse 0.037582
+mse 0.039163
+mse 0.046764
+mse 0.042431
+mse 0.044921
+mse 0.039152
+mse 0.045167
+mse 0.036784
+mse 0.042452
+epoch: 139
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07748995
+sd_error: 0.077489704
+mean erros: 0.00030123367
+binary accuracy:  0.4785861713106295   0.47256621947024424
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019911015
+sd_error: 0.019910997
+mean erros: 0.00011242173
+binary accuracy:  0.9934276517703421   0.9989220750056141
+mse 0.035855
+mse 0.038510
+mse 0.037599
+mse 0.040858
+mse 0.029844
+mse 0.043212
+mse 0.035346
+mse 0.045145
+mse 0.037328
+mse 0.034970
+mse 0.048116
+mse 0.040557
+mse 0.040986
+mse 0.041142
+mse 0.041011
+mse 0.044999
+mse 0.040165
+mse 0.040261
+mse 0.037475
+mse 0.035571
+mse 0.045468
+mse 0.042262
+epoch: 140
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07709385
+sd_error: 0.07709367
+mean erros: 2.2575445e-05
+binary accuracy:  0.4813381492948056   0.47248022015823876
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019848961
+sd_error: 0.019848876
+mean erros: 0.00010752168
+binary accuracy:  0.9934575941312973   0.9989520173665694
+mse 0.038172
+mse 0.036241
+mse 0.039187
+mse 0.038802
+mse 0.029636
+mse 0.037980
+mse 0.043229
+mse 0.040499
+mse 0.042137
+mse 0.036249
+mse 0.044652
+mse 0.039913
+mse 0.041837
+mse 0.039332
+mse 0.038046
+mse 0.033327
+mse 0.038328
+mse 0.044020
+mse 0.036967
+mse 0.045067
+mse 0.046652
+mse 0.040214
+epoch: 141
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076492116
+sd_error: 0.07649138
+mean erros: 0.0008708934
+binary accuracy:  0.5011179910560716   0.48770209838321293
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020053698
+sd_error: 0.020053627
+mean erros: 0.00023224877
+binary accuracy:  0.993322853506999   0.998892132644659
+mse 0.034406
+mse 0.039159
+mse 0.041205
+mse 0.036701
+mse 0.040337
+mse 0.032955
+mse 0.037104
+mse 0.044420
+mse 0.036741
+mse 0.034208
+mse 0.042936
+mse 0.039852
+mse 0.043443
+mse 0.041496
+mse 0.039316
+mse 0.040388
+mse 0.040975
+mse 0.041187
+mse 0.042532
+mse 0.042549
+mse 0.040414
+mse 0.048693
+epoch: 142
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07697275
+sd_error: 0.07697257
+mean erros: 0.0003172668
+binary accuracy:  0.4980220158238734   0.4924320605435156
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019475782
+sd_error: 0.019475712
+mean erros: 0.00017055898
+binary accuracy:  0.9934276517703421   0.9989071038251366
+mse 0.039238
+mse 0.038746
+mse 0.039593
+mse 0.034346
+mse 0.039280
+mse 0.040179
+mse 0.037097
+mse 0.035471
+mse 0.038545
+mse 0.036985
+mse 0.037828
+mse 0.045952
+mse 0.039358
+mse 0.045553
+mse 0.044829
+mse 0.037153
+mse 0.038722
+mse 0.042424
+mse 0.049359
+mse 0.045224
+mse 0.039617
+mse 0.045450
+epoch: 143
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07689492
+sd_error: 0.07689481
+mean erros: -0.0004800521
+binary accuracy:  0.47901616787065704   0.47273821809425526
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019960994
+sd_error: 0.019960964
+mean erros: 3.889787e-05
+binary accuracy:  0.9934126805898645   0.9988322479227487
+mse 0.040751
+mse 0.040703
+mse 0.035511
+mse 0.039277
+mse 0.035144
+mse 0.030505
+mse 0.040138
+mse 0.038918
+mse 0.040458
+mse 0.036006
+mse 0.050376
+mse 0.038643
+mse 0.041562
+mse 0.041840
+mse 0.038490
+mse 0.047358
+mse 0.031643
+mse 0.032745
+mse 0.044161
+mse 0.043629
+mse 0.046053
+mse 0.046104
+epoch: 144
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076687716
+sd_error: 0.0766876
+mean erros: 0.00025635568
+binary accuracy:  0.49699002407980736   0.48770209838321293
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.020028545
+sd_error: 0.020028487
+mean erros: 6.749375e-05
+binary accuracy:  0.9933977094093869   0.9988472191032263
+mse 0.037297
+mse 0.035104
+mse 0.032181
+mse 0.040637
+mse 0.038695
+mse 0.036219
+mse 0.037488
+mse 0.044820
+mse 0.032479
+mse 0.036718
+mse 0.037451
+mse 0.039142
+mse 0.042231
+mse 0.041599
+mse 0.044185
+mse 0.045157
+mse 0.042945
+mse 0.042709
+mse 0.037703
+mse 0.040134
+mse 0.041195
+mse 0.056988
+epoch: 145
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076459095
+sd_error: 0.076459035
+mean erros: -0.00017210834
+binary accuracy:  0.4820261437908497   0.4821981424148607
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019929888
+sd_error: 0.019929856
+mean erros: 9.4219686e-05
+binary accuracy:  0.9934575941312973   0.9989220750056141
+mse 0.036829
+mse 0.034501
+mse 0.032656
+mse 0.039450
+mse 0.032024
+mse 0.039351
+mse 0.035459
+mse 0.043018
+mse 0.035909
+mse 0.037386
+mse 0.049656
+mse 0.039688
+mse 0.041502
+mse 0.041615
+mse 0.039882
+mse 0.036894
+mse 0.038945
+mse 0.043377
+mse 0.045917
+mse 0.046058
+mse 0.038882
+mse 0.041194
+epoch: 146
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07691245
+sd_error: 0.07691243
+mean erros: -3.951993e-06
+binary accuracy:  0.49415204678362573   0.48899208806329547
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019647792
+sd_error: 0.019647732
+mean erros: 7.3765856e-05
+binary accuracy:  0.9934426229508196   0.9988771614641815
+mse 0.028596
+mse 0.033741
+mse 0.041111
+mse 0.034921
+mse 0.039213
+mse 0.028709
+mse 0.037070
+mse 0.044010
+mse 0.043194
+mse 0.043489
+mse 0.042318
+mse 0.039541
+mse 0.038037
+mse 0.041283
+mse 0.044145
+mse 0.037801
+mse 0.044159
+mse 0.043288
+mse 0.043601
+mse 0.036400
+mse 0.043382
+mse 0.037156
+epoch: 147
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076350585
+sd_error: 0.07635068
+mean erros: -0.00021219195
+binary accuracy:  0.5048159614723082   0.4959580323357413
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019550867
+sd_error: 0.019550828
+mean erros: -6.514295e-05
+binary accuracy:  0.9934126805898645   0.9989520173665694
+mse 0.038836
+mse 0.032019
+mse 0.040445
+mse 0.034209
+mse 0.036695
+mse 0.032020
+mse 0.034566
+mse 0.045642
+mse 0.033242
+mse 0.045491
+mse 0.036483
+mse 0.037583
+mse 0.041088
+mse 0.033905
+mse 0.036555
+mse 0.046865
+mse 0.045126
+mse 0.042556
+mse 0.046331
+mse 0.037728
+mse 0.045613
+mse 0.041521
+epoch: 148
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07678967
+sd_error: 0.076789536
+mean erros: -0.00010197982
+binary accuracy:  0.5014619883040936   0.4955280357757138
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019768858
+sd_error: 0.01976883
+mean erros: 0.00012228508
+binary accuracy:  0.9934276517703421   0.9989071038251366
+mse 0.041545
+mse 0.034365
+mse 0.037352
+mse 0.034200
+mse 0.034884
+mse 0.040121
+mse 0.035454
+mse 0.038556
+mse 0.038107
+mse 0.041045
+mse 0.034535
+mse 0.040701
+mse 0.035041
+mse 0.040641
+mse 0.047102
+mse 0.044093
+mse 0.046341
+mse 0.036000
+mse 0.046480
+mse 0.046621
+mse 0.047999
+mse 0.041871
+epoch: 149
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07700968
+sd_error: 0.07700961
+mean erros: 9.271098e-05
+binary accuracy:  0.4926900584795322   0.48796009631922943
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019684907
+sd_error: 0.019684887
+mean erros: 8.975217e-05
+binary accuracy:  0.9934575941312973   0.998892132644659
+mse 0.039568
+mse 0.041031
+mse 0.042049
+mse 0.032421
+mse 0.043034
+mse 0.033784
+mse 0.034593
+mse 0.036255
+mse 0.039045
+mse 0.045909
+mse 0.043331
+mse 0.042230
+mse 0.042783
+mse 0.035592
+mse 0.044507
+mse 0.042955
+mse 0.043976
+mse 0.039601
+mse 0.038092
+mse 0.050326
+mse 0.034637
+mse 0.039460
+epoch: 150
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07719999
+sd_error: 0.07719941
+mean erros: -0.0007717317
+binary accuracy:  0.48813209494324045   0.488218094255246
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019634904
+sd_error: 0.019634612
+mean erros: -0.00049396174
+binary accuracy:  0.9934725653117749   0.9989071038251366
+mse 0.035857
+mse 0.038488
+mse 0.033289
+mse 0.038800
+mse 0.035067
+mse 0.035354
+mse 0.040769
+mse 0.036837
+mse 0.042238
+mse 0.038866
+mse 0.040021
+mse 0.038528
+mse 0.043273
+mse 0.043002
+mse 0.041972
+mse 0.038046
+mse 0.038444
+mse 0.040093
+mse 0.036528
+mse 0.042065
+mse 0.047915
+mse 0.044185
+epoch: 151
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07677911
+sd_error: 0.07677875
+mean erros: 0.0004763499
+binary accuracy:  0.4817681458548332   0.47695218438252496
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01965637
+sd_error: 0.019656336
+mean erros: 8.0927e-05
+binary accuracy:  0.9934276517703421   0.9988621902837038
+mse 0.030681
+mse 0.033767
+mse 0.040939
+mse 0.038964
+mse 0.037312
+mse 0.037529
+mse 0.036816
+mse 0.031937
+mse 0.042606
+mse 0.043246
+mse 0.046214
+mse 0.039400
+mse 0.037654
+mse 0.044533
+mse 0.039600
+mse 0.039210
+mse 0.037775
+mse 0.038968
+mse 0.044974
+mse 0.044881
+mse 0.042474
+mse 0.042015
+epoch: 152
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07704577
+sd_error: 0.07704579
+mean erros: 0.00012061117
+binary accuracy:  0.4825421396628827   0.47721018231854145
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01920887
+sd_error: 0.019208837
+mean erros: -2.9163379e-05
+binary accuracy:  0.9933977094093869   0.9988472191032263
+mse 0.032656
+mse 0.035476
+mse 0.038952
+mse 0.038856
+mse 0.032473
+mse 0.041931
+mse 0.042853
+mse 0.033007
+mse 0.035690
+mse 0.033619
+mse 0.033461
+mse 0.039441
+mse 0.036232
+mse 0.034524
+mse 0.035292
+mse 0.043100
+mse 0.033831
+mse 0.045154
+mse 0.042059
+mse 0.043012
+mse 0.042073
+mse 0.041014
+epoch: 153
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0764382
+sd_error: 0.07643828
+mean erros: 0.00023420005
+binary accuracy:  0.4817681458548332   0.47566219470244236
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019038402
+sd_error: 0.019038351
+mean erros: -0.00016528757
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.033430
+mse 0.037671
+mse 0.034524
+mse 0.038391
+mse 0.036064
+mse 0.033517
+mse 0.037342
+mse 0.033832
+mse 0.032493
+mse 0.041968
+mse 0.032459
+mse 0.036504
+mse 0.038526
+mse 0.036476
+mse 0.044887
+mse 0.030407
+mse 0.042110
+mse 0.038947
+mse 0.049816
+mse 0.035709
+mse 0.043241
+mse 0.041364
+epoch: 154
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076869376
+sd_error: 0.07686938
+mean erros: -7.414492e-05
+binary accuracy:  0.4851221190230478   0.4833161334709322
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018752882
+sd_error: 0.018752797
+mean erros: 3.2140626e-06
+binary accuracy:  0.9935623923946403   0.9989669885470469
+mse 0.034871
+mse 0.037338
+mse 0.035362
+mse 0.043454
+mse 0.043336
+mse 0.035622
+mse 0.030001
+mse 0.035227
+mse 0.035298
+mse 0.038242
+mse 0.044134
+mse 0.050754
+mse 0.030690
+mse 0.036466
+mse 0.039317
+mse 0.035004
+mse 0.039964
+mse 0.039103
+mse 0.040214
+mse 0.041984
+mse 0.036179
+mse 0.045067
+epoch: 155
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07675224
+sd_error: 0.07675204
+mean erros: -0.00039464625
+binary accuracy:  0.47703818369453044   0.46826625386996906
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019528098
+sd_error: 0.01952805
+mean erros: -0.00015609695
+binary accuracy:  0.99350250767273   0.9989520173665694
+mse 0.033827
+mse 0.031278
+mse 0.039389
+mse 0.035872
+mse 0.041716
+mse 0.037218
+mse 0.037421
+mse 0.031289
+mse 0.045312
+mse 0.038158
+mse 0.032719
+mse 0.041732
+mse 0.041780
+mse 0.036093
+mse 0.040430
+mse 0.039307
+mse 0.046895
+mse 0.041445
+mse 0.041635
+mse 0.038677
+mse 0.043603
+mse 0.035573
+epoch: 156
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07685174
+sd_error: 0.07685081
+mean erros: -0.0008910945
+binary accuracy:  0.5010319917440661   0.4914860681114551
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019171886
+sd_error: 0.019171687
+mean erros: -0.00040118917
+binary accuracy:  0.9934126805898645   0.998892132644659
+mse 0.033897
+mse 0.034212
+mse 0.043678
+mse 0.045060
+mse 0.036666
+mse 0.038621
+mse 0.038611
+mse 0.035987
+mse 0.041425
+mse 0.046043
+mse 0.038881
+mse 0.036796
+mse 0.041548
+mse 0.043338
+mse 0.038915
+mse 0.037580
+mse 0.038412
+mse 0.041132
+mse 0.043670
+mse 0.040097
+mse 0.047842
+mse 0.041714
+epoch: 157
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07684909
+sd_error: 0.076849
+mean erros: -0.00020271874
+binary accuracy:  0.4917440660474716   0.48615411076711385
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019215943
+sd_error: 0.019215928
+mean erros: -7.334537e-05
+binary accuracy:  0.9934126805898645   0.9988621902837038
+mse 0.040228
+mse 0.037924
+mse 0.036692
+mse 0.035626
+mse 0.033891
+mse 0.037685
+mse 0.039207
+mse 0.036863
+mse 0.035653
+mse 0.039293
+mse 0.045137
+mse 0.033368
+mse 0.042765
+mse 0.037770
+mse 0.037976
+mse 0.039782
+mse 0.040356
+mse 0.041078
+mse 0.037781
+mse 0.038522
+mse 0.047682
+mse 0.045294
+epoch: 158
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07681362
+sd_error: 0.076813616
+mean erros: -0.00016495961
+binary accuracy:  0.48744410044719644   0.48099415204678364
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019447122
+sd_error: 0.0194471
+mean erros: -0.00011875519
+binary accuracy:  0.9934126805898645   0.9988771614641815
+mse 0.038045
+mse 0.044432
+mse 0.037892
+mse 0.034259
+mse 0.035868
+mse 0.038111
+mse 0.036290
+mse 0.035954
+mse 0.044185
+mse 0.041089
+mse 0.048430
+mse 0.034953
+mse 0.037105
+mse 0.040837
+mse 0.036022
+mse 0.036858
+mse 0.037613
+mse 0.048386
+mse 0.032592
+mse 0.039725
+mse 0.043145
+mse 0.045478
+epoch: 159
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07679038
+sd_error: 0.07678951
+mean erros: -0.00097370363
+binary accuracy:  0.4917440660474716   0.4833161334709322
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019336632
+sd_error: 0.019336531
+mean erros: -0.00030152415
+binary accuracy:  0.9934126805898645   0.9988472191032263
+mse 0.040702
+mse 0.032613
+mse 0.035845
+mse 0.036130
+mse 0.037204
+mse 0.038616
+mse 0.034010
+mse 0.037292
+mse 0.038635
+mse 0.045765
+mse 0.044006
+mse 0.043303
+mse 0.038154
+mse 0.038252
+mse 0.041001
+mse 0.034907
+mse 0.037517
+mse 0.044799
+mse 0.040392
+mse 0.036369
+mse 0.035533
+mse 0.042310
+epoch: 160
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076903105
+sd_error: 0.07690254
+mean erros: -0.00075043656
+binary accuracy:  0.49681802545579634   0.48168214654282765
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01932474
+sd_error: 0.01932459
+mean erros: -0.00037866572
+binary accuracy:  0.9934426229508196   0.9989071038251366
+mse 0.039566
+mse 0.037082
+mse 0.033216
+mse 0.033277
+mse 0.036008
+mse 0.034570
+mse 0.033747
+mse 0.043867
+mse 0.036343
+mse 0.046099
+mse 0.045602
+mse 0.043561
+mse 0.044191
+mse 0.041613
+mse 0.047204
+mse 0.035944
+mse 0.034626
+mse 0.036073
+mse 0.043244
+mse 0.041294
+mse 0.041473
+mse 0.031416
+epoch: 161
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07689243
+sd_error: 0.07689227
+mean erros: -0.0002499408
+binary accuracy:  0.5179738562091504   0.5026659786721707
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019010043
+sd_error: 0.019009974
+mean erros: -0.00014218752
+binary accuracy:  0.9934276517703421   0.9988771614641815
+mse 0.043238
+mse 0.035853
+mse 0.037312
+mse 0.039891
+mse 0.036451
+mse 0.035885
+mse 0.045954
+mse 0.037911
+mse 0.038892
+mse 0.040548
+mse 0.042278
+mse 0.036942
+mse 0.035989
+mse 0.035772
+mse 0.033827
+mse 0.037686
+mse 0.043172
+mse 0.044330
+mse 0.039097
+mse 0.038285
+mse 0.041496
+mse 0.042133
+epoch: 162
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07638606
+sd_error: 0.07638593
+mean erros: -0.00024298757
+binary accuracy:  0.5139318885448917   0.5056759545923633
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019322192
+sd_error: 0.019322157
+mean erros: -0.0001948842
+binary accuracy:  0.9934126805898645   0.9988472191032263
+mse 0.039742
+mse 0.034454
+mse 0.037588
+mse 0.035085
+mse 0.036476
+mse 0.035529
+mse 0.043748
+mse 0.037904
+mse 0.040535
+mse 0.040235
+mse 0.035818
+mse 0.036323
+mse 0.034841
+mse 0.038993
+mse 0.043237
+mse 0.038767
+mse 0.032625
+mse 0.041696
+mse 0.049506
+mse 0.047610
+mse 0.041011
+mse 0.037952
+epoch: 163
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076737
+sd_error: 0.0767368
+mean erros: 0.00030202794
+binary accuracy:  0.5035259717922257   0.4909700722394221
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019409033
+sd_error: 0.01940902
+mean erros: 8.4087755e-05
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.030444
+mse 0.035968
+mse 0.045995
+mse 0.041900
+mse 0.037240
+mse 0.039770
+mse 0.036240
+mse 0.043082
+mse 0.040806
+mse 0.038662
+mse 0.038758
+mse 0.041000
+mse 0.039700
+mse 0.035182
+mse 0.033871
+mse 0.037975
+mse 0.037667
+mse 0.044417
+mse 0.040263
+mse 0.042207
+mse 0.038947
+mse 0.041795
+epoch: 164
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07645008
+sd_error: 0.07645004
+mean erros: 6.272609e-05
+binary accuracy:  0.5108359133126935   0.49484004127966974
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019412719
+sd_error: 0.019412676
+mean erros: 0.00016492371
+binary accuracy:  0.9934725653117749   0.9989370461860918
+mse 0.036611
+mse 0.041519
+mse 0.036446
+mse 0.039534
+mse 0.042868
+mse 0.035311
+mse 0.038915
+mse 0.036960
+mse 0.040550
+mse 0.037544
+mse 0.034238
+mse 0.037272
+mse 0.038805
+mse 0.037967
+mse 0.037599
+mse 0.044152
+mse 0.044302
+mse 0.042794
+mse 0.036104
+mse 0.038157
+mse 0.039158
+mse 0.042031
+epoch: 165
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07685551
+sd_error: 0.0768555
+mean erros: 0.0001700248
+binary accuracy:  0.5018059855521155   0.48890608875129
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019301623
+sd_error: 0.019301517
+mean erros: 0.00028708612
+binary accuracy:  0.9934276517703421   0.9988472191032263
+mse 0.036176
+mse 0.041645
+mse 0.042079
+mse 0.042731
+mse 0.039270
+mse 0.044061
+mse 0.034996
+mse 0.035999
+mse 0.038730
+mse 0.041225
+mse 0.039110
+mse 0.035484
+mse 0.043632
+mse 0.037505
+mse 0.044681
+mse 0.037227
+mse 0.032152
+mse 0.037149
+mse 0.038309
+mse 0.041625
+mse 0.046404
+mse 0.043412
+epoch: 166
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07661636
+sd_error: 0.076616
+mean erros: -0.00053921103
+binary accuracy:  0.47936016511867907   0.4740282077743378
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019385362
+sd_error: 0.019385248
+mean erros: -0.00023208017
+binary accuracy:  0.9935174788532076   0.9989370461860918
+mse 0.032087
+mse 0.037493
+mse 0.039141
+mse 0.035214
+mse 0.039386
+mse 0.036265
+mse 0.041111
+mse 0.040306
+mse 0.039780
+mse 0.038676
+mse 0.033913
+mse 0.042016
+mse 0.036252
+mse 0.040989
+mse 0.047454
+mse 0.033779
+mse 0.039980
+mse 0.048138
+mse 0.041447
+mse 0.036695
+mse 0.042149
+mse 0.042946
+epoch: 167
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076984435
+sd_error: 0.076984435
+mean erros: 0.00014559003
+binary accuracy:  0.4862401100791194   0.4761781905744754
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018758502
+sd_error: 0.018758431
+mean erros: -7.3547846e-05
+binary accuracy:  0.9934575941312973   0.998892132644659
+mse 0.038945
+mse 0.038996
+mse 0.036347
+mse 0.039376
+mse 0.033336
+mse 0.030748
+mse 0.034441
+mse 0.038856
+mse 0.037808
+mse 0.041517
+mse 0.035327
+mse 0.037163
+mse 0.034518
+mse 0.038597
+mse 0.039480
+mse 0.040878
+mse 0.036638
+mse 0.038834
+mse 0.035026
+mse 0.043068
+mse 0.047688
+mse 0.043841
+epoch: 168
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07699399
+sd_error: 0.076993935
+mean erros: -0.00011093638
+binary accuracy:  0.4840041279669763   0.4746302029583763
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018789291
+sd_error: 0.018789258
+mean erros: 0.00011530489
+binary accuracy:  0.9934426229508196   0.9988322479227487
+mse 0.038104
+mse 0.038023
+mse 0.041933
+mse 0.037637
+mse 0.034144
+mse 0.039144
+mse 0.035192
+mse 0.039380
+mse 0.041591
+mse 0.035988
+mse 0.035374
+mse 0.043292
+mse 0.037329
+mse 0.030490
+mse 0.037729
+mse 0.040371
+mse 0.037438
+mse 0.036351
+mse 0.040901
+mse 0.035687
+mse 0.037497
+mse 0.042125
+epoch: 169
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07633331
+sd_error: 0.07633307
+mean erros: -0.00039956585
+binary accuracy:  0.5014619883040936   0.49208806329549365
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018781494
+sd_error: 0.018781474
+mean erros: 3.9480266e-05
+binary accuracy:  0.9934575941312973   0.9988771614641815
+mse 0.034929
+mse 0.033522
+mse 0.038218
+mse 0.043346
+mse 0.038359
+mse 0.037767
+mse 0.040807
+mse 0.039752
+mse 0.036418
+mse 0.034340
+mse 0.032580
+mse 0.042349
+mse 0.040551
+mse 0.038329
+mse 0.035350
+mse 0.038604
+mse 0.040488
+mse 0.039314
+mse 0.042917
+mse 0.048382
+mse 0.048713
+mse 0.037402
+epoch: 170
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07704964
+sd_error: 0.0770497
+mean erros: -2.657938e-05
+binary accuracy:  0.5039559683522532   0.49647402820777436
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018205559
+sd_error: 0.018205391
+mean erros: 0.00034808312
+binary accuracy:  0.9933827382289093   0.9988172767422712
+mse 0.034506
+mse 0.035399
+mse 0.035833
+mse 0.034881
+mse 0.031168
+mse 0.039708
+mse 0.036783
+mse 0.035519
+mse 0.039415
+mse 0.034123
+mse 0.034887
+mse 0.037283
+mse 0.035141
+mse 0.036088
+mse 0.038480
+mse 0.038658
+mse 0.036441
+mse 0.038234
+mse 0.045774
+mse 0.036954
+mse 0.046926
+mse 0.042463
+epoch: 171
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076511964
+sd_error: 0.07651188
+mean erros: 0.00012020668
+binary accuracy:  0.48787409700722395   0.48787409700722395
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018833164
+sd_error: 0.018833052
+mean erros: 0.000288721
+binary accuracy:  0.9934426229508196   0.9988771614641815
+mse 0.035003
+mse 0.036684
+mse 0.038990
+mse 0.033647
+mse 0.031256
+mse 0.031137
+mse 0.037800
+mse 0.039232
+mse 0.036306
+mse 0.044258
+mse 0.035675
+mse 0.035324
+mse 0.037763
+mse 0.035222
+mse 0.040666
+mse 0.040263
+mse 0.033745
+mse 0.034957
+mse 0.039869
+mse 0.039104
+mse 0.044633
+mse 0.049503
+epoch: 172
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07692665
+sd_error: 0.07692663
+mean erros: -6.571817e-05
+binary accuracy:  0.48985208118335055   0.4804781561747506
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01873403
+sd_error: 0.018733973
+mean erros: 9.4871066e-05
+binary accuracy:  0.9934426229508196   0.9989370461860918
+mse 0.034947
+mse 0.036433
+mse 0.041377
+mse 0.037462
+mse 0.040297
+mse 0.031994
+mse 0.034041
+mse 0.038722
+mse 0.033547
+mse 0.031139
+mse 0.043669
+mse 0.034433
+mse 0.040069
+mse 0.043897
+mse 0.038187
+mse 0.038807
+mse 0.037021
+mse 0.039918
+mse 0.043994
+mse 0.048322
+mse 0.041596
+mse 0.040627
+epoch: 173
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07689764
+sd_error: 0.076897606
+mean erros: 1.0951506e-05
+binary accuracy:  0.48477812177502577   0.47497420020639836
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018966053
+sd_error: 0.018966045
+mean erros: 0.00012732112
+binary accuracy:  0.9934276517703421   0.998892132644659
+mse 0.030974
+mse 0.039235
+mse 0.043743
+mse 0.033644
+mse 0.038137
+mse 0.036369
+mse 0.040581
+mse 0.039267
+mse 0.040783
+mse 0.038320
+mse 0.034307
+mse 0.037308
+mse 0.036449
+mse 0.034989
+mse 0.038966
+mse 0.035942
+mse 0.037684
+mse 0.038932
+mse 0.043998
+mse 0.042228
+mse 0.042304
+mse 0.038130
+epoch: 174
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07704081
+sd_error: 0.077040695
+mean erros: 0.00018248065
+binary accuracy:  0.49165806673546614   0.48185414516683867
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018783601
+sd_error: 0.018783476
+mean erros: 0.00029693832
+binary accuracy:  0.9934276517703421   0.9988621902837038
+mse 0.037593
+mse 0.038661
+mse 0.039627
+mse 0.037915
+mse 0.036126
+mse 0.033013
+mse 0.038368
+mse 0.041694
+mse 0.036101
+mse 0.033316
+mse 0.037176
+mse 0.035968
+mse 0.036079
+mse 0.041243
+mse 0.040433
+mse 0.043587
+mse 0.038573
+mse 0.040519
+mse 0.044104
+mse 0.046800
+mse 0.039860
+mse 0.040186
+epoch: 175
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07729679
+sd_error: 0.077296674
+mean erros: 8.511495e-05
+binary accuracy:  0.49251805985552116   0.4845201238390093
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018603027
+sd_error: 0.018603016
+mean erros: 0.00010507226
+binary accuracy:  0.99350250767273   0.9989520173665694
+mse 0.035818
+mse 0.039243
+mse 0.037634
+mse 0.033870
+mse 0.034822
+mse 0.035108
+mse 0.033133
+mse 0.042328
+mse 0.033144
+mse 0.038383
+mse 0.030694
+mse 0.035938
+mse 0.046153
+mse 0.039361
+mse 0.038948
+mse 0.036116
+mse 0.036463
+mse 0.038788
+mse 0.042487
+mse 0.037397
+mse 0.041658
+mse 0.042911
+epoch: 176
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07699784
+sd_error: 0.076997675
+mean erros: -0.0003058768
+binary accuracy:  0.4975060199518404   0.48796009631922943
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01884459
+sd_error: 0.018844532
+mean erros: -9.6911135e-05
+binary accuracy:  0.9934126805898645   0.9988771614641815
+mse 0.037208
+mse 0.040188
+mse 0.038019
+mse 0.031622
+mse 0.043101
+mse 0.036093
+mse 0.037234
+mse 0.035656
+mse 0.037006
+mse 0.035883
+mse 0.039631
+mse 0.037141
+mse 0.037690
+mse 0.031847
+mse 0.041830
+mse 0.035521
+mse 0.042399
+mse 0.038520
+mse 0.045112
+mse 0.042465
+mse 0.039875
+mse 0.040336
+epoch: 177
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07656803
+sd_error: 0.07656758
+mean erros: -0.00055451586
+binary accuracy:  0.4929480564155487   0.4842621259029928
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018755492
+sd_error: 0.018755436
+mean erros: -9.427061e-05
+binary accuracy:  0.9934276517703421   0.9988472191032263
+mse 0.040603
+mse 0.034786
+mse 0.032655
+mse 0.039319
+mse 0.035208
+mse 0.036492
+mse 0.039055
+mse 0.037858
+mse 0.037075
+mse 0.034428
+mse 0.038163
+mse 0.040535
+mse 0.031184
+mse 0.042720
+mse 0.032629
+mse 0.047008
+mse 0.033141
+mse 0.038554
+mse 0.047170
+mse 0.054009
+mse 0.043274
+mse 0.038717
+epoch: 178
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076699056
+sd_error: 0.07669919
+mean erros: -7.8202705e-05
+binary accuracy:  0.4870141038871689   0.48194014447884415
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018981006
+sd_error: 0.018980946
+mean erros: 0.0001704874
+binary accuracy:  0.9934126805898645   0.9989071038251366
+mse 0.036538
+mse 0.037810
+mse 0.034589
+mse 0.039809
+mse 0.035616
+mse 0.036773
+mse 0.033944
+mse 0.035322
+mse 0.043360
+mse 0.040174
+mse 0.041274
+mse 0.029639
+mse 0.034282
+mse 0.034820
+mse 0.036715
+mse 0.043320
+mse 0.040244
+mse 0.037729
+mse 0.037214
+mse 0.038941
+mse 0.041463
+mse 0.040315
+epoch: 179
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07679867
+sd_error: 0.07679869
+mean erros: -0.00014648862
+binary accuracy:  0.4911420708634331   0.4849501203990368
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018646762
+sd_error: 0.018646736
+mean erros: 9.815511e-05
+binary accuracy:  0.9934276517703421   0.9988621902837038
+mse 0.037997
+mse 0.037708
+mse 0.035895
+mse 0.033620
+mse 0.044891
+mse 0.042606
+mse 0.036491
+mse 0.041870
+mse 0.040062
+mse 0.041149
+mse 0.036748
+mse 0.032259
+mse 0.037579
+mse 0.041062
+mse 0.034502
+mse 0.036216
+mse 0.040018
+mse 0.037501
+mse 0.040201
+mse 0.046588
+mse 0.042611
+mse 0.047415
+epoch: 180
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07693792
+sd_error: 0.07693792
+mean erros: -6.3267876e-06
+binary accuracy:  0.4768661850705194   0.4697282421740626
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.019070914
+sd_error: 0.019070895
+mean erros: -1.887571e-05
+binary accuracy:  0.9933527958679542   0.9988322479227487
+mse 0.031842
+mse 0.038480
+mse 0.034212
+mse 0.037716
+mse 0.045711
+mse 0.035554
+mse 0.034129
+mse 0.033197
+mse 0.033324
+mse 0.037829
+mse 0.036126
+mse 0.038512
+mse 0.039300
+mse 0.040102
+mse 0.037926
+mse 0.037356
+mse 0.037777
+mse 0.039233
+mse 0.037095
+mse 0.040972
+mse 0.042900
+mse 0.040267
+epoch: 181
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077174604
+sd_error: 0.07717458
+mean erros: 7.18925e-05
+binary accuracy:  0.4873581011351909   0.4810801513587891
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018720543
+sd_error: 0.018720519
+mean erros: 8.886787e-05
+binary accuracy:  0.9933527958679542   0.9988322479227487
+mse 0.033303
+mse 0.044279
+mse 0.038819
+mse 0.036710
+mse 0.038548
+mse 0.037834
+mse 0.037995
+mse 0.036482
+mse 0.037295
+mse 0.039324
+mse 0.040296
+mse 0.035617
+mse 0.038669
+mse 0.034679
+mse 0.039345
+mse 0.031474
+mse 0.043374
+mse 0.033142
+mse 0.040100
+mse 0.040952
+mse 0.039479
+mse 0.044813
+epoch: 182
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.0771358
+sd_error: 0.07713575
+mean erros: -0.00024281254
+binary accuracy:  0.4807361541107671   0.4742862057103543
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01882579
+sd_error: 0.018825723
+mean erros: -6.390475e-05
+binary accuracy:  0.9933827382289093   0.9988472191032263
+mse 0.037335
+mse 0.034913
+mse 0.034912
+mse 0.035403
+mse 0.039162
+mse 0.040403
+mse 0.035468
+mse 0.043424
+mse 0.035219
+mse 0.047775
+mse 0.034461
+mse 0.036846
+mse 0.032992
+mse 0.040532
+mse 0.035161
+mse 0.038130
+mse 0.042570
+mse 0.034716
+mse 0.041973
+mse 0.035082
+mse 0.043066
+mse 0.041224
+epoch: 183
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077375464
+sd_error: 0.07737528
+mean erros: -0.00040195964
+binary accuracy:  0.48116615067079466   0.477984176126591
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018610394
+sd_error: 0.018610325
+mean erros: -0.00028493963
+binary accuracy:  0.9933527958679542   0.998787334381316
+mse 0.041310
+mse 0.032359
+mse 0.031083
+mse 0.036324
+mse 0.038169
+mse 0.036795
+mse 0.031026
+mse 0.038612
+mse 0.034395
+mse 0.038400
+mse 0.037232
+mse 0.038980
+mse 0.044987
+mse 0.038375
+mse 0.034223
+mse 0.038697
+mse 0.041519
+mse 0.036309
+mse 0.039101
+mse 0.034375
+mse 0.041619
+mse 0.037439
+epoch: 184
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07687019
+sd_error: 0.07686994
+mean erros: -0.00051658775
+binary accuracy:  0.4862401100791194   0.4850361197110423
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01856708
+sd_error: 0.01856693
+mean erros: -0.00033158064
+binary accuracy:  0.9933527958679542   0.9988172767422712
+mse 0.036270
+mse 0.031457
+mse 0.038450
+mse 0.037776
+mse 0.036781
+mse 0.036239
+mse 0.034225
+mse 0.034298
+mse 0.040631
+mse 0.036399
+mse 0.033116
+mse 0.040097
+mse 0.041027
+mse 0.033038
+mse 0.036795
+mse 0.039145
+mse 0.049314
+mse 0.038861
+mse 0.041107
+mse 0.039189
+mse 0.040975
+mse 0.035013
+epoch: 185
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07675773
+sd_error: 0.07675701
+mean erros: -0.0008531671
+binary accuracy:  0.4937220502235982   0.4886480908152735
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018430205
+sd_error: 0.018430047
+mean erros: -0.0003463663
+binary accuracy:  0.9933977094093869   0.9988621902837038
+mse 0.035469
+mse 0.038747
+mse 0.029934
+mse 0.028633
+mse 0.034594
+mse 0.028268
+mse 0.041721
+mse 0.037143
+mse 0.040446
+mse 0.038956
+mse 0.037756
+mse 0.038427
+mse 0.044048
+mse 0.039176
+mse 0.031631
+mse 0.044314
+mse 0.039486
+mse 0.038747
+mse 0.036982
+mse 0.035050
+mse 0.038892
+mse 0.041615
+epoch: 186
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077085294
+sd_error: 0.07708526
+mean erros: 3.876622e-05
+binary accuracy:  0.48520811833505334   0.48116615067079466
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018212102
+sd_error: 0.018212082
+mean erros: 0.00014763212
+binary accuracy:  0.9934276517703421   0.9988771614641815
+mse 0.034331
+mse 0.032792
+mse 0.037498
+mse 0.029661
+mse 0.038778
+mse 0.031654
+mse 0.039134
+mse 0.035144
+mse 0.034827
+mse 0.033276
+mse 0.034192
+mse 0.037214
+mse 0.037499
+mse 0.040673
+mse 0.039868
+mse 0.036529
+mse 0.039200
+mse 0.035909
+mse 0.043065
+mse 0.044269
+mse 0.037920
+mse 0.044752
+epoch: 187
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07682576
+sd_error: 0.0768256
+mean erros: -0.00046743327
+binary accuracy:  0.5010319917440661   0.49011007911936705
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.017980516
+sd_error: 0.017980492
+mean erros: -5.4687695e-05
+binary accuracy:  0.9933827382289093   0.9988322479227487
+mse 0.033694
+mse 0.035267
+mse 0.034795
+mse 0.034880
+mse 0.033678
+mse 0.032529
+mse 0.031927
+mse 0.037652
+mse 0.039934
+mse 0.033899
+mse 0.036019
+mse 0.036854
+mse 0.032124
+mse 0.034130
+mse 0.039502
+mse 0.036992
+mse 0.041822
+mse 0.041515
+mse 0.032695
+mse 0.041271
+mse 0.047283
+mse 0.050547
+epoch: 188
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076298796
+sd_error: 0.07629838
+mean erros: -0.00055634696
+binary accuracy:  0.5044719642242862   0.4966460268317853
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018433923
+sd_error: 0.018433837
+mean erros: -0.0002256177
+binary accuracy:  0.9933677670484318   0.9988023055617935
+mse 0.036308
+mse 0.033319
+mse 0.034420
+mse 0.034752
+mse 0.037097
+mse 0.033160
+mse 0.036742
+mse 0.034843
+mse 0.046396
+mse 0.032181
+mse 0.041601
+mse 0.030321
+mse 0.034116
+mse 0.035843
+mse 0.041082
+mse 0.032615
+mse 0.034506
+mse 0.045009
+mse 0.038893
+mse 0.041751
+mse 0.038065
+mse 0.048200
+epoch: 189
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07704176
+sd_error: 0.07704076
+mean erros: -0.0009555506
+binary accuracy:  0.49948400412796695   0.4913140694874441
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018280987
+sd_error: 0.018280614
+mean erros: -0.0005706404
+binary accuracy:  0.9934126805898645   0.9988172767422712
+mse 0.040078
+mse 0.038604
+mse 0.036704
+mse 0.035275
+mse 0.036890
+mse 0.035131
+mse 0.037586
+mse 0.035189
+mse 0.030835
+mse 0.034046
+mse 0.038511
+mse 0.037490
+mse 0.035700
+mse 0.037034
+mse 0.036143
+mse 0.044059
+mse 0.039325
+mse 0.038524
+mse 0.042550
+mse 0.034145
+mse 0.039347
+mse 0.039090
+epoch: 190
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.077622235
+sd_error: 0.07762175
+mean erros: -0.0006686689
+binary accuracy:  0.4746302029583763   0.4686962504299966
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018042898
+sd_error: 0.018042644
+mean erros: -0.00041945535
+binary accuracy:  0.9933527958679542   0.998787334381316
+mse 0.033114
+mse 0.032459
+mse 0.034538
+mse 0.036478
+mse 0.034962
+mse 0.035997
+mse 0.038893
+mse 0.036584
+mse 0.041512
+mse 0.033828
+mse 0.043628
+mse 0.033315
+mse 0.033841
+mse 0.037874
+mse 0.035102
+mse 0.033415
+mse 0.040875
+mse 0.042244
+mse 0.037141
+mse 0.034844
+mse 0.046650
+mse 0.040799
+epoch: 191
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076779574
+sd_error: 0.07677903
+mean erros: -0.00069008686
+binary accuracy:  0.4841761265909873   0.4740282077743378
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01810142
+sd_error: 0.01810136
+mean erros: -0.00017838528
+binary accuracy:  0.9934276517703421   0.9988621902837038
+mse 0.035928
+mse 0.038414
+mse 0.032343
+mse 0.036570
+mse 0.037838
+mse 0.035450
+mse 0.038651
+mse 0.036644
+mse 0.037038
+mse 0.046870
+mse 0.036346
+mse 0.041172
+mse 0.037892
+mse 0.045242
+mse 0.035717
+mse 0.037507
+mse 0.039619
+mse 0.037704
+mse 0.041084
+mse 0.033289
+mse 0.034581
+mse 0.037858
+epoch: 192
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.076619856
+sd_error: 0.07661976
+mean erros: -0.00031090193
+binary accuracy:  0.5061919504643962   0.5004299965600275
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01801586
+sd_error: 0.018015845
+mean erros: 7.539883e-05
+binary accuracy:  0.9934276517703421   0.9988771614641815
+mse 0.038781
+mse 0.030332
+mse 0.042016
+mse 0.039878
+mse 0.032819
+mse 0.037195
+mse 0.037048
+mse 0.038470
+mse 0.037406
+mse 0.037964
+mse 0.043157
+mse 0.033434
+mse 0.033635
+mse 0.037364
+mse 0.040236
+mse 0.042905
+mse 0.031893
+mse 0.033925
+mse 0.037128
+mse 0.036963
+mse 0.044861
+mse 0.042046
+epoch: 193
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07660045
+sd_error: 0.076600425
+mean erros: -0.00017708814
+binary accuracy:  0.49079807361541106   0.4914000687994496
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018468387
+sd_error: 0.018468387
+mean erros: 1.3443968e-05
+binary accuracy:  0.9933527958679542   0.9988172767422712
+mse 0.033407
+mse 0.029944
+mse 0.039683
+mse 0.034284
+mse 0.038224
+mse 0.038336
+mse 0.031721
+mse 0.039878
+mse 0.035616
+mse 0.037165
+mse 0.040808
+mse 0.035272
+mse 0.037774
+mse 0.032695
+mse 0.042067
+mse 0.034777
+mse 0.036007
+mse 0.038684
+mse 0.045826
+mse 0.042938
+mse 0.036810
+mse 0.039248
+epoch: 194
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07690607
+sd_error: 0.07690574
+mean erros: -0.0005403131
+binary accuracy:  0.49251805985552116   0.48348813209494323
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01834326
+sd_error: 0.018343236
+mean erros: -7.931256e-05
+binary accuracy:  0.9933078823265215   0.9987723632008384
+mse 0.033775
+mse 0.039677
+mse 0.036449
+mse 0.033193
+mse 0.031486
+mse 0.034178
+mse 0.039518
+mse 0.032268
+mse 0.036879
+mse 0.040060
+mse 0.032138
+mse 0.041151
+mse 0.039546
+mse 0.038973
+mse 0.039420
+mse 0.037604
+mse 0.037625
+mse 0.043319
+mse 0.033957
+mse 0.042687
+mse 0.038053
+mse 0.037523
+epoch: 195
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07678478
+sd_error: 0.076784745
+mean erros: -5.63784e-05
+binary accuracy:  0.48804609563123497   0.4789301685586515
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018340185
+sd_error: 0.018340103
+mean erros: 0.00013993887
+binary accuracy:  0.9934126805898645   0.9988621902837038
+mse 0.032178
+mse 0.032024
+mse 0.036121
+mse 0.038927
+mse 0.040672
+mse 0.036433
+mse 0.039735
+mse 0.030755
+mse 0.034591
+mse 0.044849
+mse 0.032181
+mse 0.036355
+mse 0.031612
+mse 0.034274
+mse 0.040508
+mse 0.041340
+mse 0.038954
+mse 0.041849
+mse 0.035865
+mse 0.043568
+mse 0.038964
+mse 0.046823
+epoch: 196
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07697369
+sd_error: 0.07697358
+mean erros: 4.5591365e-05
+binary accuracy:  0.49544203646370827   0.48357413140694877
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.017814258
+sd_error: 0.017814204
+mean erros: 0.000111333124
+binary accuracy:  0.9933527958679542   0.9988023055617935
+mse 0.029727
+mse 0.032235
+mse 0.036277
+mse 0.035879
+mse 0.034981
+mse 0.037354
+mse 0.027940
+mse 0.039265
+mse 0.031883
+mse 0.033435
+mse 0.040755
+mse 0.042102
+mse 0.040834
+mse 0.035888
+mse 0.036989
+mse 0.043579
+mse 0.037771
+mse 0.033288
+mse 0.039198
+mse 0.039433
+mse 0.042777
+mse 0.045126
+epoch: 197
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07671687
+sd_error: 0.07671706
+mean erros: -7.869928e-05
+binary accuracy:  0.4984520123839009   0.4929480564155487
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.01823314
+sd_error: 0.01823308
+mean erros: 1.867688e-05
+binary accuracy:  0.9933378246874766   0.9987573920203608
+mse 0.037774
+mse 0.032786
+mse 0.032881
+mse 0.029893
+mse 0.038242
+mse 0.038216
+mse 0.032124
+mse 0.034501
+mse 0.035972
+mse 0.033858
+mse 0.039828
+mse 0.034693
+mse 0.038680
+mse 0.045146
+mse 0.044337
+mse 0.037076
+mse 0.036487
+mse 0.040544
+mse 0.038686
+mse 0.039461
+mse 0.050003
+mse 0.033613
+epoch: 198
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07712832
+sd_error: 0.077128276
+mean erros: -0.00020330533
+binary accuracy:  0.49681802545579634   0.48890608875129
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018216982
+sd_error: 0.018216949
+mean erros: -2.0813543e-05
+binary accuracy:  0.9933677670484318   0.9987723632008384
+mse 0.033559
+mse 0.028414
+mse 0.037972
+mse 0.039222
+mse 0.040177
+mse 0.042985
+mse 0.042063
+mse 0.039876
+mse 0.035946
+mse 0.036062
+mse 0.036045
+mse 0.030626
+mse 0.039067
+mse 0.039545
+mse 0.028302
+mse 0.033926
+mse 0.036288
+mse 0.038467
+mse 0.047267
+mse 0.043042
+mse 0.041958
+mse 0.037151
+epoch: 199
+(153, 366)
+(153, 300)
+predicted output shape: (153, 300)
+accuracy_on_test: 0.006535947712418301
+mse: 0.07653672
+sd_error: 0.07653665
+mean erros: -0.00031030577
+binary accuracy:  0.4849501203990368   0.47015823873409013
+evaluation on the training set:
+predicted output shape: (366, 300)
+accuracy_on_test: 0.00273224043715847
+mse: 0.018426986
+sd_error: 0.018426966
+mean erros: -0.0001243338
+binary accuracy:  0.9933977094093869   0.9988172767422712

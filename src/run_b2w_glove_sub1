@@ -1,0 +1,285 @@
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_0 --subject_id 1 --fold_id 1 > results_b2w_glove_word_0_step_0_fold_1_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_0 --subject_id 1 --fold_id 1 > results_b2w_glove_word_1_step_0_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_0 --subject_id 1 --fold_id 1 > results_b2w_glove_word_2_step_0_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_0 --subject_id 1 --fold_id 1 > results_b2w_glove_word_3_step_0_fold_1_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_1 --subject_id 1 --fold_id 1 > results_b2w_glove_word_0_step_1_fold_1_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_1 --subject_id 1 --fold_id 1 > results_b2w_glove_word_1_step_1_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_1 --subject_id 1 --fold_id 1 > results_b2w_glove_word_2_step_1_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_1 --subject_id 1 --fold_id 1 > results_b2w_glove_word_3_step_1_fold_1_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_2 --subject_id 1 --fold_id 1 > results_b2w_glove_word_0_step_2_fold_1_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_2 --subject_id 1 --fold_id 1 > results_b2w_glove_word_1_step_2_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_2 --subject_id 1 --fold_id 1 > results_b2w_glove_word_2_step_2_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_2 --subject_id 1 --fold_id 1 > results_b2w_glove_word_3_step_2_fold_1_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_3 --subject_id 1 --fold_id 1 > results_b2w_glove_word_0_step_3_fold_1_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_3 --subject_id 1 --fold_id 1 > results_b2w_glove_word_1_step_3_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_3 --subject_id 1 --fold_id 1 > results_b2w_glove_word_2_step_3_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_3 --subject_id 1 --fold_id 1 > results_b2w_glove_word_3_step_3_fold_1_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_4 --subject_id 1 --fold_id 1 > results_b2w_glove_word_0_step_4_fold_1_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_4 --subject_id 1 --fold_id 1 > results_b2w_glove_word_1_step_4_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_4 --subject_id 1 --fold_id 1 > results_b2w_glove_word_2_step_4_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_4 --subject_id 1 --fold_id 1 > results_b2w_glove_word_3_step_4_fold_1_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_5 --subject_id 1 --fold_id 1 > results_b2w_glove_word_0_step_5_fold_1_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_5 --subject_id 1 --fold_id 1 > results_b2w_glove_word_1_step_5_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_5 --subject_id 1 --fold_id 1 > results_b2w_glove_word_2_step_5_fold_1_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_5 --subject_id 1 --fold_id 1 > results_b2w_glove_word_3_step_5_fold_1_sub1
+
+
+
+
+
+
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_0 --subject_id 1 --fold_id 2 > results_b2w_glove_word_0_step_0_fold_2_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_0 --subject_id 1 --fold_id 2 > results_b2w_glove_word_1_step_0_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_0 --subject_id 1 --fold_id 2 > results_b2w_glove_word_2_step_0_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_0 --subject_id 1 --fold_id 2 > results_b2w_glove_word_3_step_0_fold_2_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_1 --subject_id 1 --fold_id 2 > results_b2w_glove_word_0_step_1_fold_2_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_1 --subject_id 1 --fold_id 2 > results_b2w_glove_word_1_step_1_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_1 --subject_id 1 --fold_id 2 > results_b2w_glove_word_2_step_1_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_1 --subject_id 1 --fold_id 2 > results_b2w_glove_word_3_step_1_fold_2_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_2 --subject_id 1 --fold_id 2 > results_b2w_glove_word_0_step_2_fold_2_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_2 --subject_id 1 --fold_id 2 > results_b2w_glove_word_1_step_2_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_2 --subject_id 1 --fold_id 2 > results_b2w_glove_word_2_step_2_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_2 --subject_id 1 --fold_id 2 > results_b2w_glove_word_3_step_2_fold_2_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_3 --subject_id 1 --fold_id 2 > results_b2w_glove_word_0_step_3_fold_2_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_3 --subject_id 1 --fold_id 2 > results_b2w_glove_word_1_step_3_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_3 --subject_id 1 --fold_id 2 > results_b2w_glove_word_2_step_3_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_3 --subject_id 1 --fold_id 2 > results_b2w_glove_word_3_step_3_fold_2_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_4 --subject_id 1 --fold_id 2 > results_b2w_glove_word_0_step_4_fold_2_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_4 --subject_id 1 --fold_id 2 > results_b2w_glove_word_1_step_4_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_4 --subject_id 1 --fold_id 2 > results_b2w_glove_word_2_step_4_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_4 --subject_id 1 --fold_id 2 > results_b2w_glove_word_3_step_4_fold_2_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_5 --subject_id 1 --fold_id 2 > results_b2w_glove_word_0_step_5_fold_2_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_5 --subject_id 1 --fold_id 2 > results_b2w_glove_word_1_step_5_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_5 --subject_id 1 --fold_id 2 > results_b2w_glove_word_2_step_5_fold_2_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_5 --subject_id 1 --fold_id 2 > results_b2w_glove_word_3_step_5_fold_2_sub1
+
+
+
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_0 --subject_id 1 --fold_id 3 > results_b2w_glove_word_0_step_0_fold_3_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_0 --subject_id 1 --fold_id 3 > results_b2w_glove_word_1_step_0_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_0 --subject_id 1 --fold_id 3 > results_b2w_glove_word_2_step_0_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_0 --subject_id 1 --fold_id 3 > results_b2w_glove_word_3_step_0_fold_3_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_1 --subject_id 1 --fold_id 3 > results_b2w_glove_word_0_step_1_fold_3_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_1 --subject_id 1 --fold_id 3 > results_b2w_glove_word_1_step_1_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_1 --subject_id 1 --fold_id 3 > results_b2w_glove_word_2_step_1_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_1 --subject_id 1 --fold_id 3 > results_b2w_glove_word_3_step_1_fold_3_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_2 --subject_id 1 --fold_id 3 > results_b2w_glove_word_0_step_2_fold_3_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_2 --subject_id 1 --fold_id 3 > results_b2w_glove_word_1_step_2_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_2 --subject_id 1 --fold_id 3 > results_b2w_glove_word_2_step_2_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_2 --subject_id 1 --fold_id 3 > results_b2w_glove_word_3_step_2_fold_3_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_3 --subject_id 1 --fold_id 3 > results_b2w_glove_word_0_step_3_fold_3_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_3 --subject_id 1 --fold_id 3 > results_b2w_glove_word_1_step_3_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_3 --subject_id 1 --fold_id 3 > results_b2w_glove_word_2_step_3_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_3 --subject_id 1 --fold_id 3 > results_b2w_glove_word_3_step_3_fold_3_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_4 --subject_id 1 --fold_id 3 > results_b2w_glove_word_0_step_4_fold_3_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_4 --subject_id 1 --fold_id 3 > results_b2w_glove_word_1_step_4_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_4 --subject_id 1 --fold_id 3 > results_b2w_glove_word_2_step_4_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_4 --subject_id 1 --fold_id 3 > results_b2w_glove_word_3_step_4_fold_3_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_5 --subject_id 1 --fold_id 3 > results_b2w_glove_word_0_step_5_fold_3_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_5 --subject_id 1 --fold_id 3 > results_b2w_glove_word_1_step_5_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_5 --subject_id 1 --fold_id 3 > results_b2w_glove_word_2_step_5_fold_3_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_5 --subject_id 1 --fold_id 3 > results_b2w_glove_word_3_step_5_fold_3_sub1
+
+
+
+
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_0 --subject_id 1 --fold_id 4 > results_b2w_glove_word_0_step_0_fold_4_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_0 --subject_id 1 --fold_id 4 > results_b2w_glove_word_1_step_0_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_0 --subject_id 1 --fold_id 4 > results_b2w_glove_word_2_step_0_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 0 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_0 --subject_id 1 --fold_id 4 > results_b2w_glove_word_3_step_0_fold_4_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_1 --subject_id 1 --fold_id 4 > results_b2w_glove_word_0_step_1_fold_4_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_1 --subject_id 1 --fold_id 4 > results_b2w_glove_word_1_step_1_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_1 --subject_id 1 --fold_id 4 > results_b2w_glove_word_2_step_1_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 1 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_1 --subject_id 1 --fold_id 4 > results_b2w_glove_word_3_step_1_fold_4_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_2 --subject_id 1 --fold_id 4 > results_b2w_glove_word_0_step_2_fold_4_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_2 --subject_id 1 --fold_id 4 > results_b2w_glove_word_1_step_2_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_2 --subject_id 1 --fold_id 4 > results_b2w_glove_word_2_step_2_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 2 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_2 --subject_id 1 --fold_id 4 > results_b2w_glove_word_3_step_2_fold_4_sub1
+
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_3 --subject_id 1 --fold_id 4 > results_b2w_glove_word_0_step_3_fold_4_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_3 --subject_id 1 --fold_id 4 > results_b2w_glove_word_1_step_3_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_3 --subject_id 1 --fold_id 4 > results_b2w_glove_word_2_step_3_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 3 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_3 --subject_id 1 --fold_id 4 > results_b2w_glove_word_3_step_3_fold_4_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_4 --subject_id 1 --fold_id 4 > results_b2w_glove_word_0_step_4_fold_4_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_4 --subject_id 1 --fold_id 4 > results_b2w_glove_word_1_step_4_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_4 --subject_id 1 --fold_id 4 > results_b2w_glove_word_2_step_4_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 4 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_4 --subject_id 1 --fold_id 4 > results_b2w_glove_word_3_step_4_fold_4_sub1
+
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 0 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_0_step_5 --subject_id 1 --fold_id 4 > results_b2w_glove_word_0_step_5_fold_4_sub1
+
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 1 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_1_step_5 --subject_id 1 --fold_id 4 > results_b2w_glove_word_1_step_5_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 2 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_2_step_5 --subject_id 1 --fold_id 4 > results_b2w_glove_word_2_step_5_fold_4_sub1
+
+python main.py --direction brain2word --mapper intended --model glove   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6  --mode train  --hidden_dim 256 --ith_word 3 --ith_step 5 --fMRI_preprocess_mode detrend_filter_std --exp_name word_3_step_5 --subject_id 1 --fold_id 4 > results_b2w_glove_word_3_step_5_fold_4_sub1

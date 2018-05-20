@@ -11,6 +11,7 @@ tf.set_random_seed(1234)
 FLAGS = tf.app.flags.FLAGS
 # ========Where to save outputs===========
 tf.app.flags.DEFINE_string('log_root', '../log_root', 'Root directory for all logging.')
+tf.app.flags.DEFINE_string('fold_id', '1', '1/2/3/4')
 tf.app.flags.DEFINE_string('data_path', '../data', 'Directory where the data '
                                                    'is going to be saved.')
 tf.app.flags.DEFINE_string('mapper', 'decoder', 'intended/forward/decoder')
@@ -53,7 +54,7 @@ def prepare(FLAGS):
 
   # Change log_root to FLAGS.log_root/FLAGS.exp_name and create the dir if necessary
   encoder_decoder_dir = os.path.join(FLAGS.log_root,FLAGS.fold_id, 'subject_' + FLAGS.subject_id)
-  FLAGS.log_root = os.path.join(FLAGS.log_root, 'subject_' + FLAGS.subject_id, FLAGS.direction, FLAGS.model,
+  FLAGS.log_root = os.path.join(FLAGS.log_root,FLAGS.fold_id, 'subject_' + FLAGS.subject_id, FLAGS.direction, FLAGS.model,
                                 FLAGS.mapper, FLAGS.exp_name, )
   if not os.path.exists(FLAGS.log_root):
     os.makedirs(FLAGS.log_root)
