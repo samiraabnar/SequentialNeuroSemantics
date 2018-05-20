@@ -671,10 +671,10 @@ def load_data(FLAGS):
   elif FLAGS.model == "glove_linear":
     print("one step:",FLAGS.one_step)
     train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
-                                                                                 "../embeddings/filtered_glove_embedding_dic.npy",
+                                                                                 "../embeddings/subject_"+str(FLAGS.subject_id)+"_filtered_glove_embedding_dic.npy",
                                                                                  FLAGS.linear_steps, scan_objects,avg=False,one_step=FLAGS.one_step)
     test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
-                                                                              "../embeddings/filtered_glove_embedding_dic.npy",
+                                                                              "../embeddings/subject_"+str(FLAGS.subject_id)+"_filtered_glove_embedding_dic.npy",
                                                                               FLAGS.linear_steps, scan_objects,avg=False,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
