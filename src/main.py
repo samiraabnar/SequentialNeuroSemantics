@@ -25,7 +25,7 @@ tf.app.flags.DEFINE_string('direction', 'word2brain', 'must be one of '
 tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
                                             'train/test/save_vectors/eval_voxels')
 tf.app.flags.DEFINE_string('fMRI_preprocess_mode', 'detrend_filter_std', 'must be one of '
-                                            'none/detrend/detrend_filter/detrend_filter_std')
+                                            'none/detrend/detrend_filter/detrend_filter_std/mean')
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
 tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
 tf.app.flags.DEFINE_string('features', 'selected', 'dim_reducted/selected')
