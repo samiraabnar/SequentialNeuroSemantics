@@ -1,25 +1,25 @@
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_1 --mode train --subject_id 7 —-one_step True --linear_steps 1 --hidden_dim 256 --fold_id 4 > result_linear_lstm_one_step_1_fold_4_sub7
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_1 --mode train --subject_id 7 —-one_step True --linear_steps 1 --hidden_dim 256 --fold_id 4 > result_linear_glove_one_step_1_fold_4_sub7
 
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_2 --mode train --subject_id 7 —-one_step True --linear_steps 2 --hidden_dim 256 --fold_id 4 > result_linear_lstm_one_step_2_fold_4_sub7
-
-
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_3 --mode train --subject_id 7 —-one_step True --linear_steps 3 --hidden_dim 256 --fold_id 4 > result_linear_lstm_one_step_3_fold_4_sub7
-
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_4 --mode train --ssubject_id 7 —-one_step True --linear_steps 4 --hidden_dim 256 --fold_id 4 > result_linear_lstm_one_step_4_fold_4_sub7 
-
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_5 --mode train --subject_id 7 —-one_step True --linear_steps 5 --hidden_dim 256 --fold_id 4 > result_linear_lstm_one_step_5_fold_4_sub7
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_2 --mode train --subject_id 7 —-one_step True --linear_steps 2 --hidden_dim 256 --fold_id 4 > result_linear_glove_one_step_2_fold_4_sub7
 
 
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_1 --mode train --subject_id 7 —-one_step False --linear_steps 1 --hidden_dim 256 --fold_id 4  > result_linear_lstm_all_step_1_fold_4_sub7
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_3 --mode train --subject_id 7 —-one_step True --linear_steps 3 --hidden_dim 256 --fold_id 4 > result_linear_glove_one_step_3_fold_4_sub7
 
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_2 --mode train --subject_id 7 —-one_step False --linear_steps 2 --hidden_dim 256  --fold_id 4 > result_linear_lstm_all_step_2_fold_4_sub7
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_4 --mode train --ssubject_id 7 —-one_step True --linear_steps 4 --hidden_dim 256 --fold_id 4 > result_linear_glove_one_step_4_fold_4_sub7 
+
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name one_step_5 --mode train --subject_id 7 —-one_step True --linear_steps 5 --hidden_dim 256 --fold_id 4 > result_linear_glove_one_step_5_fold_4_sub7
 
 
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_3 --mode train --subject_id 7 —-one_step False --linear_steps 3 --hidden_dim 256 --fold_id 4 > result_linear_lstm_all_step_3_fold_4_sub7 
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_1 --mode train --subject_id 7 —-one_step False --linear_steps 1 --hidden_dim 256 --fold_id 4  > result_linear_glove_all_step_1_fold_4_sub7
+
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_2 --mode train --subject_id 7 —-one_step False --linear_steps 2 --hidden_dim 256  --fold_id 4 > result_linear_glove_all_step_2_fold_4_sub7
 
 
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_4 --mode train --subject_id 7 —-one_step False --linear_steps 4 --hidden_dim 256  --fold_id 4 > result_linear_lstm_all_step_4_fold_4_sub7
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_3 --mode train --subject_id 7 —-one_step False --linear_steps 3 --hidden_dim 256 --fold_id 4 > result_linear_glove_all_step_3_fold_4_sub7 
 
-python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_5 --mode train --subject_id 7 —-one_step False --linear_steps 5 --hidden_dim 256 --fold_id 4 > result_linear_lstm_all_step_5_fold_4_sub7
+
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_4 --mode train --subject_id 7 —-one_step False --linear_steps 4 --hidden_dim 256  --fold_id 4 > result_linear_glove_all_step_4_fold_4_sub7
+
+python linear_main.py --direction word2brain --mapper intended --model glove_linear   --batch_size 16 --l2_factor 0.000001 --p_keep_input 0.85 --p_keep_hidden 0.6 --exp_name all_step_5 --mode train --subject_id 7 —-one_step False --linear_steps 5 --hidden_dim 256 --fold_id 4 > result_linear_glove_all_step_5_fold_4_sub7
 
 
