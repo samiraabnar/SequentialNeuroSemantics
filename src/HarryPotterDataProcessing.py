@@ -405,7 +405,7 @@ def prepare_linear_lstm(block_ids, steps, scan_objects, avg=False, one_step=Fals
         "../../lm1b/text_input_full_state/block_" + str(block_id) + "/lstm_memory_" + str(layer_id) + ".npy").item()
 
 
-      for scan_obj in scan_objects.item().get(block_id):
+    for scan_obj in scan_objects.item().get(block_id):
       # print(scan_obj.step, scan_obj.word, scan_obj.timestamp)
       brain_scans.append(scan_obj.activations[0])
       all_words = []
