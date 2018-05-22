@@ -28,7 +28,7 @@ class LinearMapper(object):
     else:
       linear_steps = self.hparams.linear_steps
 
-    self.input_states_batch = tf.placeholder("float", [linear_steps * 4, None, self.hparams.input_dim])
+    self.input_states_batch = tf.placeholder("float", [linear_steps, None, self.hparams.input_dim])
     # for i in np.arange(self.hparams.linear_steps):
     #    self.input_states_batch_steps[i] = tf.placeholder("float", [None,self.hparams.input_dim])
     self.output_states_batch = tf.placeholder("float", [None, self.hparams.output_dim])
@@ -37,7 +37,7 @@ class LinearMapper(object):
     self.batch_size = tf.placeholder("int32")
 
     with tf.variable_scope("step_weights"):
-      self.step_weights = tf.get_variable(name="w_step", shape=(linear_steps * 4),
+      self.step_weights = tf.get_variable(name="w_step", shape=(linear_steps),
                                           initializer=tf.truncated_normal_initializer(0.01))
 
     # self.step_weights = tf.nn.softmax(self.step_weights)

@@ -343,19 +343,32 @@ def prepare_linear(block_ids, embeddings_file, steps, scan_objects, avg=False,on
 
       words.append('_'.join(scan_obj.all_words))
 
-  fine_steps = steps * 4
+  if avg == False:
+    fine_steps = steps * 4
+  else:
+    fine_steps = steps
+
   for i in np.arange(fine_steps - 1):
     word_embeddings.insert(0, np.zeros_like(word_embeddings[0]))
 
   word_embeddings = np.asarray(word_embeddings)
   print("word em shape:",word_embeddings.shape)
   combined_word_embeddings = []
-  if one_step == True:
-    for i in np.arange(4):
-      combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,4)])
+
+  if avg == False:
+    if one_step == True:
+      for i in np.arange(4):
+        combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,4)])
+    else:
+      for i in np.arange(fine_steps):
+        combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,4)])
   else:
-    for i in np.arange(fine_steps):
-      combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,4)])
+    if one_step == True:
+      for i in np.arange(1):
+        combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,1)])
+    else:
+      for i in np.arange(fine_steps):
+        combined_word_embeddings.append(word_embeddings[np.arange(i,len(word_embeddings) - (fine_steps - i) + 1,1)])
 
   all_brain_scans = np.asarray(all_brain_scans)
   brain_scans = np.asarray(brain_scans)
@@ -743,10 +756,10 @@ def load_data(FLAGS):
     print("one step:",FLAGS.one_step)
     train_embeddings, train_normalized_brain_scans, train_words = prepare_linear(fold[FLAGS.fold_id]['train'],
                                                                                  "../embeddings/subject_"+str(FLAGS.subject_id)+"_filtered_glove_embedding_dic.npy",
-                                                                                 FLAGS.linear_steps, scan_objects,avg=False,one_step=FLAGS.one_step)
+                                                                                 FLAGS.linear_steps, scan_objects,avg=True,one_step=FLAGS.one_step)
     test_embeddings, test_normalized_brain_scans, test_words = prepare_linear(fold[FLAGS.fold_id]['test'],
                                                                               "../embeddings/subject_"+str(FLAGS.subject_id)+"_filtered_glove_embedding_dic.npy",
-                                                                              FLAGS.linear_steps, scan_objects,avg=False,one_step=FLAGS.one_step)
+                                                                              FLAGS.linear_steps, scan_objects,avg=True,one_step=FLAGS.one_step)
     train_size = train_embeddings.shape[1]
     print("train size: ", train_size)
   elif FLAGS.model == "char_word_linear":
