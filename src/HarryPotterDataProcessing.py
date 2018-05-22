@@ -404,7 +404,8 @@ def prepare_linear_lstm(block_ids, steps, scan_objects, avg=False, one_step=Fals
     lstm_m_1 = np.load(
         "../../lm1b/text_input_full_state/block_" + str(block_id) + "/lstm_memory_" + str(layer_id) + ".npy").item()
 
-    for scan_obj in scan_objects.item().get(block_id):
+
+      for scan_obj in scan_objects.item().get(block_id):
       # print(scan_obj.step, scan_obj.word, scan_obj.timestamp)
       brain_scans.append(scan_obj.activations[0])
       all_words = []
@@ -832,9 +833,10 @@ def load_data(FLAGS):
 
   print("size of brain scans:", train_normalized_brain_scans.shape)
 
-  #if FLAGS.fMRI_preprocess_mode == "none":
-  #  train_normalized_brain_scans = train_normalized_brain_scans - np.mean(train_normalized_brain_scans, axis=0)
-  #  test_normalized_brain_scans = test_normalized_brain_scans - np.mean(test_normalized_brain_scans, axis=0)
+  if FLAGS.fMRI_preprocess_mode == "nothing":
+    train_normalized_brain_scans = (train_normalized_brain_scans - np.min(train_normalized_brain_scans, axis=0)) / (np.max(train_normalized_brain_scans, axis=0)- np.min(train_normalized_brain_scans, axis=0) + 0.000000001)
+    test_normalized_brain_scans = (test_normalized_brain_scans - np.min(test_normalized_brain_scans, axis=0)) / (np.max(test_normalized_brain_scans, axis=0)- np.min(test_normalized_brain_scans, axis=0) + 0.000000001)
+
 
 
   print("before:",train_embeddings.shape)
