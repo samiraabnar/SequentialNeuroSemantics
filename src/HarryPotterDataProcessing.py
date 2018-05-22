@@ -139,21 +139,22 @@ def read_and_prepare_data_block_based_ith_word(block_ids, scan_objects, FLAGS):
       if (k - FLAGS.ith_step) > 0:
         scan_obj = scan_objects.item().get(block_id)[k - FLAGS.ith_step]
         # print(scan_obj.step, scan_obj.word, scan_obj.timestamp)
-        current_word.append('_'.join(scan_obj.all_words[FLAGS.ith_word]))
-        current_block_step = scan_obj.step - scan_objects.item()[block_id][0].step
-        print("current block step:",current_block_step)
-        brain_scans.append(scan_obj.activations[0])
-        all_embeddings = []
+        if FLAGS.ith_word < len(scan_obj.all_words):
+          current_word.append('_'.join(scan_obj.all_words[FLAGS.ith_word]))
+          current_block_step = scan_obj.step - scan_objects.item()[block_id][0].step
+          print("current block step:",current_block_step)
+          brain_scans.append(scan_obj.activations[0])
+          all_embeddings = []
 
-        i = FLAGS.ith_word
-        one_embeddings = np.concatenate([lstm_h_0[current_block_step+i][0],
-                                         lstm_m_0[current_block_step+i][0],
-                                         lstm_h_1[current_block_step+i][0],
-                                         lstm_m_1[current_block_step+i][0]])
+          i = FLAGS.ith_word
+          one_embeddings = np.concatenate([lstm_h_0[current_block_step+i][0],
+                                           lstm_m_0[current_block_step+i][0],
+                                           lstm_h_1[current_block_step+i][0],
+                                           lstm_m_1[current_block_step+i][0]])
 
 
-        lstm_embeddings.append(one_embeddings)
-        words.append(scan_obj.all_words[FLAGS.ith_word])
+          lstm_embeddings.append(one_embeddings)
+          words.append(scan_obj.all_words[FLAGS.ith_word])
 
   brain_scans = np.asarray(brain_scans)
   lstm_embeddings = np.asarray(lstm_embeddings)
@@ -849,12 +850,14 @@ def load_data(FLAGS):
       train_embeddings = pca_x.transform(train_embeddings)
       test_embeddings = pca_x.transform(test_embeddings)
 
-  pca_y = PCA(n_components=512)
-  print("PCA shape: ", np.concatenate([train_normalized_brain_scans],axis=0).shape)
-  pca_y.fit(np.concatenate([train_normalized_brain_scans],axis=0))
+  if FLAGS.reduce_brain == True:
+    pca_y = PCA(n_components=512)
+    print("PCA shape: ", np.concatenate([train_normalized_brain_scans],axis=0).shape)
+    pca_y.fit(np.concatenate([train_normalized_brain_scans],axis=0))
 
-  train_normalized_brain_scans = pca_y.transform(train_normalized_brain_scans)
-  test_normalized_brain_scans = pca_y.transform(test_normalized_brain_scans)
+    train_normalized_brain_scans = pca_y.transform(train_normalized_brain_scans)
+    test_normalized_brain_scans = pca_y.transform(test_normalized_brain_scans)
+
   print("PCA shape: ", train_normalized_brain_scans.shape)
 
   return test_embeddings, test_normalized_brain_scans, test_words, \
