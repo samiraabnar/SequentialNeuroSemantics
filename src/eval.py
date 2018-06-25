@@ -5,6 +5,7 @@ from scipy.spatial.distance import *
 import numpy as np
 from sklearn.preprocessing import *
 from scipy.stats import logistic
+from sklearn.metrics import explained_variance_score
 
 def save_pred_and_target_brain_vectors(sess,train_x, train_y,test_x, test_y,test_words,train_words,FLAGS):
 	
@@ -126,8 +127,9 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 		e_b_acc.append(e_right_match < e_wrong_match)
 
 	print("binary accuracy: ", np.mean(b_acc)," ", np.mean(e_b_acc))
-
-	return np.mean(b_acc)
+	exp_var = explained_variance_score(test_y, predicted_output)
+	print("explained variance", explained_variance_score(test_y, predicted_output))
+	return np.mean(b_acc),exp_var
 
 
 

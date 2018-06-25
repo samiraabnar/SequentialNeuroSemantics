@@ -43,11 +43,11 @@ def train(model, sess, sv, train_x, train_y, test_x, test_y, test_words, train_w
         #qualitative_eval(model, sess, test_x, test_y, training_step,test_words,FLAGS)
         #qualitative_eval(model, sess, train_x, train_y, training_step,train_words,FLAGS,"train")
 
-        test_accuracy = quantitative_eval(model, sess, test_x, test_y, training_step,test_words,FLAGS)
+        test_accuracy,exp_var = quantitative_eval(model, sess, test_x, test_y, training_step,test_words,FLAGS)
         print("evaluation on the training set:")
         quantitative_eval(model, sess, train_x, train_y, training_step,test_words,FLAGS)
-        if test_accuracy >= current_best:
-            best_saver.save(sess,best_dir+"/best_model_epoch"+str(i)+"_"+str(test_accuracy))
-            current_best = test_accuracy
+        if exp_var >= current_best:
+            best_saver.save(sess,best_dir+"/best_model_epoch"+str(i)+"_"+str(exp_var))
+            current_best = exp_var
 
 
