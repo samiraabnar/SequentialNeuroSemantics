@@ -833,9 +833,9 @@ def load_data(FLAGS):
 
   print("size of brain scans:", train_normalized_brain_scans.shape)
 
-  if FLAGS.fMRI_preprocess_mode == "nothing":
-    train_normalized_brain_scans = (train_normalized_brain_scans - np.min(train_normalized_brain_scans, axis=0)) / (np.max(train_normalized_brain_scans, axis=0)- np.min(train_normalized_brain_scans, axis=0) + 0.000000001)
-    test_normalized_brain_scans = (test_normalized_brain_scans - np.min(test_normalized_brain_scans, axis=0)) / (np.max(test_normalized_brain_scans, axis=0)- np.min(test_normalized_brain_scans, axis=0) + 0.000000001)
+  #if FLAGS.fMRI_preprocess_mode == "nothing":
+  train_normalized_brain_scans = (train_normalized_brain_scans - np.min(train_normalized_brain_scans, axis=0)) / (np.max(train_normalized_brain_scans, axis=0)- np.min(train_normalized_brain_scans, axis=0) + 0.000000001)
+  test_normalized_brain_scans = (test_normalized_brain_scans - np.min(test_normalized_brain_scans, axis=0)) / (np.max(test_normalized_brain_scans, axis=0)- np.min(test_normalized_brain_scans, axis=0) + 0.000000001)
 
 
 

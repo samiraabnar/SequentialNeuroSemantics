@@ -127,8 +127,9 @@ def quantitative_eval(model, sess, test_x, test_y, train_step, test_words, FLAGS
 		e_b_acc.append(e_right_match < e_wrong_match)
 
 	print("binary accuracy: ", np.mean(b_acc)," ", np.mean(e_b_acc))
+	print(test_y.shape,predicted_output.shape)
 	exp_var = explained_variance_score(test_y, predicted_output)
-	print("explained variance", explained_variance_score(test_y, predicted_output))
+	print("explained variance", exp_var)
 	return np.mean(b_acc),exp_var
 
 

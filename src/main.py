@@ -26,12 +26,14 @@ tf.app.flags.DEFINE_string('mode', 'train', 'must be one of '
                                             'train/test/save_vectors/eval_voxels')
 tf.app.flags.DEFINE_string('fMRI_preprocess_mode', 'detrend_filter_std', 'must be one of '
                                             'none/detrend/detrend_filter/detrend_filter_std/mean')
+tf.app.flags.DEFINE_boolean('reduce_brain', False, 'True/False')
 tf.app.flags.DEFINE_string('timeshift', '0', 'must be a positive or negetive integer')
 tf.app.flags.DEFINE_string('select', '0', 'must be a positive integer')
 tf.app.flags.DEFINE_string('features', 'selected', 'dim_reducted/selected')
 tf.app.flags.DEFINE_string('subject_id', '1', '1-8')
-
+tf.app.flags.DEFINE_boolean('one_step', 'True', 'False')
 tf.app.flags.DEFINE_integer('ith_word', '-1', 'which word to look at (-1 means all!')
+tf.app.flags.DEFINE_integer('linear_steps', '1', 'which word to look at (1 means all!')
 tf.app.flags.DEFINE_integer('ith_step', '0', 'which word to look at (0 means current step!')
 
 # ==========Hyper Params=========
